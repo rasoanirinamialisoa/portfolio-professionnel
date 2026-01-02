@@ -1,0 +1,210 @@
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Github, ExternalLink } from "lucide-react";
+
+const Projects = () => {
+  const [activeTab, setActiveTab] = useState("all");
+
+  const projects = [
+    {
+      id: 1,
+      title: "Boutique Écolo Natecolo (Projet d'apprentissage)",
+      category: "web",
+      tags: ["HTML", "CSS", "Site statique", "Écologie"],
+      image: "/assets/natecolo.png",
+      description:
+        "Mon tout premier site web développé avec HTML et CSS. Une boutique e-commerce écologique fictive présentant des produits durables et respectueux de l'environnement. Ce projet statique m'a permis de découvrir les bases du développement front-end.",
+      features: [
+        "Design responsive adapté mobile et desktop",
+        "Catalogue de produits écoresponsables fictifs",
+        "Maquette de panier d'achat (front-end uniquement)",
+        "Navigation entre différentes pages HTML",
+        "Formulaire de contact statique",
+        "Mise en pratique des concepts CSS (flexbox, grid)",
+      ],
+      githubUrl: "https://github.com/votre-username/natecolo",
+      demoUrl: "https://votre-username.github.io/natecolo",
+    },
+    {
+      id: 2,
+      title: "Facebak - Réseau social (Projet d'apprentissage React)",
+      category: "web",
+      tags: ["React", "Hooks", "Components", "JSX"],
+      image: "assets/facebak.png",
+      description:
+        "Mon premier projet React : une simulation de réseau social développée pour apprendre les concepts fondamentaux de React comme les composants, les hooks et le cycle de vie des composants.",
+      features: [
+        "Structure en composants réutilisables",
+        "Utilisation des hooks useState et useEffect",
+        "Gestion d'état local des composants",
+        "Gestion des événements utilisateur",
+        "Rendu conditionnel avec JSX",
+        "Props et communication entre composants",
+      ],
+      githubUrl: "https://github.com/rasoanirinamialisoa/facebak",
+      demoUrl: "https://rasoanirinamialisoa.github.io/facebak",
+    },
+    {
+      id: 3,
+      title: "AKORY-HOTEL Gestion d'hôtel - Dashboard Admin",
+      category: "Base de données | WEB",
+      tags: ["HTML", "CSS", "PostgreSQL", "Node.js", "Express"],
+      image: "assets/gestion.png",
+      description:
+        "Mon premier gestion de base de données: application web de gestion hôtelière avec interface admin pour gérer les réservations, les clients et les chambres. Utilisation de PostgreSQL pour la gestion des données et Node.js/Express pour le backend.",
+      features: [
+        "Interface admin pour gérer les réservations, clients et chambres",
+        "Connexion à une base de données PostgreSQL",
+        "CRUD complet pour les entités principales",
+        "Formulaires de saisie avec validation",
+        "Authentification simple pour l'accès admin",
+        "Utilisation de Node.js et Express pour le backend",
+      ],
+      githubUrl: "https://github.com/rasoanirinamialisoa/Gestion_Hotel",
+      demoUrl: "https://example.com",
+    },
+    {
+      id: 4,
+      title: "Portfolio Website",
+      category: "web",
+      tags: ["HTML/CSS", "JavaScript", "ReactJs"],
+      image: "placeholder.svg",
+      description:
+        "Conception de mon portfolio website, moderne avec animations fluides et design responsive.",
+      githubUrl: "https://github.com",
+      demoUrl: "https://example.com",
+    },
+    {
+      id: 5,
+      title: "Music App",
+      category: "mobile",
+      tags: ["React Native"],
+      image: "placeholder.svg",
+      description:
+        "Application pour lire de la musique avec plusieurs options",
+      githubUrl: "https://github.com",
+      demoUrl: "https://example.com",
+    },
+    {
+      id: 6,
+      title: "Développement d'une plateforme SaaS d'IA pour la création automatisée de contenu digitaux",
+      category: "web",
+      tags: ["PHP", "Laravel", "React" , "Tailwind CSS", "PostgreSQL"],
+      image: "assets/postnova-ai.png",
+      description:
+        "Interface d'administration complète pour la gestion des utilisateurs et des contenus.",
+      githubUrl: "https://github.com",
+      demoUrl: "https://example.com",
+    },
+  ];
+
+  const filteredProjects =
+    activeTab === "all"
+      ? projects
+      : projects.filter((project) => project.category === activeTab);
+
+  const tabs = [
+    { id: "all", label: "Tous" },
+    { id: "web", label: "Web" },
+    { id: "ui", label: "UI/UX" },
+    { id: "mobile", label: "Mobile" },
+  ];
+
+  return (
+    <section id="projects" className="py-24 ">
+      <div className="section-container space-y-16">
+        {/* Header */}
+        <div className="text-center space-y-4 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold">Mes Projets</h2>
+          <p className="text-lg text-gray-600">
+            Une sélection de mes récents travaux en développement web et mobile.
+          </p>
+        </div>
+
+        {/* Filter Tabs */}
+        <div className="flex flex-wrap justify-center gap-2">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-6 py-2 rounded-full transition-all duration-300 ${
+                activeTab === tab.id
+                  ? "bg-neon-purple text-white shadow-neon-purple"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project) => (
+            <div
+              key={project.id}
+              className="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-neon-purple transition-all duration-500"
+            >
+              {/* Project Image */}
+              <div className="relative h-60 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+
+              {/* Project Info */}
+              <div className="p-6 space-y-3">
+                <h3 className="text-xl font-bold">{project.title}</h3>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-700"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <p className="text-gray-600 line-clamp-3">
+                  {project.description}
+                </p>
+
+                <div className="pt-3 flex items-center justify-between">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-gray-700 hover:text-neon-purple transition-colors"
+                  >
+                    <Github size={16} />
+                    <span>Code</span>
+                  </a>
+
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-gray-700 hover:text-neon-pink transition-colors"
+                  >
+                    <ExternalLink size={16} />
+                    <span>Demo</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Hover Overlay */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-purple to-neon-pink transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
