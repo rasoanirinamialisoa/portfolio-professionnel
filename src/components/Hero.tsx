@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import SocialLinks from './SocialLinks';
+import homeProfil2 from '../../assets/homeProfil2.png';
 
 const Hero = () => {
   return (
@@ -8,7 +9,7 @@ const Hero = () => {
       {/* Image en arrière-plan sur toute la page */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/assets/new-hero.png" 
+          src={homeProfil2} 
           alt="RASOANIRINA Mialisoa Lisa" 
           className="w-full h-full object-cover object-center" 
         />
