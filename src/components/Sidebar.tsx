@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Home, User, FolderKanban, MailIcon } from 'lucide-react';
 import SocialLinks from './SocialLinks';
 import { cn } from '@/lib/utils';
+import lisaLogo from '../../assets/lisa.png';
 
 const Sidebar = () => {
   // Navigation links for the sidebar
@@ -20,7 +21,7 @@ const Sidebar = () => {
           <div className="w-full flex flex-col items-center">
             {/* Logo en cercle avec fond transparent */}
             
-              <img src="/assets/lisa.png" alt="Logo" className="w-16 h-16 md:w-20 md:h-20 object-cover" />
+              <img src={lisaLogo} alt="Logo" className="w-16 h-16 md:w-20 md:h-20 object-cover" />
            
           </div>
         </Link>
