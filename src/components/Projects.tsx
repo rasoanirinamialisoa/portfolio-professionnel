@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
+import natecolo from "../../assets/natecolo.png";
+import facebak from "../../assets/facebak.png";
+import gestion from "../../assets/gestion.png";
+import blog from "../../assets/blog-article.png";
+import music from "../../assets/music.png";
+import postnova from "../../assets/postnova-ai.png";
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -11,7 +17,7 @@ const Projects = () => {
       title: "Boutique Écolo Natecolo (Projet d'apprentissage)",
       category: "web",
       tags: ["HTML", "CSS", "Site statique", "Écologie"],
-      image: "/assets/natecolo.png",
+      image: natecolo,
       description:
         "Mon tout premier site web développé avec HTML et CSS. Une boutique e-commerce écologique fictive présentant des produits durables et respectueux de l'environnement. Ce projet statique m'a permis de découvrir les bases du développement front-end.",
       features: [
@@ -30,7 +36,7 @@ const Projects = () => {
       title: "Facebak - Réseau social (Projet d'apprentissage React)",
       category: "web",
       tags: ["React", "Hooks", "Components", "JSX"],
-      image: "assets/facebak.png",
+      image: facebak,
       description:
         "Mon premier projet React : une simulation de réseau social développée pour apprendre les concepts fondamentaux de React comme les composants, les hooks et le cycle de vie des composants.",
       features: [
@@ -42,14 +48,14 @@ const Projects = () => {
         "Props et communication entre composants",
       ],
       githubUrl: "https://github.com/rasoanirinamialisoa/facebak",
-      demoUrl: "https://rasoanirinamialisoa.github.io/facebak",
+      demoUrl: "https://github.com/rasoanirinamialisoa/facebak",
     },
     {
       id: 3,
       title: "AKORY-HOTEL Gestion d'hôtel - Dashboard Admin",
       category: "Base de données | WEB",
       tags: ["HTML", "CSS", "PostgreSQL", "Node.js", "Express"],
-      image: "assets/gestion.png",
+      image: gestion,
       description:
         "Mon premier gestion de base de données: application web de gestion hôtelière avec interface admin pour gérer les réservations, les clients et les chambres. Utilisation de PostgreSQL pour la gestion des données et Node.js/Express pour le backend.",
       features: [
@@ -61,40 +67,40 @@ const Projects = () => {
         "Utilisation de Node.js et Express pour le backend",
       ],
       githubUrl: "https://github.com/rasoanirinamialisoa/Gestion_Hotel",
-      demoUrl: "https://example.com",
+      demoUrl: "https://github.com/rasoanirinamialisoa/Gestion_Hotel",
     },
     {
       id: 4,
-      title: "Portfolio Website",
+      title: "Blog article",
       category: "web",
-      tags: ["HTML/CSS", "JavaScript", "ReactJs"],
-      image: "placeholder.svg",
+      tags: ["HTML/CSS", "Bootstrap", "Symfony", "PHP"],
+      image: blog,
       description:
-        "Conception de mon portfolio website, moderne avec animations fluides et design responsive.",
-      githubUrl: "https://github.com",
-      demoUrl: "https://example.com",
+        "Conception de blog d'articles avec système de gestion de contenu simple",
+      githubUrl: "https://github.com/TECHLAB-ETECH-MAI-2025/BLOG-Lisa",
+      demoUrl: "https://github.com/TECHLAB-ETECH-MAI-2025/BLOG-Lisa",
     },
     {
       id: 5,
       title: "Music App",
       category: "mobile",
       tags: ["React Native"],
-      image: "placeholder.svg",
+      image: music,
       description:
         "Application pour lire de la musique avec plusieurs options",
-      githubUrl: "https://github.com",
-      demoUrl: "https://example.com",
+      githubUrl: "https://github.com/rasoanirinamialisoa/Music-Player",
+      demoUrl: "https://github.com/rasoanirinamialisoa/Music-Player",
     },
     {
       id: 6,
       title: "Développement d'une plateforme SaaS d'IA pour la création automatisée de contenu digitaux",
       category: "web",
       tags: ["PHP", "Laravel", "React" , "Tailwind CSS", "PostgreSQL"],
-      image: "assets/postnova-ai.png",
+      image: postnova,
       description:
         "Interface d'administration complète pour la gestion des utilisateurs et des contenus.",
-      githubUrl: "https://github.com",
-      demoUrl: "https://example.com",
+      githubUrl: "https://github.com/rasoanirinamialisoa/PostNova.AI-server",
+      demoUrl: "https://prod-postnova-web.netlify.app",
     },
   ];
 
