@@ -1,150 +1,98 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-
-      const sections = ['home', 'about', 'projects', 'contact'];
-      const scrollPositions = sections.map(id => {
+    const onScroll = () => {
+      const sections = ["home", "about", "projects", "contact"];
+      sections.forEach((id) => {
         const el = document.getElementById(id);
-        return el ? el.offsetTop : 0;
-      });
-
-      for (let i = 0; i < scrollPositions.length; i++) {
-        if (window.scrollY >= scrollPositions[i] - 200) {
-          setActiveSection(sections[i]);
+        if (el && window.scrollY >= el.offsetTop - 150) {
+          setActiveSection(id);
         }
-      }
+      });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const navLinks = [
-    { 
-      name: 'Accueil', 
-      href: '#home' 
-    },
-    { 
-      name: 'À propos', 
-      href: '#about', 
-      subSections: [
-        { name: 'Compétences', href: '#competences' },
-        { name: 'Expériences', href: '#experiences' }
-      ] 
-    },
-    { 
-      name: 'Projets', 
-      href: '#projects' 
-    },
-    { 
-      name: 'Contact', 
-      href: '#contact' 
-    },
+    { name: "Accueil", href: "#home" },
+    { name: "À propos", href: "#about" },
+    { name: "Projets", href: "#projects" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out py-4",
-        activeSection === 'home' 
-          ? "bg-white" 
-          : "bg-gradient-to-r from-neon-blue via-neon-pink to-neon-purple bg-opacity-80 backdrop-blur-md shadow-md"
-      )}
-    >
-      <div className="section-container flex justify-between items-center">
-        <a href="#home" className="text-2xl font-bold text-gradient">
-          Portfolio
-        </a>
+    <>
+      {/* NAVBAR */}
+      <header
+        className={cn(
+          "fixed top-0 left-0 w-full z-50",
+          "bg-white shadow-md",
+          "md:bg-gradient-to-r md:from-neon-blue md:via-neon-pink md:to-neon-purple md:shadow-lg"
+        )}
+      >
+        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+          {/* LOGO */}
+          <a
+            href="#home"
+            className="text-2xl font-bold text-neon-blue md:text-white"
+          >
+            Portfolio
+          </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-10">
-          {navLinks.map((link) => (
-            <div 
-              key={link.name} 
-              className="relative"
-              onMouseEnter={() => link.subSections && setIsDropdownOpen(true)}
-              onMouseLeave={() => link.subSections && setIsDropdownOpen(false)}
-            >
+          {/* DESKTOP MENU */}
+          <nav className="hidden md:flex space-x-10">
+            {navLinks.map((link) => (
               <a
+                key={link.name}
                 href={link.href}
-                className="font-medium text-white hover:text-neon-purple transition-colors duration-300"
+                className={cn(
+                  "font-medium transition-colors",
+                  activeSection === link.href.replace("#", "")
+                    ? "text-neon-purple"
+                    : "text-white hover:text-neon-purple"
+                )}
               >
                 {link.name}
               </a>
+            ))}
+          </nav>
 
-              {link.subSections && isDropdownOpen && (
-                <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg w-48">
-                  {link.subSections.map((sub) => (
-                    <a
-                      key={sub.name}
-                      href={sub.href}
-                      className="block px-4 py-2 text-white hover:text-neon-purple hover:bg-gray-100 transition-colors duration-300"
-                    >
-                      {sub.name}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </nav>
+          {/* MOBILE TOGGLE */}
+          <button
+            className=" md:hidden text-neon-blue"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
+      </header>
 
-        {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden text-white hover:text-neon-purple" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Navigation */}
+      {/* MOBILE MENU */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-md py-4">
-          <nav className="flex flex-col items-center space-y-4">
+        <div className="fixed top-16 left-0 w-full bg-white z-40 shadow-lg md:hidden">
+          <nav className="flex flex-col items-center py-6 space-y-5">
             {navLinks.map((link) => (
-              <div key={link.name} className="relative w-full text-center">
-                <a
-                  href={link.href}
-                  className="block font-medium text-white hover:text-neon-purple transition-colors duration-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-                {link.subSections && (
-                  <div className="flex flex-col bg-gray-100 rounded-md mt-1">
-                    {link.subSections.map((sub) => (
-                      <a
-                        key={sub.name}
-                        href={sub.href}
-                        className="block py-2 text-white hover:text-neon-purple hover:bg-gray-200 transition-colors duration-300"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {sub.name}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-lg font-medium text-neon-blue hover:text-neon-purple"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.name}
+              </a>
             ))}
           </nav>
         </div>
       )}
-    </header>
+    </>
   );
 };
 
