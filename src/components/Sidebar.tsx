@@ -43,9 +43,6 @@ const Sidebar = () => {
 
   return (
     <main className="flex justify-end">
-      
-     
-
       <motion.aside className="fixed top-0 left-0 h-screen w-14 md:w-60 bg-neon-blue shadow-md flex flex-col items-center justify-between py-8 z-50 border-r border-white/10" variants={clicked ? asideVariants : ""} animate={clicked ? "open" : "closed"}  >
       
       <div className="w-full">

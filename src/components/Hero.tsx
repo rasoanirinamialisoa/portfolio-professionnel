@@ -34,7 +34,7 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="space-y-6 md:space-y-8 text-center lg:text-left lg:col-start-2">
             <div className="space-y-2 md:space-y-3">
-              <h2 className="text-lg md:text-xl font-medium text-neon-purple">
+              <h2 className="text-lg md:text-2xl font-medium text-neon-purple">
                 Bonjour, je suis
               </h2>
 
@@ -50,7 +50,7 @@ const Hero = () => {
               </p>
             </div>
 
-            <p className="text-gray-600 max-w-lg mx-auto lg:mx-0 text-sm md:text-base">
+            <p className="text-gray-600 max-w-lg mx-auto lg:mx-0 text-sm md:text-xl">
               Développeur web passionné par la création d'interfaces utilisateur modernes et performantes.
               Spécialisé en développement front-end, back-end et en solutions cloud.
             </p>
