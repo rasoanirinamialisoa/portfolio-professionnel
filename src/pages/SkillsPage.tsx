@@ -1,17 +1,18 @@
 
 import React from 'react';
-import Hero from '@/components/Hero';
+import Skills from '@/components/Skills';
 import ParticleBackground from '@/components/ParticleBackground';
 
-const Home = () => {
+const SkillsPage = () => {
   return (
     <div className="relative min-h-screen">
       <ParticleBackground />
       <main className="md:pl-64">
-        <Hero />
+        <Skills />
       </main>
     </div>
   );
+  
 };
 
-export default Home;
+export default SkillsPage;

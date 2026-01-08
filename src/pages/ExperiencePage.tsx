@@ -1,17 +1,16 @@
-
 import React from 'react';
-import Hero from '@/components/Hero';
+import Experience from '@/components/Experience';
 import ParticleBackground from '@/components/ParticleBackground';
 
-const Home = () => {
-  return (
+const ExperiencePage = () => {
+    return (
     <div className="relative min-h-screen">
       <ParticleBackground />
       <main className="md:pl-64">
-        <Hero />
+        <Experience />
       </main>
     </div>
   );
 };
 
-export default Home;
+export default ExperiencePage;

@@ -43,12 +43,16 @@ const Contact = () => {
       <div className="section-container max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16">
           <div className="space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-4xl font-bold">Contact</h2>
-              <p className="text-lg text-gray-600">
+            <div className="text-center space-y-4 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold">Contact</h2> {/* Taille réduite sur mobile */}
+            <div className="relative w-32 mx-auto">
+              <hr className="w-full border-t-2 border-gray-300" />
+              <hr className="w-20 border-t-4 border-neon-purple absolute top-0 left-1/2 -translate-x-1/2 font-bold" />
+            </div>
+            <p className="text-lg text-gray-600">
                 Intéressé par une collaboration ? N'hésitez pas à me contacter.
               </p>
-            </div>
+          </div>
             
             <div className="space-y-6">
               <div className="flex items-center gap-3">

@@ -120,13 +120,16 @@ const Projects = () => {
     <section id="projects" className="py-24 ">
       <div className="section-container space-y-16">
         {/* Header */}
-        <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold">Mes Projets</h2>
+        <div className="text-center space-y-4 max-w-3xl mx-auto px-4"> {/* Ajout de padding horizontal */}
+          <h2 className="text-3xl md:text-4xl font-bold">Mes projets</h2> {/* Taille de texte réduite sur mobile */}
+          <div className="relative w-32 mx-auto">
+            <hr className="w-full border-t-2 border-gray-300" />
+            <hr className="w-20 border-t-4 border-neon-purple absolute top-0 left-1/2 -translate-x-1/2 font-bold" />
+          </div>
           <p className="text-lg text-gray-600">
             Une sélection de mes récents travaux en développement web et mobile.
           </p>
         </div>
-
         {/* Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-2">
           {tabs.map((tab) => (

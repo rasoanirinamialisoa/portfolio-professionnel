@@ -7,7 +7,7 @@ const ContactPage = () => {
   return (
     <div className="relative min-h-screen">
       <ParticleBackground />
-      <main className="pl-20 md:pl-64">
+      <main className="md:pl-64">
         <Contact />
       </main>
     </div>
