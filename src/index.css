@@ -160,3 +160,28 @@
 ::-webkit-scrollbar-thumb:hover {
   background: theme('colors.neon.pink');
 }
+.scroll-dot {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 12px;
+  border-radius: 9999px;
+  background: linear-gradient(to bottom, #a855f7, #3b82f6);
+  animation: scrollMove 1.4s infinite ease-in-out;
+}
+
+@keyframes scrollMove {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 18px);
+  }
+}

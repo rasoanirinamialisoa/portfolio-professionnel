@@ -118,7 +118,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-24 ">
-      <div className="section-container space-y-16">
+      <div className="section-container space-y-8 md:space-y-16">
         {/* Header */}
         <div className="text-center space-y-4 max-w-3xl mx-auto px-4"> {/* Ajout de padding horizontal */}
           <h2 className="text-3xl md:text-4xl font-bold">Mes projets</h2> {/* Taille de texte réduite sur mobile */}
@@ -131,12 +131,12 @@ const Projects = () => {
           </p>
         </div>
         {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-2">
+        <div className="flex justify-center gap-2">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-6 py-2 rounded-full transition-all duration-300 ${
+              className={`px-5 md:px-6 py-1 md:py-2 rounded-full transition-all duration-300 ${
                 activeTab === tab.id
                   ? "bg-neon-purple text-white shadow-neon-purple"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"

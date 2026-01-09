@@ -23,7 +23,7 @@ const Skills = () => {
         </div>
 
       {/* Grille des compétences */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {skills.map((skill, index) => (
           <div
             key={index}
@@ -34,7 +34,7 @@ const Skills = () => {
             </div>
             <div className="flex-1 text-center">
               <h4 className="text-lg md:text-2xl font-medium mb-1 md:mb-2">{skill.name}</h4>
-              <p className="text-gray-600 text-xl md:text-xl">{skill.description}</p>
+              <p className="text-gray-600 text-base md:text-base">{skill.description}</p>
             </div>
           </div>
         ))}
