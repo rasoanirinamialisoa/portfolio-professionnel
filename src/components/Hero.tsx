@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="h-screen pt-16 md:pt-20 relative overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white"
+      className="min-h-screen pt-16 md:pt-20 relative overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white"
     >
       {/* ===== EFFETS DE FOND LIGHT ===== */}
       {/* Bulles flottantes légères */}
