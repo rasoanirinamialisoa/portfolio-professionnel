@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, Check, Mail, Phone, MapPin } from "lucide-react";
 import SocialLinks from "./SocialLinks";
+import { serviceContact } from '@/service/contactService';
+import { Alert } from "./ui/alert";
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -12,8 +14,18 @@ const Contact = () => {
     message: "",
   });
 
+  const postContact = async (contactData: {
+  name: string;
+  email: string;
+  message: string;
+}) => {
+  return await serviceContact(contactData);
+};
+
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -22,21 +34,32 @@ const Contact = () => {
     setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (isSubmitting) return;
+
+  setIsSubmitting(true);
+  setIsSubmitted(false);
+  setError(null);
+
+  try {
+    await postContact(formState);
+
+    setIsSubmitted(true);
+    setFormState({ name: "", email: "", message: "" });
 
     setTimeout(() => {
-      console.log("Form submitted:", formState);
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormState({ name: "", email: "", message: "" });
+      setIsSubmitted(false);
+    }, 5000);
+  } catch (error) {
+    console.error("Submit error:", error);
+    setError("Erreur lors de l'envoi du message. Réessayez.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-    }, 1500);
-  };
 
   return (
     <section id="contact" className="py-20 md:py-26">
@@ -121,8 +144,7 @@ const Contact = () => {
 
           {/* Carte du formulaire */}
           <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 neon-border">
-            <h3 className="text-2xl font-bold mb-6 text-gray-800">Envoyez un message</h3>
-            
+            <h3 className="text-2xl font-bold mb-6 text-gray-800">Envoyez un message</h3> 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-4">
                 <label
@@ -179,51 +201,72 @@ const Contact = () => {
                 />
               </div>
 
-              <div className="flex justify-end">
-                <Button
-                  type="submit"
-                  disabled={isSubmitting || isSubmitted}
-                  className={`bg-gradient-to-r from-neon-purple to-neon-pink hover:opacity-90 text-white px-6 ${
-                    isSubmitted ? "bg-green-500" : ""
-                  }`}
-                >
-                  {isSubmitting ? (
-                    <span className="flex items-center gap-2">
-                      <svg
-                        className="animate-spin h-5 w-5 text-white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
-                      Envoi en cours...
-                    </span>
-                  ) : isSubmitted ? (
-                    <span className="flex items-center gap-2">
-                      <Check size={20} />
-                      Message envoyé !
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-2">
-                      <Send size={16} />
-                      Envoyer
-                    </span>
-                  )}
-                </Button>
-              </div>
+              <div className="flex items-center justify-end gap-4">
+  {/* MESSAGE D'ALERTE À CÔTÉ DU BOUTON */}
+  {isSubmitted && (
+    <Alert
+      variant="default"
+      className="py-2 px-3 text-sm border-green-500 bg-green-50 text-green-800"
+    >
+      Message envoyé ✔
+    </Alert>
+  )}
+
+  {error && (
+    <Alert
+      variant="destructive"
+      className="py-2 px-3 text-sm"
+    >
+      {error}
+    </Alert>
+  )}
+
+  {/* BOUTON */}
+  <Button
+    type="submit"
+    disabled={isSubmitting || isSubmitted}
+    className={`bg-gradient-to-r from-neon-purple to-neon-pink hover:opacity-90 text-white px-6 ${
+      isSubmitted ? "bg-green-500" : ""
+    }`}
+  >
+    {isSubmitting ? (
+      <span className="flex items-center gap-2">
+        <svg
+          className="animate-spin h-5 w-5 text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            className="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            strokeWidth="4"
+          />
+          <path
+            className="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+          />
+        </svg>
+        Envoi en cours...
+      </span>
+    ) : isSubmitted ? (
+      <span className="flex items-center gap-2">
+        <Check size={20} />
+        Message envoyé !
+      </span>
+    ) : (
+      <span className="flex items-center gap-2">
+        <Send size={16} />
+        Envoyer
+      </span>
+    )}
+  </Button>
+</div>
+
             </form>
           </div>
         </div>
