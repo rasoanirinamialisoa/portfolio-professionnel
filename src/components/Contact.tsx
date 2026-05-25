@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, Check, Mail, Phone, MapPin } from "lucide-react";
 import SocialLinks from "./SocialLinks";
-import { serviceContact } from '@/service/contactService';
+import contactService from "../service/contactService";
 import { Alert } from "./ui/alert";
 
 const Contact = () => {
@@ -19,7 +19,7 @@ const Contact = () => {
   email: string;
   message: string;
 }) => {
-  return await serviceContact(contactData);
+  return await contactService(contactData);
 };
 
 
@@ -134,7 +134,7 @@ const Contact = () => {
                   <div className="h-px w-full sm:h-8 sm:w-px sm:min-h-6 bg-gradient-to-r from-neon-purple to-neon-blue sm:bg-gradient-to-b"></div>
                   <SocialLinks
                     className="flex gap-4 justify-center sm:justify-start"
-                    variant="gradient"
+                    variant="outline"
                     iconSize={22}
                   />
                 </div>

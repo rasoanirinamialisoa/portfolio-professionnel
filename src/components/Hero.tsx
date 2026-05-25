@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import SocialLinks from "./SocialLinks";
-import homeProfil2 from "../../assets/homeProfil2.png";
-import homeProfilMobile from "../../assets/homeProfilMobile.png";
+import homeProfil2 from "../../assets/profil2.png";
+import homeProfilMobile from "../../assets/mobile-profil.png";
 import {
   Sparkles,
   ArrowRight,
