@@ -1,73 +1,109 @@
-# React + TypeScript + Vite
+# Portfolio React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue sur mon portfolio personnel développé avec React.
 
-Currently, two official plugins are available:
+Ce projet présente mon parcours, mes compétences, mes projets et mes coordonnées professionnelles.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Aperçu
 
-## React Compiler
+- Présentation personnelle
+- Compétences techniques
+- Expériences et formations
+- Projets réalisés
+- Contact
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies utilisées
 
-## Expanding the ESLint configuration
+- React.js
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Tailwind CSS
+- GitHub
+- Netlify
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Fonctionnalités
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+✅ Interface moderne et responsive
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+✅ Navigation fluide
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+✅ Présentation des projets
+
+✅ Liens vers GitHub et LinkedIn
+
+✅ Formulaire de contact
+
+✅ Optimisé pour mobile et desktop
+
+## Installation
+
+Cloner le dépôt :
+
+```bash
+git clone https://github.com/rasoanirinamialisoa/portfolio-professionnel
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Accéder au projet :
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd portfolio
 ```
+
+Installer les dépendances :
+
+```bash
+npm install
+```
+
+Lancer le serveur de développement :
+
+```bash
+npm run dev
+```
+
+ou
+
+```bash
+npm start
+```
+
+## Build de production
+
+```bash
+npm run build
+```
+
+## Déploiement
+
+Le projet est déployé sur Netlify.
+
+Portfolio en ligne :
+
+[https://portfolio-lisa-mialy.netlify.app/]
+
+## Structure du projet
+
+```text
+src/
+├── components/
+├── config/
+├── hooks/
+├── lib/
+├── pages/
+├── services/
+├── App.css
+├── App.tsx
+├── index.css
+└── main.tsx
+```
+
+## Auteur
+
+**Mialisoa Lisa Rasoanirina**
+
+Développeuse Web Full Stack
+
+- GitHub : https://github.com/rasoanirinamialisoa
+- LinkedIn : https://www.linkedin.com/in/mialisoa-lisa-rasoanirina-0028b3148/
+- Email : rasoanirinamialisoa@gmail.com
