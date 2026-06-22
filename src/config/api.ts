@@ -1,6 +1,8 @@
+// src/config/api.ts
 import axios from "axios";
 
-const API_BASE_URL: string = import.meta.env.VITE_API_URL;
+// Forcer l'URL complète pour test
+const API_BASE_URL = "https://server-portfolio-abx5.onrender.com";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -8,7 +10,6 @@ const api = axios.create({
     "Content-Type": "application/json",
     Accept: "application/json",
   },
-  // withCredentials: true,
 });
 
 export default api;
