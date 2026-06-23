@@ -1,7 +1,8 @@
 import React from 'react';
 import { ChevronRight, Code, Database, Server, Rocket, Layout, Cpu, Smartphone } from 'lucide-react';
-import profil from "../../assets/profil.png";
 const About = () => {
+  const profileAbout = import.meta.env.VITE_ProfileAbout;
+
   const skills = [
     { name: 'Frontend', icon: Layout, description: 'React, Next, HTML/CSS' },
     { name: 'Backend', icon: Server, description: 'Node.js, Express, SpringBoot, Symfony, Laravel' },
@@ -47,7 +48,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:grid-cols-1 xl:grid-cols-3 md:gap-12 items-center px-4 md:px-0"> {/* Ajout de padding et réduction d'espacement */}
           {/* Image centrée sur mobile */}
           <div className="w-full max-w-xs mx-auto md:max-w-none md:mx-0"> {/* Centrage et taille maximale sur mobile */}
-            <img src={profil} alt="Profile" className="w-full h-auto object-cover rounded-lg shadow-md" /> {/* Ajout de styles pour mobile */}
+            <img src={profileAbout} alt="Profile" className="w-full h-auto object-cover rounded-lg shadow-md" /> {/* Ajout de styles pour mobile */}
           </div>
 
           {/* Informations (pleine largeur sur mobile, 2/3 sur desktop) */}

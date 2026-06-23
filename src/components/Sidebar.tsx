@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { Home, User, FolderKanban, MailIcon, Briefcase, Brain } from 'lucide-react';
 import SocialLinks from './SocialLinks';
 import { cn } from '@/lib/utils';
-import lisaLogo from '../../assets/lisa.png';
 import useClick from '@/hooks/useClick';
 import { FaBars } from 'react-icons/fa';
 import { FaXmark } from 'react-icons/fa6';
@@ -12,6 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Sidebar = () => {
   const location = useLocation();
   const { clicked, handleClick } = useClick();
+  const Logo = import.meta.env.VITE_Logo;
 
   const navLinks = [
     { name: 'Accueil', href: '/', icon: Home },
@@ -37,7 +37,7 @@ const Sidebar = () => {
         <div className="w-full px-4">
           <Link to="/" className="flex justify-center mb-12">
             <img
-              src={lisaLogo}
+              src={Logo}
               alt="Logo"
               className="w-16 h-16 object-cover rounded-full"
             />
