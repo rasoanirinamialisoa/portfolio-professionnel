@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
-import natecolo from "../../assets/natecolo.png";
-import facebak from "../../assets/facebak.png";
-import gestion from "../../assets/gestion.png";
-import blog from "../../assets/blog-article.png";
-import music from "../../assets/music.png";
-import postnova from "../../assets/postnova-ai.png";
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("all");
+  const ProjectNatecolo = import.meta.env.VITE_ProjectNatEcolo;
+  const ProjectFacebak = import.meta.env.VITE_ProjectFacebak;
+  const ProjectAkoryHotel = import.meta.env.VITE_ProjectAkoryHotel;
+  const ProjectBlogArticle = import.meta.env.VITE_ProjectBlogArticle;
+  const ProjectMusicApp = import.meta.env.VITE_ProjectMusicApp;
+  const ProjectPostnova = import.meta.env.VITE_ProjectPostNovaAi;
 
   const projects = [
     {
@@ -17,7 +17,7 @@ const Projects = () => {
       title: "Boutique Écolo Natecolo (Projet d'apprentissage)",
       category: "web",
       tags: ["HTML", "CSS", "Site statique", "Écologie"],
-      image: natecolo,
+      image: ProjectNatecolo,
       description:
         "Mon tout premier site web développé avec HTML et CSS. Une boutique e-commerce écologique fictive présentant des produits durables et respectueux de l'environnement. Ce projet statique m'a permis de découvrir les bases du développement front-end.",
       features: [
@@ -36,7 +36,7 @@ const Projects = () => {
       title: "Facebak - Réseau social (Projet d'apprentissage React)",
       category: "web",
       tags: ["React", "Hooks", "Components", "JSX"],
-      image: facebak,
+      image: ProjectFacebak,
       description:
         "Mon premier projet React : une simulation de réseau social développée pour apprendre les concepts fondamentaux de React comme les composants, les hooks et le cycle de vie des composants.",
       features: [
@@ -55,7 +55,7 @@ const Projects = () => {
       title: "AKORY-HOTEL Gestion d'hôtel - Dashboard Admin",
       category: "Base de données | WEB",
       tags: ["HTML", "CSS", "PostgreSQL", "Node.js", "Express"],
-      image: gestion,
+      image: ProjectAkoryHotel,
       description:
         "Mon premier gestion de base de données: application web de gestion hôtelière avec interface admin pour gérer les réservations, les clients et les chambres. Utilisation de PostgreSQL pour la gestion des données et Node.js/Express pour le backend.",
       features: [
@@ -74,7 +74,7 @@ const Projects = () => {
       title: "Blog article",
       category: "web",
       tags: ["HTML/CSS", "Bootstrap", "Symfony", "PHP"],
-      image: blog,
+      image: ProjectBlogArticle,
       description:
         "Conception de blog d'articles avec système de gestion de contenu simple",
       githubUrl: "https://github.com/TECHLAB-ETECH-MAI-2025/BLOG-Lisa",
@@ -85,7 +85,7 @@ const Projects = () => {
       title: "Music App",
       category: "mobile",
       tags: ["React Native"],
-      image: music,
+      image: ProjectMusicApp,
       description:
         "Application pour lire de la musique avec plusieurs options",
       githubUrl: "https://github.com/rasoanirinamialisoa/Music-Player",
@@ -96,7 +96,7 @@ const Projects = () => {
       title: "Développement d'une plateforme SaaS d'IA pour la création automatisée de contenu digitaux",
       category: "web",
       tags: ["PHP", "Laravel", "React" , "Tailwind CSS", "PostgreSQL"],
-      image: postnova,
+      image: ProjectPostnova,
       description:
         "Interface d'administration complète pour la gestion des utilisateurs et des contenus.",
       githubUrl: "https://github.com/rasoanirinamialisoa/PostNova.AI-server",

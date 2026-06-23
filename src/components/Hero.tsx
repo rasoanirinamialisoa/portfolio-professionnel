@@ -1,8 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import SocialLinks from "./SocialLinks";
-import homeProfil2 from "../../assets/profil2.png";
-import homeProfilMobile from "../../assets/mobile-profil.png";
+
 import {
   Sparkles,
   ArrowRight,
@@ -38,6 +37,9 @@ import {
 } from "react-icons/si";
 
 import { FaReact } from "react-icons/fa";
+
+const ProfileHero = import.meta.env.VITE_ProfileHero;
+const ProfileHeroMobile = import.meta.env.VITE_ProfileHeroMobile;
 
 const skills = [
   {
@@ -146,7 +148,7 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute -inset-1"></div>
               <img
-                src={homeProfil2}
+                src={ProfileHero}
                 className="h-screen w-auto object-contain max-w-[2000px] animate-float"
               />
             </div>
@@ -166,7 +168,7 @@ const Hero = () => {
           <div className="absolute -inset-4 bg-gradient-to-r from-neon-purple/15 to-neon-blue/15 rounded-2xl blur-lg"></div>
           <div className="relative bg-white/80 backdrop-blur-md border-2 border-white rounded-xl p-2 shadow-xl">
             <img
-              src={homeProfilMobile}
+              src={ProfileHeroMobile}
               alt="RASOANIRINA Mialisoa Lisa"
               className="w-64 sm:w-80 md:w-96 object-contain animate-float"
             />
