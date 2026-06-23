@@ -102,9 +102,9 @@ const Contact = () => {
                   <Phone size={20} className="text-neon-purple" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-semibold text-gray-700">Téléphone</h4>
+                  <h4 className="font-semibold text-gray-700">Téléphone / Whatsapp </h4>
                   <a 
-                    href="tel:+261348133458" 
+                    href="https://wa.me/+261348133458" 
                     className="text-gray-600 hover:text-neon-purple transition-colors"
                   >
                     +261 34 81 334 58
