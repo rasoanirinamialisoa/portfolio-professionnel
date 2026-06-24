@@ -1,6 +1,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import SocialLinks from "./SocialLinks";
+import { Link } from "react-router-dom";
+import ProjectsPage from "@/pages/ProjectsPage";
 
 import {
   Sparkles,
@@ -192,51 +194,73 @@ const Hero = () => {
               </span>
               <span className="text-gray-900">Mialisoa Lisa</span>
             </h1>
-           <div className="flex flex-row justify-center md:justify-start items-center gap-2 mt-3">
-  <p className="text-base md:text-lg text-gray-700 font-light">
-    étudiante en
-  </p>
+            <div className="flex flex-row justify-center md:justify-start items-center gap-2 mt-3">
+              <p className="text-base md:text-lg text-gray-700 font-light">
+                étudiante en
+              </p>
 
-  <div className="relative">
-    <span className="font-bold bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent text-lg md:text-xl">
-      INFORMATIQUE
-    </span>
-    <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-neon-purple to-neon-blue rounded-full" />
-  </div>
-</div>
+              <div className="relative">
+                <span className="font-bold bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent text-lg md:text-xl">
+                  INFORMATIQUE
+                </span>
+                <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-neon-purple to-neon-blue rounded-full" />
+              </div>
+            </div>
 
             <div className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl p-6 shadow-lg max-w-lg mx-auto lg:mx-0 group hover:shadow-xl hover:border-neon-purple/30 transition-all duration-300">
               <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
                 <div className="w-3 h-3 bg-neon-purple rounded-full animate-ping"></div>
               </div>
               <p className="text-gray-700 text-sm md:text-lg leading-relaxed">
-                <span className="font-semibold text-neon-purple">Développeur PHP orienté API</span> passionné par la conception et le développement de services performants. Spécialisé en <span className="text-neon-blue font-medium">architecture backend, intégration d’API REST</span>, <span className="text-neon-purple font-medium">gestion de bases de données</span>, et en solutions <span className="text-neon-pink font-medium">cloud</span>.
+                <span className="font-semibold text-neon-purple">
+                  Développeur PHP orienté API
+                </span>{" "}
+                passionné par la conception et le développement de services
+                performants. Spécialisé en{" "}
+                <span className="text-neon-blue font-medium">
+                  architecture backend, intégration d’API REST
+                </span>
+                ,{" "}
+                <span className="text-neon-purple font-medium">
+                  gestion de bases de données
+                </span>
+                , et en solutions{" "}
+                <span className="text-neon-pink font-medium">cloud</span>.
               </p>
             </div>
             <div className="flex flex-row sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button className="group relative overflow-hidden bg-gradient-to-r from-neon-blue to-neon-purple text-white w-full sm:w-auto px-5 py-5 md:px-8 md:py-6 rounded-xl border-0 shadow-lg hover:shadow-2xl hover:shadow-neon-blue/40 transition-all duration-300 transform hover:-translate-y-1">
-                <span className="relative z-10 flex items-center gap-3 font-semibold">
-                  <Download className="w-5 h-5 group-hover:animate-bounce" />
+              <a
+                href="/cv.pdf"
+                download
+                className="group relative overflow-hidden bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2.5 md:px-6 md:py-3 rounded-xl border-0 shadow-lg hover:shadow-2xl hover:shadow-neon-blue/40 transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base"
+              >
+                <span className="relative z-10 flex items-center gap-2 font-semibold">
+                  <Download className="w-4 h-4 md:w-5 md:h-5 group-hover:animate-bounce" />
                   Voir mon CV
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-neon-purple to-neon-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute inset-0 overflow-hidden rounded-xl">
-                  <div className="absolute -inset-y-full -skew-x-12 w-8 bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-shine"></div>
-                </div>
-              </Button>
-              <Button className="group relative overflow-hidden bg-gradient-to-r from-neon-blue to-neon-purple text-white w-full sm:w-auto px-5 py-5 md:px-8 md:py-6 rounded-xl border-0 shadow-lg hover:shadow-2xl hover:shadow-neon-blue/40 transition-all duration-300 transform hover:-translate-y-1">
-                <span className="relative z-10 flex items-center gap-3 font-semibold">
+              </a>
+              <Link
+                to="/projects"
+                className="group relative overflow-hidden bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2.5 md:px-6 md:py-3 rounded-xl border-0 shadow-lg hover:shadow-2xl hover:shadow-neon-blue/40 transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base"
+              >
+                <span className="relative z-10 flex items-center gap-2 font-semibold">
                   Voir mes projets
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-neon-purple/5 to-neon-blue/5 opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-300"></div>
-              </Button>
+              </Link>
             </div>
             <div className="pt-0">
               <div className="inline-flex flex-row sm:flex-row items-center gap-4 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl p-4 shadow-md hover:shadow-lg transition-shadow duration-300">
-                <span className="text-sm font-semibold text-gray-700">Suivez-moi</span>
+                <span className="text-sm font-semibold text-gray-700">
+                  Suivez-moi
+                </span>
                 <div className="h-px w-8 bg-gradient-to-r from-neon-purple to-neon-blue sm:h-8 sm:w-px sm:bg-gradient-to-b"></div>
-                <SocialLinks className="flex gap-4" variant="light" iconSize={20} />
+                <SocialLinks
+                  className="flex gap-4"
+                  variant="light"
+                  iconSize={20}
+                />
               </div>
             </div>
           </div>
@@ -244,64 +268,93 @@ const Hero = () => {
       </div>
 
       {/* ===== SKILLS FIXE EN BAS ===== */}
-<div className="fixed bottom-0 w-full z-50 bg-[rgba(128,128,128,0.3)] backdrop-blur-sm py-2">
-  <div className="overflow-hidden">
-    <div className="flex animate-scroll-slow gap-6 px-4">
-      {skills.map((skillGroup, idx) =>
-        skillGroup.techs.map((tech, tIdx) => {
-          const Icon = tech.icon;
-          return (
-            <div
-              key={`${idx}-${tIdx}`}
-              className="flex flex-col items-center justify-center min-w-[80px] text-center"
-            >
-              <Icon className={`w-10 h-10 ${tech.color}`} />
-              <span className="text-xs text-gray-900 mt-1">{tech.label}</span>
-            </div>
-          );
-        })
-      )}
-      {/* Répétition pour boucle infinie */}
-      {skills.map((skillGroup, idx) =>
-        skillGroup.techs.map((tech, tIdx) => {
-          const Icon = tech.icon;
-          return (
-            <div
-              key={`repeat-${idx}-${tIdx}`}
-              className="flex flex-col items-center justify-center min-w-[80px] text-center"
-            >
-              <Icon className={`w-10 h-10 ${tech.color}`} />
-              <span className="text-xs text-gray-900 mt-1">{tech.label}</span>
-            </div>
-          );
-        })
-      )}
-    </div>
-  </div>
-</div>
-
+      <div className="fixed bottom-0 w-full z-50 bg-[rgba(128,128,128,0.3)] backdrop-blur-sm py-2">
+        <div className="overflow-hidden">
+          <div className="flex animate-scroll-slow gap-6 px-4">
+            {skills.map((skillGroup, idx) =>
+              skillGroup.techs.map((tech, tIdx) => {
+                const Icon = tech.icon;
+                return (
+                  <div
+                    key={`${idx}-${tIdx}`}
+                    className="flex flex-col items-center justify-center min-w-[80px] text-center"
+                  >
+                    <Icon className={`w-10 h-10 ${tech.color}`} />
+                    <span className="text-xs text-gray-900 mt-1">
+                      {tech.label}
+                    </span>
+                  </div>
+                );
+              })
+            )}
+            {/* Répétition pour boucle infinie */}
+            {skills.map((skillGroup, idx) =>
+              skillGroup.techs.map((tech, tIdx) => {
+                const Icon = tech.icon;
+                return (
+                  <div
+                    key={`repeat-${idx}-${tIdx}`}
+                    className="flex flex-col items-center justify-center min-w-[80px] text-center"
+                  >
+                    <Icon className={`w-10 h-10 ${tech.color}`} />
+                    <span className="text-xs text-gray-900 mt-1">
+                      {tech.label}
+                    </span>
+                  </div>
+                );
+              })
+            )}
+          </div>
+        </div>
+      </div>
 
       {/* ===== Styles animation ===== */}
       <style jsx>{`
         @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-15px); }
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-15px);
+          }
         }
         @keyframes twinkle {
-          0%, 100% { opacity: 0.3; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.1); }
+          0%,
+          100% {
+            opacity: 0.3;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1.1);
+          }
         }
         @keyframes scroll-slow {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
         }
         @keyframes shine {
-          0% { transform: translateX(-100%) skewX(-12deg); }
-          100% { transform: translateX(200%) skewX(-12deg); }
+          0% {
+            transform: translateX(-100%) skewX(-12deg);
+          }
+          100% {
+            transform: translateX(200%) skewX(-12deg);
+          }
         }
-        .animate-float { animation: float 6s ease-in-out infinite; }
-        .animate-scroll-slow { animation: scroll-slow 30s linear infinite; }
-        .animate-shine { animation: shine 1.5s ease-in-out infinite; }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        .animate-scroll-slow {
+          animation: scroll-slow 30s linear infinite;
+        }
+        .animate-shine {
+          animation: shine 1.5s ease-in-out infinite;
+        }
       `}</style>
     </section>
   );
