@@ -99,7 +99,7 @@ const Sidebar = () => {
               <div className="w-full px-4">
                 <Link to="/" className="flex justify-center mb-12" onClick={handleClick}>
                   <img
-                    src={lisaLogo}
+                    src={Logo}
                     alt="Logo"
                     className="w-16 h-16 object-cover rounded-full"
                   />
