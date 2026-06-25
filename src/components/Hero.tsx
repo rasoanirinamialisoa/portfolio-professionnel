@@ -185,15 +185,16 @@ const Hero = () => {
             <h2 className="text-base md:text-lg font-medium text-gray-600 tracking-wider uppercase">
               Bonjour, je suis
             </h2>
-            <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl tracking-tight text-center sm:text-left">
-              <span className="bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink bg-clip-text text-transparent">
-                RASOANIRINA
-              </span>
-              <span className="hidden md:block">
-                <br />
-              </span>
-              <span className="text-gray-900">Mialisoa Lisa</span>
-            </h1>
+            
+            <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl tracking-tight text-center sm:text-left font-bold text-gray-900">
+  <span className="bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink bg-clip-text text-transparent block sm:inline">
+    RASOANIRINA
+  </span>
+  <span className="hidden md:block"></span>
+  <span className="block sm:inline text-gray-900">
+    Mialisoa Lisa
+  </span>
+</h1>
             <div className="flex flex-row justify-center md:justify-start items-center gap-2 mt-3">
               <p className="text-base md:text-lg text-gray-700 font-light">
                 étudiante en
