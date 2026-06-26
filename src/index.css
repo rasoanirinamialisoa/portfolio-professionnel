@@ -185,3 +185,7 @@
     transform: translate(-50%, 18px);
   }
 }
+
+.perspective {
+  perspective: 1000px;
+}

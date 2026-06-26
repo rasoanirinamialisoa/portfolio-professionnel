@@ -65,9 +65,9 @@ export default {
 				},
 				// Futuristic neon colors
 				neon: {
-					pink: '#d708a0ff',
-					purple: '#6147d9ff',
-					blue: '#053159ff',
+					pink: 'rgb(70, 3, 52)',
+					purple: 'rgb(19, 2, 93)',
+					blue: 'rgb(19, 2, 93)',
 					indigo: '#c2e1faff',
 					dark: '#02182dff',
 				}

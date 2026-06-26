@@ -18,103 +18,174 @@ const Projects = () => {
 
   // ===== Données des projets =====
   const projects = [
-    {
-      id: 1,
-      title: "Boutique Écolo Natecolo (Projet d'apprentissage)",
-      category: "web",
-      tags: ["HTML", "CSS", "Site statique", "Écologie"],
-      image: env.projectNatecolo,
-      description:
-        "Mon tout premier site web développé avec HTML et CSS. Une boutique e-commerce écologique fictive présentant des produits durables et respectueux de l'environnement. Ce projet statique m'a permis de découvrir les bases du développement front-end.",
-      features: [
-        "Design responsive adapté mobile et desktop",
-        "Catalogue de produits écoresponsables fictifs",
-        "Maquette de panier d'achat (front-end uniquement)",
-        "Navigation entre différentes pages HTML",
-        "Formulaire de contact statique",
-        "Mise en pratique des concepts CSS (flexbox, grid)",
-      ],
-      githubUrl: "https://github.com/votre-username/natecolo",
-      demoUrl: "https://votre-username.github.io/natecolo",
-    },
-    {
-      id: 2,
-      title: "Facebak - Réseau social (Projet d'apprentissage React)",
-      category: "web",
-      tags: ["React", "Hooks", "Components", "JSX"],
-      image: env.projectFacebak,
-      description:
-        "Mon premier projet React : une simulation de réseau social développée pour apprendre les concepts fondamentaux de React comme les composants, les hooks et le cycle de vie des composants.",
-      features: [
-        "Structure en composants réutilisables",
-        "Utilisation des hooks useState et useEffect",
-        "Gestion d'état local des composants",
-        "Gestion des événements utilisateur",
-        "Rendu conditionnel avec JSX",
-        "Props et communication entre composants",
-      ],
-      githubUrl: "https://github.com/rasoanirinamialisoa/facebak",
-      demoUrl: "https://github.com/rasoanirinamialisoa/facebak",
-    },
-    {
-      id: 3,
-      title: "AKORY-HOTEL Gestion d'hôtel - Dashboard Admin",
-      category: "web",
-      tags: ["HTML", "CSS", "PostgreSQL", "Node.js", "Express"],
-      image: env.projectAkoryHotel,
-      description:
-        "Mon premier gestion de base de données: application web de gestion hôtelière avec interface admin pour gérer les réservations, les clients et les chambres. Utilisation de PostgreSQL pour la gestion des données et Node.js/Express pour le backend.",
-      features: [
-        "Interface admin pour gérer les réservations, clients et chambres",
-        "Connexion à une base de données PostgreSQL",
-        "CRUD complet pour les entités principales",
-        "Formulaires de saisie avec validation",
-        "Authentification simple pour l'accès admin",
-        "Utilisation de Node.js et Express pour le backend",
-      ],
-      githubUrl: "https://github.com/rasoanirinamialisoa/Gestion_Hotel",
-      demoUrl: "https://github.com/rasoanirinamialisoa/Gestion_Hotel",
-    },
-    {
-      id: 4,
-      title: "Blog article",
-      category: "web",
-      tags: ["HTML/CSS", "Bootstrap", "Symfony", "PHP"],
-      image: env.projectBlogArticle,
-      description:
-        "Conception de blog d'articles avec système de gestion de contenu simple",
-      githubUrl: "https://github.com/TECHLAB-ETECH-MAI-2025/BLOG-Lisa",
-      demoUrl: "https://github.com/TECHLAB-ETECH-MAI-2025/BLOG-Lisa",
-    },
-    {
-      id: 5,
-      title: "Music App",
-      category: "mobile",
-      tags: ["React Native"],
-      image: env.projectMusicApp,
-      description: "Application pour lire de la musique avec plusieurs options",
-      githubUrl: "https://github.com/rasoanirinamialisoa/Music-Player",
-      demoUrl: "https://github.com/rasoanirinamialisoa/Music-Player",
-    },
-    {
-      id: 6,
-      title:
-        "Développement d'une plateforme SaaS d'IA pour la création automatisée de contenu digitaux",
-      category: "web",
-      tags: ["PHP", "Laravel", "React", "Tailwind CSS", "PostgreSQL"],
-      image: env.projectPostnova,
-      description:
-        "Interface d'administration complète pour la gestion des utilisateurs et des contenus.",
-      githubUrl: "https://github.com/rasoanirinamialisoa/PostNova.AI-server",
-      demoUrl: "https://prod-postnova-web.netlify.app",
-    },
-  ];
+  {
+    id: 1,
+    title: "Boutique Écolo Natecolo",
+    category: "web",
+    tags: ["HTML", "CSS", "Site statique", "Écologie"],
+    image: env.projectNatecolo,
+    description:
+      "Premier site web développé en HTML et CSS pur.",
+    longDescription:
+      "Natecolo est mon premier projet web réalisé dans le cadre de mon apprentissage du développement front-end. L'objectif était de concevoir un site vitrine présentant des produits écologiques tout en découvrant les bases du HTML5 et du CSS3. Ce projet m'a permis de comprendre la structuration des pages web, la création d'interfaces responsives ainsi que l'organisation du contenu sur plusieurs pages.",
+
+    features: [
+      "Design responsive adapté aux mobiles et ordinateurs",
+      "Catalogue de produits écologiques",
+      "Navigation multi-pages",
+      "Formulaire de contact",
+      "Utilisation de Flexbox",
+      "Utilisation de CSS Grid"
+    ],
+
+    githubUrl: "https://github.com/rasoanirinamialisoa/rasoanirinamialisoa",
+    demoUrl: "https://natecolo.netlify.app/",
+  },
+
+  {
+    id: 2,
+    title: "Facebak - Réseau Social",
+    category: "web",
+    tags: ["React", "Hooks", "JSX", "Components"],
+    image: env.projectFacebak,
+    description:
+      "Application développée pour apprendre React.",
+
+    longDescription:
+      "Facebak est mon premier projet réalisé avec React. L'objectif était de reproduire les fonctionnalités principales d'un réseau social afin de comprendre l'architecture des composants, la gestion d'état et le fonctionnement des hooks React. Ce projet m'a permis de découvrir la logique de développement moderne basée sur les composants réutilisables.",
+
+    features: [
+      "Architecture basée sur les composants",
+      "Utilisation de useState",
+      "Utilisation de useEffect",
+      "Gestion des événements utilisateur",
+      "Rendu dynamique avec JSX",
+      "Communication entre composants via les props"
+    ],
+
+    githubUrl: "https://github.com/rasoanirinamialisoa/facebak",
+    demoUrl: "https://github.com/rasoanirinamialisoa/facebak",
+  },
+
+  {
+    id: 3,
+    title: "AKORY-HOTEL - Gestion d'Hôtel",
+    category: "web",
+    tags: ["Node.js", "Express", "PostgreSQL", "HTML", "CSS"],
+    image: env.projectAkoryHotel,
+    description:
+      "Application de gestion hôtelière avec base de données.",
+
+    longDescription:
+      "AKORY-HOTEL est une application de gestion permettant d'administrer les chambres, les clients et les réservations d'un hôtel. Ce projet représente ma première expérience avec les bases de données relationnelles et le développement back-end. J'ai pu apprendre à créer des opérations CRUD complètes et à connecter une application à PostgreSQL.",
+
+    features: [
+      "Gestion des réservations",
+      "Gestion des chambres",
+      "Gestion des clients",
+      "CRUD complet",
+      "Connexion PostgreSQL",
+      "API Node.js / Express"
+    ],
+
+    githubUrl:
+      "https://github.com/rasoanirinamialisoa/Gestion_Hotel",
+    demoUrl:
+      "https://github.com/rasoanirinamialisoa/Gestion_Hotel",
+  },
+
+  {
+    id: 4,
+    title: "Blog Article",
+    category: "web",
+    tags: ["Symfony", "PHP", "Bootstrap", "MySQL"],
+    image: env.projectBlogArticle,
+    description:
+      "Plateforme de publication et gestion d'articles.",
+
+    longDescription:
+      "Projet réalisé durant ma formation PHP/Symfony. L'application permet de créer, modifier, consulter et supprimer des articles. Ce projet m'a permis de comprendre le fonctionnement du framework Symfony, l'architecture MVC, la gestion des routes, les contrôleurs ainsi que les interactions avec une base de données.",
+
+    features: [
+      "Gestion des articles",
+      "Architecture MVC",
+      "Utilisation de Symfony",
+      "Gestion des formulaires",
+      "Connexion base de données",
+      "Interface Bootstrap responsive"
+    ],
+
+    githubUrl:
+      "https://github.com/TECHLAB-ETECH-MAI-2025/BLOG-Lisa",
+    demoUrl:
+      "https://github.com/TECHLAB-ETECH-MAI-2025/BLOG-Lisa",
+  },
+
+  {
+    id: 5,
+    title: "Music App",
+    category: "mobile",
+    tags: ["React Native", "Mobile"],
+    image: env.projectMusicApp,
+    description:
+      "Application mobile de lecture audio.",
+
+    longDescription:
+      "Application mobile développée avec React Native permettant d'écouter de la musique depuis une interface simple et intuitive. Ce projet m'a permis de découvrir le développement mobile multiplateforme ainsi que la création d'interfaces adaptées aux smartphones Android et iOS.",
+
+    features: [
+      "Lecture audio",
+      "Contrôle Play / Pause",
+      "Navigation mobile",
+      "Gestion des composants React Native",
+      "Interface responsive",
+      "Découverte du développement mobile"
+    ],
+
+    githubUrl:
+      "https://github.com/rasoanirinamialisoa/Music-Player",
+    demoUrl:
+      "https://github.com/rasoanirinamialisoa/Music-Player",
+  },
+
+  {
+    id: 6,
+    title: "PostNova AI",
+    category: "web",
+    tags: [
+      "Laravel",
+      "React",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "SaaS"
+    ],
+    image: env.projectPostnova,
+    description:
+      "Plateforme SaaS basée sur l'intelligence artificielle.",
+
+    longDescription:
+      "PostNova AI est une plateforme SaaS permettant de générer automatiquement du contenu digital grâce à l'intelligence artificielle. J'ai participé au développement du front-end et du back-end ainsi qu'à la création d'interfaces modernes pour les utilisateurs et les administrateurs. Ce projet m'a permis d'approfondir mes compétences Full Stack et de travailler sur une architecture proche d'un projet professionnel.",
+
+    features: [
+      "Authentification des utilisateurs",
+      "Dashboard administrateur",
+      "Gestion des contenus",
+      "API REST Laravel",
+      "Interface React + Tailwind CSS",
+      "Base de données PostgreSQL"
+    ],
+
+    githubUrl:
+      "https://github.com/rasoanirinamialisoa/PostNova.AI-server",
+    demoUrl:
+      "https://prod-postnova-web.netlify.app",
+  }
+];
 
   // ===== Configuration des onglets =====
   const tabs = [
     { id: "all", label: "Tous" },
     { id: "web", label: "Web" },
-    { id: "ui", label: "UI/UX" },
     { id: "mobile", label: "Mobile" },
   ];
 
@@ -126,64 +197,96 @@ const Projects = () => {
 
   // ===== Composants =====
   const ProjectCard = ({ project }) => (
-    <div
-      key={project.id}
-      className="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-neon-purple transition-all duration-500"
-    >
-      {/* Image du projet */}
-      <div className="relative h-60 overflow-hidden">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+  <div className="group h-[420px] perspective">
+    <div className="relative h-full w-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+
+      {/* FACE AVANT */}
+      <div className="absolute inset-0 bg-white rounded-xl overflow-hidden shadow-md [backface-visibility:hidden]">
+
+        <div className="h-60 overflow-hidden">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        <div className="p-5 space-y-3">
+          <h3 className="text-xl font-bold">
+            {project.title}
+          </h3>
+
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map((tag, index) => (
+              <span
+                key={index}
+                className="px-2 py-1 text-xs rounded-full bg-gray-100"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <p className="text-gray-600 text-sm">
+            {project.description}
+          </p>
+
+          <p className="text-xs text-neon-purple font-medium">
+            Voir plus →
+          </p>
+        </div>
       </div>
 
-      {/* Informations du projet */}
-      <div className="p-6 space-y-3">
-        <h3 className="text-xl font-bold">{project.title}</h3>
+      {/* FACE ARRIÈRE */}
+      <div className="absolute inset-0 rounded-xl bg-neon-blue to-neon-pink text-white p-6 [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-y-auto">
 
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag, index) => (
-            <span
+        <h3 className="text-xl font-bold mb-3">
+          {project.title}
+        </h3>
+
+        <p className="text-lg leading-relaxed mb-4">
+          {project.longDescription}
+        </p>
+
+        <div className="space-y-2 mb-5">
+          {project.features.slice(0, 4).map((feature, index) => (
+            <div
               key={index}
-              className="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-700"
+              className="text-sm flex items-start gap-2"
             >
-              {tag}
-            </span>
+              <span>✓</span>
+              <span>{feature}</span>
+            </div>
           ))}
         </div>
 
-        <p className="text-gray-600 line-clamp-3">{project.description}</p>
-
-        <div className="pt-3 flex items-center justify-between">
+        <div className="flex justify-between mt-auto">
           <ProjectLink
             href={project.githubUrl}
             icon={<Github size={16} />}
             label="Code"
-            hoverColor="hover:text-neon-purple"
+            hoverColor="hover:text-white"
           />
+
           <ProjectLink
             href={project.demoUrl}
             icon={<ExternalLink size={16} />}
             label="Demo"
-            hoverColor="hover:text-neon-pink"
+            hoverColor="hover:text-white"
           />
         </div>
       </div>
 
-      {/* Barre de survol */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-purple to-neon-pink transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
     </div>
-  );
+  </div>
+);
 
   const ProjectLink = ({ href, icon, label, hoverColor }) => (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`flex items-center gap-1 text-gray-700 ${hoverColor} transition-colors`}
+      className={`flex items-center gap-1 text-gray-300 ${hoverColor} transition-colors`}
     >
       {icon}
       <span>{label}</span>
@@ -232,7 +335,7 @@ const Projects = () => {
         </div>
 
         {/* Grille des projets */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {filteredProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
