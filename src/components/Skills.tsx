@@ -229,6 +229,9 @@ const Skills = () => {
       <div className="section-container max-w-6xl mx-auto px-4 md:px-6">
         {/* Titre */}
         <div className="text-center mb-12 md:mb-16">
+          <span className="inline-block text-sm font-medium text-purple-600 tracking-widest uppercase mb-3">
+            Stack Technique
+          </span>
           <h2 className="text-4xl md:text-5xl font-light text-gray-900">
             Mes <span className="text-neon-blue font-medium">Compétences</span>
           </h2>

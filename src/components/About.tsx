@@ -9,10 +9,13 @@ const About = () => {
       <div className="section-container max-w-6xl mx-auto px-4 md:px-6">
         {/* En-tête minimaliste */}
         <div className="text-center mb-12 md:mb-16">
+          <span className="inline-block text-sm font-medium text-purple-600 tracking-widest uppercase mb-3">
+            A propos de moi
+          </span>
           <h2 className="text-4xl md:text-5xl font-light text-gray-900">
             Qui suis-je <span className="text-neon-blue font-medium">?</span>
           </h2>
-          <div className="w-16 h-0.5 bg-neon-blue mx-auto mt-4 rounded-full" />
+          <div className="w-16 h-0.5 bg-purple-600 mx-auto mt-4 rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-start">
