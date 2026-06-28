@@ -168,11 +168,11 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] bg-gradient-to-r from-neon-purple/10 to-neon-blue/10 rounded-full blur-3xl"></div>
         <div className="relative group">
           <div className="absolute -inset-4 bg-gradient-to-r from-neon-purple/15 to-neon-blue/15 rounded-2xl blur-lg"></div>
-          <div className="relative bg-white/80 backdrop-blur-md border-2 border-white rounded-xl p-2 shadow-xl">
+          <div className="relative bg-white/80 backdrop-blur-md border-2 border-white rounded-full p-2 shadow-xl">
             <img
               src={ProfileHeroMobile}
               alt="RASOANIRINA Mialisoa Lisa"
-              className="w-64 sm:w-80 md:w-96 object-contain animate-float"
+              className="w-64 sm:w-80 md:w-96 object-contain animate-float rounded-full "
             />
           </div>
         </div>

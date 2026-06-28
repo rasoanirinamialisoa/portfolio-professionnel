@@ -1,104 +1,128 @@
 import React from 'react';
-import { ChevronRight, Code, Database, Server, Rocket, Layout, Cpu, Smartphone } from 'lucide-react';
+import { Calendar, MapPin, Mail, Phone, User, Briefcase } from 'lucide-react';
+
 const About = () => {
   const profileAbout = import.meta.env.VITE_ProfileAbout;
 
-  const skills = [
-    { name: 'Frontend', icon: Layout, description: 'React, Next, HTML/CSS' },
-    { name: 'Backend', icon: Server, description: 'Node.js, Express, SpringBoot, Symfony, Laravel' },
-    { name: 'Database', icon: Database, description: 'PostgreSQL, MySQL' },
-    { name: 'DevOps', icon: Rocket, description: 'Docker, CI/CD' },
-    { name: 'Architecture', icon: Cpu, description: 'RESTful APIs' },
-    { name: 'Mobile', icon: Smartphone, description: 'React Native' },
-  ];
-
-  const experiences = [
-    {
-      title: 'Stagiaire en développement web',
-      company: 'Etech Madagascar',
-      period: 'Mai 2025 - Août 2025',
-      description: 'Contribué au développement d\'applications web en utilisant React et PHP/Laravel.',
-    },
-    {
-      title: 'Redaction de contenu web',
-      company: 'Noesys',
-      period: '2018 - 2022',
-      description: 'Rédaction d\'articles techniques et de contenu marketing pour divers clients.',
-    },
-    {
-      title: 'Stagiaire en Recherche et Développement',
-      company: 'Homepharma',
-      period: 'Avril 2017 - Septembre 2017',
-      description: 'Formulation et création des produits cosmétiques naturels.',
-    },
-  ];
-
   return (
-    <section id="about" className="relative py-16 md:py-24"> {/* Ajustement du padding vertical pour mobile */}
-      <div className="section-container space-y-12 md:space-y-16"> {/* Espacement réduit sur mobile */}
-        <div className="text-center space-y-4 max-w-3xl mx-auto px-4"> {/* Ajout de padding horizontal */}
-          <h2 className="text-3xl md:text-4xl font-bold">À Propos</h2> {/* Taille de texte réduite sur mobile */}
-          <div className="relative w-32 mx-auto">
-            <hr className="w-full border-t-2 border-gray-300" />
-            <hr className="w-20 border-t-4 border-neon-purple absolute top-0 left-1/2 -translate-x-1/2 font-bold" />
-          </div>
+    <section id="about" className="relative py-20 md:py-28 bg-gradient-to-b from-white to-purple-50/30">
+      <div className="section-container max-w-6xl mx-auto px-4 md:px-6">
+        {/* En-tête minimaliste */}
+        <div className="text-center mb-12 md:mb-16">
+          <span className="inline-block text-sm font-medium text-purple-600 tracking-widest uppercase mb-3">
+            A propos de moi
+          </span>
+          <h2 className="text-4xl md:text-5xl font-light text-gray-900">
+            Qui suis-je <span className="text-neon-blue font-medium">?</span>
+          </h2>
+          <div className="w-16 h-0.5 bg-purple-600 mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Grille responsive pour l'image et les informations */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:grid-cols-1 xl:grid-cols-3 md:gap-12 items-center px-4 md:px-0"> {/* Ajout de padding et réduction d'espacement */}
-          {/* Image centrée sur mobile */}
-          <div className="w-full max-w-xs mx-auto md:max-w-none md:mx-0"> {/* Centrage et taille maximale sur mobile */}
-            <img src={profileAbout} alt="Profile" className="w-full h-auto object-cover rounded-lg shadow-md" /> {/* Ajout de styles pour mobile */}
-          </div>
-
-          {/* Informations (pleine largeur sur mobile, 2/3 sur desktop) */}
-          <div className="md:col-span-2 space-y-4 md:space-y-6"> {/* Espacement réduit sur mobile */}
-            <h2 className="text-xl md:text-2xl text-gray-600 font-bold text-center md:text-left">Développeur Fullstack</h2> {/* Centrage sur mobile */}
-            
-            {/* Grille responsive pour les informations personnelles */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-gray-700 text-sm md:text-base"> {/* Taille texte réduite sur mobile */}
-              <ul className="space-y-2">
-                <li className="flex items-center">
-                  <ChevronRight className="text-purple-600 mr-2 flex-shrink-0" size={18} /> {/* Taille d'icône fixe */}
-                  <span className='font-bold'>Nom:</span>&nbsp;RASOANIRINA
-                </li>
-                <li className="flex items-center">
-                  <ChevronRight className="text-purple-600 mr-2 flex-shrink-0" size={18} />
-                  <span className='font-bold'>Prénom:</span>&nbsp;Mialisoa Lisa
-                </li>
-                <li className="flex items-center">
-                  <ChevronRight className="text-purple-600 mr-2 flex-shrink-0" size={18} />
-                  <span className='font-bold'>Date de naissance:</span>&nbsp;08 Mai 1995
-                </li>
-              </ul>
-              
-              <ul className="space-y-2">
-                <li className="flex items-center">
-                  <ChevronRight className="text-purple-600 mr-2 flex-shrink-0" size={18} />
-                  <span className='font-bold'>Adresse:</span>&nbsp;Lot 198 NJO Manandriana
-                </li>
-                <li className="flex items-center">
-                  <ChevronRight className="text-purple-600 mr-2 flex-shrink-0" size={18} />
-                  <span className='font-bold'>Email:</span>&nbsp;hei.lisa.30@gmail.com
-                </li>
-                <li className="flex items-center">
-                  <ChevronRight className="text-purple-600 mr-2 flex-shrink-0" size={18} />
-                  <span className='font-bold'>Téléphone:</span>&nbsp;+261 34 81 334 58
-                </li>
-              </ul>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+          {/* Colonne gauche - Image + Nom + Titre */}
+          <div className="lg:col-span-2 flex flex-col items-center">
+            {/* Image agrandie */}
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-purple-400 rounded-2xl blur-xl opacity-20" />
+              <div className="relative bg-white p-1 rounded-2xl shadow-xl">
+                <img 
+                  src={profileAbout} 
+                  alt="Mialisoa Lisa RASOANIRINA" 
+                  className="w-80 h-80 md:w-96 md:h-96 object-cover rounded-xl"
+                />
+              </div>
+              {/* Badge discret */}
+              <div className="absolute -bottom-3 -right-3 bg-neon-blue text-white text-xs font-medium px-4 py-1.5 rounded-full shadow-lg">
+                Fullstack
+              </div>
             </div>
-            
-            {/* Texte de description avec taille responsive */}
-            <p className="text-gray-600 text-base md:text-lg mt-2 md:mt-4 text-justify md:text-left"> {/* Justifié sur mobile */}
-              Originaire de Madagascar, j'ai effectué une reconversion dans l'informatique après avoir obtenu un Master 2 en Pharmacologie. 
-              Au fil du temps, le développement web et la programmation sont devenus une véritable passion. 
-              Je cherche toujours à trouver un équilibre entre ces deux domaines qui me tiennent à cœur. 
-              Actuellement, je souhaite mettre mes compétences en <span> <strong> PHP et React </strong> </span>au service des entreprises, 
-              en apportant à la fois ma rigueur scientifique et ma créativité technique.
-            </p>
+
+            {/* Nom et titre sous l'image uniquement */}
+            <div className="text-center mt-6">
+              <h3 className="text-2xl md:text-3xl font-light text-gray-800">
+                Mialisoa Lisa <span className="text-neon-blue font-medium">RASOANIRINA</span>
+              </h3>
+              <p className="text-gray-500 text-sm tracking-wide mt-1">
+                Développeuse Fullstack · Passionnée par l'innovation
+              </p>
+            </div>
+          </div>
+
+          {/* Colonne droite - Infos personnelles + Description */}
+          <div className="lg:col-span-3 space-y-6">
+            {/* Infos personnelles - design minimaliste */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
+                <User className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Nom</p>
+                  <p className="text-sm lg:text-base text-gray-700 font-medium">RASOANIRINA</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
+                <User className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Prénom</p>
+                  <p className="text-sm lg:text-base text-gray-700 font-medium">Mialisoa Lisa</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
+                <Calendar className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Date de naissance</p>
+                  <p className="text-sm lg:text-base text-gray-700 font-medium">08 Mai 1995</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
+                <MapPin className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Adresse</p>
+                  <p className="text-sm lg:text-base text-gray-700 font-medium">Lot 198 NJO Manandriana</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
+                <Mail className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Email</p>
+                  <p className="text-sm lg:text-base text-gray-700 font-medium">rasoanirinamialisoa@gmail.com</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
+                <Phone className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Téléphone</p>
+                  <p className="text-sm lg:text-basetext-gray-700 font-medium">+261 34 81 334 58</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Description */}
+            <div className="bg-white/60 rounded-xl p-5 border border-purple-100/50">
+              <div className="flex items-center space-x-2 mb-3">
+                <Briefcase className="text-purple-700 w-4 h-4" />
+                <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">Parcours</span>
+              </div>
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                Originaire de Madagascar, j'ai effectué une reconversion dans l'informatique après avoir obtenu un 
+                <span className="text-purple-700 font-medium"> Master 2 en Pharmacologie</span>. 
+                Au fil du temps, le développement web et la programmation sont devenus une véritable passion. 
+                Je cherche toujours à trouver un équilibre entre ces deux domaines qui me tiennent à cœur. 
+                Actuellement, je souhaite mettre mes compétences en 
+                <span className="text-purple-700 font-semibold"> PHP</span> et 
+                <span className="text-purple-700 font-semibold"> React</span> au service des entreprises, 
+                en apportant à la fois ma rigueur scientifique et ma créativité technique.
+              </p>
+            </div>
+
+            {/* Petite signature */}
+            <div className="flex justify-end">
+              <div className="flex items-center space-x-2 text-xs text-gray-400">
+                <span className="w-8 h-px bg-purple-700" />
+                <span>Fullstack Developer</span>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   );

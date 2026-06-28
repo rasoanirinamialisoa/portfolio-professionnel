@@ -12,6 +12,9 @@ const Sidebar = () => {
   const location = useLocation();
   const { clicked, handleClick } = useClick();
   const Logo = import.meta.env.VITE_Logo;
+  
+  // Date automatique
+  const currentYear = new Date().getFullYear();
 
   const navLinks = [
     { name: 'Accueil', href: '/', icon: Home },
@@ -64,13 +67,22 @@ const Sidebar = () => {
           </nav>
         </div>
 
-        <div className="w-full px-4">
-          <div className="mt-auto p-4 backdrop-blur-md bg-white/5 rounded-lg">
+        <div className="w-full px-4 space-y-4">
+          {/* Social Links */}
+          <div className="p-4 backdrop-blur-md bg-white/5 rounded-lg">
             <SocialLinks
               variant="outline"
               iconSize={20}
               className="flex justify-center gap-4 text-white"
             />
+          </div>
+
+          {/* Copyright - Desktop */}
+          <div className="text-center text-white/50 text-[14px] leading-relaxed">
+            <p>© {currentYear} Tous droits réservés</p>
+            <p className="text-[14px] text-white/30 mt-0.5">
+              RASOANIRINA Mialisoa Lisa
+            </p>
           </div>
         </div>
       </aside>
@@ -127,13 +139,22 @@ const Sidebar = () => {
                 </nav>
               </div>
 
-              <div className="w-full px-4">
-                <div className="mt-auto p-4 backdrop-blur-md bg-white/5 rounded-lg">
+              <div className="w-full px-4 space-y-4">
+                {/* Social Links */}
+                <div className="p-4 backdrop-blur-md bg-white/5 rounded-lg">
                   <SocialLinks
                     variant="outline"
                     iconSize={20}
                     className="flex justify-center gap-4 text-white"
                   />
+                </div>
+
+                {/* Copyright - Mobile */}
+                <div className="text-center text-white/50 text-[10px] px-2 leading-relaxed">
+                  <p>© {currentYear} Tous droits réservés</p>
+                  <p className="text-[8px] text-white/30 mt-0.5">
+                    RASOANIRINA Mialisoa Lisa
+                  </p>
                 </div>
               </div>
             </motion.aside>
