@@ -53,42 +53,42 @@ const About = () => {
                 <User className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Nom</p>
-                  <p className="text-sm text-gray-700 font-medium">RASOANIRINA</p>
+                  <p className="text-sm lg:text-base text-gray-700 font-medium">RASOANIRINA</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
                 <User className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Prénom</p>
-                  <p className="text-sm text-gray-700 font-medium">Mialisoa Lisa</p>
+                  <p className="text-sm lg:text-base text-gray-700 font-medium">Mialisoa Lisa</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
                 <Calendar className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Date de naissance</p>
-                  <p className="text-sm text-gray-700 font-medium">08 Mai 1995</p>
+                  <p className="text-sm lg:text-base text-gray-700 font-medium">08 Mai 1995</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
                 <MapPin className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Adresse</p>
-                  <p className="text-sm text-gray-700 font-medium">Lot 198 NJO Manandriana</p>
+                  <p className="text-sm lg:text-base text-gray-700 font-medium">Lot 198 NJO Manandriana</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
                 <Mail className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Email</p>
-                  <p className="text-sm text-gray-700 font-medium">rasoanirinamialisoa@gmail.com</p>
+                  <p className="text-sm lg:text-base text-gray-700 font-medium">rasoanirinamialisoa@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
                 <Phone className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Téléphone</p>
-                  <p className="text-sm text-gray-700 font-medium">+261 34 81 334 58</p>
+                  <p className="text-sm lg:text-basetext-gray-700 font-medium">+261 34 81 334 58</p>
                 </div>
               </div>
             </div>
