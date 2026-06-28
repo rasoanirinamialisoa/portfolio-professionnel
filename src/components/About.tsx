@@ -50,42 +50,42 @@ const About = () => {
             {/* Infos personnelles - design minimaliste */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
-                <User className="text-neon-blue w-4 h-4 mt-0.5 flex-shrink-0" />
+                <User className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Nom</p>
                   <p className="text-sm text-gray-700 font-medium">RASOANIRINA</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
-                <User className="text-neon-blue w-4 h-4 mt-0.5 flex-shrink-0" />
+                <User className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Prénom</p>
                   <p className="text-sm text-gray-700 font-medium">Mialisoa Lisa</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
-                <Calendar className="text-neon-blue w-4 h-4 mt-0.5 flex-shrink-0" />
+                <Calendar className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Date de naissance</p>
                   <p className="text-sm text-gray-700 font-medium">08 Mai 1995</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
-                <MapPin className="text-neon-blue w-4 h-4 mt-0.5 flex-shrink-0" />
+                <MapPin className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Adresse</p>
                   <p className="text-sm text-gray-700 font-medium">Lot 198 NJO Manandriana</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
-                <Mail className="text-neon-blue w-4 h-4 mt-0.5 flex-shrink-0" />
+                <Mail className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Email</p>
-                  <p className="text-sm text-gray-700 font-medium">hei.lisa.30@gmail.com</p>
+                  <p className="text-sm text-gray-700 font-medium">rasoanirinamialisoa@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white transition-colors duration-200">
-                <Phone className="text-neon-blue w-4 h-4 mt-0.5 flex-shrink-0" />
+                <Phone className="text-purple-700 w-4 h-4 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Téléphone</p>
                   <p className="text-sm text-gray-700 font-medium">+261 34 81 334 58</p>
@@ -96,17 +96,17 @@ const About = () => {
             {/* Description */}
             <div className="bg-white/60 rounded-xl p-5 border border-purple-100/50">
               <div className="flex items-center space-x-2 mb-3">
-                <Briefcase className="text-neon-blue w-4 h-4" />
+                <Briefcase className="text-purple-700 w-4 h-4" />
                 <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">Parcours</span>
               </div>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
                 Originaire de Madagascar, j'ai effectué une reconversion dans l'informatique après avoir obtenu un 
-                <span className="text-neon-blue font-medium"> Master 2 en Pharmacologie</span>. 
+                <span className="text-purple-700 font-medium"> Master 2 en Pharmacologie</span>. 
                 Au fil du temps, le développement web et la programmation sont devenus une véritable passion. 
                 Je cherche toujours à trouver un équilibre entre ces deux domaines qui me tiennent à cœur. 
                 Actuellement, je souhaite mettre mes compétences en 
-                <span className="text-neon-blue font-semibold"> PHP</span> et 
-                <span className="text-neon-blue font-semibold"> React</span> au service des entreprises, 
+                <span className="text-purple-700 font-semibold"> PHP</span> et 
+                <span className="text-purple-700 font-semibold"> React</span> au service des entreprises, 
                 en apportant à la fois ma rigueur scientifique et ma créativité technique.
               </p>
             </div>
@@ -114,7 +114,7 @@ const About = () => {
             {/* Petite signature */}
             <div className="flex justify-end">
               <div className="flex items-center space-x-2 text-xs text-gray-400">
-                <span className="w-8 h-px bg-neon-blue" />
+                <span className="w-8 h-px bg-purple-700" />
                 <span>Fullstack Developer</span>
               </div>
             </div>
