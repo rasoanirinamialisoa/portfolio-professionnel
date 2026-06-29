@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, X, Code, Award, Users, Eye } from "lucide-react";
+import { Github, ExternalLink, X, Code, Award, Users, Eye, ChevronRight, Hourglass } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
   // ===== État =====
   const [activeTab, setActiveTab] = useState("all");
   const [selectedProject, setSelectedProject] = useState(null);
+  const navigate = useNavigate();
 
   // ===== Variables d'environnement =====
   const env = {
@@ -39,6 +41,7 @@ const Projects = () => {
       ],
       githubUrl: "https://github.com/rasoanirinamialisoa/rasoanirinamialisoa",
       demoUrl: "https://natecolo.netlify.app/",
+      hasDemo: true, // Indique que le projet a une démo
     },
     {
       id: 2,
@@ -57,7 +60,8 @@ const Projects = () => {
         "Communication entre composants via les props"
       ],
       githubUrl: "https://github.com/rasoanirinamialisoa/facebak",
-      demoUrl: "https://github.com/rasoanirinamialisoa/facebak",
+      demoUrl: null,
+      hasDemo: false, // Pas de démo disponible
     },
     {
       id: 3,
@@ -76,7 +80,8 @@ const Projects = () => {
         "API Node.js / Express"
       ],
       githubUrl: "https://github.com/rasoanirinamialisoa/Gestion_Hotel",
-      demoUrl: "https://github.com/rasoanirinamialisoa/Gestion_Hotel",
+      demoUrl: null,
+      hasDemo: false,
     },
     {
       id: 4,
@@ -95,7 +100,8 @@ const Projects = () => {
         "Interface Bootstrap responsive"
       ],
       githubUrl: "https://github.com/TECHLAB-ETECH-MAI-2025/BLOG-Lisa",
-      demoUrl: "https://github.com/TECHLAB-ETECH-MAI-2025/BLOG-Lisa",
+      demoUrl: null,
+      hasDemo: false,
     },
     {
       id: 5,
@@ -114,7 +120,8 @@ const Projects = () => {
         "Découverte du développement mobile"
       ],
       githubUrl: "https://github.com/rasoanirinamialisoa/Music-Player",
-      demoUrl: "https://github.com/rasoanirinamialisoa/Music-Player",
+      demoUrl: null,
+      hasDemo: false,
     },
     {
       id: 6,
@@ -134,14 +141,8 @@ const Projects = () => {
       ],
       githubUrl: "https://github.com/rasoanirinamialisoa/PostNova.AI-server",
       demoUrl: "https://prod-postnova-web.netlify.app",
+      hasDemo: true,
     }
-  ];
-
-  // ===== Configuration des onglets =====
-  const tabs = [
-    { id: "all", label: "Tous" },
-    { id: "web", label: "Web" },
-    { id: "mobile", label: "Mobile" },
   ];
 
   // ===== Filtrage des projets =====
@@ -150,13 +151,36 @@ const Projects = () => {
       ? projects
       : projects.filter((project) => project.category === activeTab);
 
+  // ===== Fonction pour gérer le clic sur "Voir la démo" =====
+  const handleDemoClick = (project, e) => {
+    e.stopPropagation(); // Empêche l'ouverture de la modale
+    
+    if (project.hasDemo && project.demoUrl) {
+      // Si le projet a une démo, ouvrir dans un nouvel onglet
+      window.open(project.demoUrl, "_blank");
+    } else {
+      // Sinon, rediriger vers la page "Coming Soon"
+      navigate("/video-coming-soon");
+    }
+  };
+
   // ===== MODAL =====
   const Modal = ({ project, onClose }) => {
     if (!project) return null;
+
+    // Fonction de démo dans la modale
+    const handleModalDemoClick = () => {
+      if (project.hasDemo && project.demoUrl) {
+        window.open(project.demoUrl, "_blank");
+      } else {
+        navigate("/video-coming-soon");
+        onClose(); // Fermer la modale après redirection
+      }
+    };
     
     return (
       <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-        <div className="bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl animate-scaleIn">
+        <div className="bg-neon-blue rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl animate-scaleIn">
           <div className="flex justify-between items-start mb-4">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold text-white">
@@ -249,33 +273,67 @@ const Projects = () => {
                 <Github size={18} />
                 <span>Code Source</span>
               </a>
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors text-white"
+              <button
+                onClick={handleModalDemoClick}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors text-white ${
+                  project.hasDemo
+                    ? "bg-purple-600 hover:bg-purple-700"
+                    : "bg-purple-600/50 hover:bg-purple-700/50 cursor-pointer"
+                }`}
               >
-                <ExternalLink size={18} />
-                <span>Voir la démo</span>
-              </a>
+                {project.hasDemo ? (
+                  <>
+                    <ExternalLink size={18} />
+                    <span>Voir la démo</span>
+                  </>
+                ) : (
+                  <>
+                    <Hourglass className="w-4 h-4 animate-spin-slow" />
+                    <span>Vidéo à venir</span>
+                  </>
+                )}
+              </button>
             </div>
+
+            {/* Message "Vidéo à venir" si pas de démo */}
+            {!project.hasDemo && (
+              <div className="bg-purple-600/10 border border-purple-500/30 rounded-lg p-3 text-center">
+                <p className="text-sm text-purple-300/80">
+                  🎬 Une démonstration vidéo est en cours de préparation pour ce projet. 
+                  Revenez bientôt !
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
     );
   };
 
-  // ===== Composants =====
-  const ProjectCard = ({ project }) => (
-    <div 
-      className="group h-[420px] perspective cursor-pointer"
-      onClick={() => setSelectedProject(project)}
-    >
-      <div className="relative h-full w-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+  // ===== Composant Carte =====
+  const ProjectCard = ({ project }) => {
+    const handleCardClick = () => {
+      setSelectedProject(project);
+    };
 
-        {/* FACE AVANT */}
-        <div className="absolute inset-0 bg-white rounded-xl overflow-hidden shadow-md [backface-visibility:hidden]">
+    return (
+      <div 
+        className="group h-[420px] cursor-pointer transition-all duration-300 hover:-translate-y-2"
+        onClick={handleCardClick}
+      >
+        <div className="relative h-full w-full bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+          
+          {/* Badge "Vidéo à venir" sur la carte */}
+          {!project.hasDemo && (
+            <div className="absolute top-3 right-3 z-10">
+              <span className="flex items-center gap-1.5 px-2.5 py-1 bg-purple-600/90 text-white text-xs font-medium rounded-full backdrop-blur-sm">
+                <Hourglass className="w-3 h-3 animate-spin-slow" />
+                Vidéo à venir
+              </span>
+            </div>
+          )}
 
+          {/* Image */}
           <div className="h-60 overflow-hidden">
             <img
               src={project.image}
@@ -284,16 +342,22 @@ const Projects = () => {
             />
           </div>
 
+          {/* Contenu */}
           <div className="p-5 space-y-3">
-            <h3 className="text-xl font-bold">
-              {project.title}
-            </h3>
+            <div className="flex items-start justify-between">
+              <h3 className="text-xl font-bold text-gray-800 line-clamp-1">
+                {project.title}
+              </h3>
+              <span className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs font-medium rounded-full flex-shrink-0 ml-2">
+                {project.category === "web" ? "Web" : "Mobile"}
+              </span>
+            </div>
 
             <div className="flex flex-wrap gap-2">
               {project.tags.slice(0, 3).map((tag, index) => (
                 <span
                   key={index}
-                  className="px-2 py-1 text-xs rounded-full bg-gray-100"
+                  className="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-600"
                 >
                   {tag}
                 </span>
@@ -305,77 +369,47 @@ const Projects = () => {
               )}
             </div>
 
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 text-sm line-clamp-2">
               {project.description}
             </p>
 
-            <p className="text-xs text-purple-600 font-medium">
-              Cliquez pour voir plus →
-            </p>
-          </div>
-        </div>
-
-        {/* FACE ARRIÈRE */}
-        <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-900 to-purple-700 text-white p-6 [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-y-auto">
-
-          <h3 className="text-xl font-bold mb-3">
-            {project.title}
-          </h3>
-
-          <p className="text-sm text-purple-100 leading-relaxed mb-4 line-clamp-3">
-            {project.longDescription}
-          </p>
-
-          <div className="space-y-1.5 mb-4">
-            {project.features.slice(0, 4).map((feature, index) => (
-              <div
-                key={index}
-                className="text-sm flex items-start gap-2 text-purple-100"
-              >
-                <span className="text-purple-300">✓</span>
-                <span className="line-clamp-1">{feature}</span>
+            {/* Indicateur de clic */}
+            <div className="flex items-center justify-between pt-1 border-t border-gray-100">
+              <span className="text-xs text-purple-400 group-hover:text-purple-600 transition-colors flex items-center gap-1">
+                Cliquez pour voir les détails
+                <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <div className="flex gap-2">
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-gray-600 transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <Github size={16} />
+                </a>
+                <button
+                  onClick={(e) => handleDemoClick(project, e)}
+                  className={`transition-colors ${
+                    project.hasDemo
+                      ? "text-gray-400 hover:text-purple-600"
+                      : "text-gray-300 hover:text-purple-400 cursor-pointer"
+                  }`}
+                >
+                  {project.hasDemo ? (
+                    <ExternalLink size={16} />
+                  ) : (
+                    <Hourglass className="w-4 h-4 animate-spin-slow" />
+                  )}
+                </button>
               </div>
-            ))}
-            {project.features.length > 4 && (
-              <div className="text-sm text-purple-300">
-                +{project.features.length - 4} autres fonctionnalités
-              </div>
-            )}
-          </div>
-
-          <div className="flex justify-between mt-auto pt-2 border-t border-white/10">
-            <div className="flex gap-3">
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1 text-purple-200 hover:text-white transition-colors"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <Github size={16} />
-                <span className="text-xs">Code</span>
-              </a>
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1 text-purple-200 hover:text-white transition-colors"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <ExternalLink size={16} />
-                <span className="text-xs">Demo</span>
-              </a>
             </div>
-            <span className="text-xs text-purple-300 animate-pulse flex items-center gap-1">
-              <Eye size={14} />
-              Détails
-            </span>
           </div>
         </div>
-
       </div>
-    </div>
-  );
+    );
+  };
 
   const TabButton = ({ tab }) => (
     <button
@@ -395,10 +429,10 @@ const Projects = () => {
     <div className="text-center space-y-4 max-w-3xl mx-auto px-4">
       <div className="text-center mb-12 md:mb-16">
         <span className="inline-block text-sm font-medium text-purple-600 tracking-widest uppercase mb-3">
-          Projets academiques et personnels
+          Projets académiques et personnels
         </span>
-        <h2 className="text-4xl md:text-5xl font-light text-gray-900">
-          Mes <span className="text-purple-600 font-medium">Projets</span>
+        <h2 className="text-2xl md:text-5xl font-light text-gray-900">
+          Mes <span className="text-neon-blue font-medium">Projets</span>
         </h2>
         <div className="w-16 h-0.5 bg-purple-600 mx-auto mt-4 rounded-full" />
       </div>
@@ -412,13 +446,6 @@ const Projects = () => {
         {/* En-tête */}
         <SectionHeader />
 
-        {/* Filtres */}
-        <div className="flex justify-center gap-2 flex-wrap">
-          {tabs.map((tab) => (
-            <TabButton key={tab.id} tab={tab} />
-          ))}
-        </div>
-
         {/* Grille des projets */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {filteredProjects.map((project) => (
@@ -431,9 +458,6 @@ const Projects = () => {
       <Modal project={selectedProject} onClose={() => setSelectedProject(null)} />
 
       <style jsx>{`
-        .perspective {
-          perspective: 1200px;
-        }
         .line-clamp-1 {
           display: -webkit-box;
           -webkit-line-clamp: 1;
@@ -446,25 +470,26 @@ const Projects = () => {
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
-        .line-clamp-3 {
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
         @keyframes fadeIn {
           from { opacity: 0; }
           to { opacity: 1; }
         }
         @keyframes scaleIn {
-          from { transform: scale(0.9); opacity: 0; }
+          from { transform: scale(0.95); opacity: 0; }
           to { transform: scale(1); opacity: 1; }
         }
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
         .animate-fadeIn {
-          animation: fadeIn 0.3s ease-out;
+          animation: fadeIn 0.15s ease-out;
         }
         .animate-scaleIn {
-          animation: scaleIn 0.3s ease-out;
+          animation: scaleIn 0.15s ease-out;
+        }
+        .animate-spin-slow {
+          animation: spin-slow 4s linear infinite;
         }
       `}</style>
     </section>

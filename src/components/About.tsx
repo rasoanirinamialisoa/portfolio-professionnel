@@ -5,14 +5,14 @@ const About = () => {
   const profileAbout = import.meta.env.VITE_ProfileAbout;
 
   return (
-    <section id="about" className="relative py-20 md:py-28 bg-gradient-to-b from-white to-purple-50/30">
+    <section id="about" className="relative min-h-screen pt-16 md:pt-20 py-20 md:py-28 bg-gradient-to-b from-white to-purple-50/30">
       <div className="section-container max-w-6xl mx-auto px-4 md:px-6">
         {/* En-tête minimaliste */}
         <div className="text-center mb-12 md:mb-16">
           <span className="inline-block text-sm font-medium text-purple-600 tracking-widest uppercase mb-3">
             A propos de moi
           </span>
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900">
+          <h2 className="text-2xl md:text-5xl font-light text-gray-900">
             Qui suis-je <span className="text-neon-blue font-medium">?</span>
           </h2>
           <div className="w-16 h-0.5 bg-purple-600 mx-auto mt-4 rounded-full" />
@@ -112,14 +112,6 @@ const About = () => {
                 <span className="text-purple-700 font-semibold"> React</span> au service des entreprises, 
                 en apportant à la fois ma rigueur scientifique et ma créativité technique.
               </p>
-            </div>
-
-            {/* Petite signature */}
-            <div className="flex justify-end">
-              <div className="flex items-center space-x-2 text-xs text-gray-400">
-                <span className="w-8 h-px bg-purple-700" />
-                <span>Fullstack Developer</span>
-              </div>
             </div>
           </div>
         </div>
