@@ -2,10 +2,8 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import SocialLinks from "./SocialLinks";
 import { Link } from "react-router-dom";
-import ProjectsPage from "@/pages/ProjectsPage";
 
 import {
-  Sparkles,
   ArrowRight,
   Download,
   Star,
@@ -15,6 +13,12 @@ import {
   Rocket,
   Cpu,
   Smartphone,
+  Github,
+  ExternalLink,
+  GraduationCap,
+  Briefcase,
+  Target,
+  Mail,
 } from "lucide-react";
 
 import {
@@ -102,11 +106,20 @@ const skills = [
   },
 ];
 
+// ===== PROJET MIS EN AVANT =====
+const featuredProject = {
+  title: "PostNova AI",
+  description: "Plateforme SaaS d'IA pour création et génération de post pour les réseaux sociaux",
+  technologies: ["Laravel", "React", "OpenAI", "Swagger", "PostgreSQL", "Docker"],
+  github: "https://github.com/ton-projet",
+  demo: "https://ton-projet.com",
+};
+
 const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen pt-16 md:pt-20 relative overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white"
+      className="relative min-h-screen pt-0 overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white"
     >
       {/* ===== EFFETS DE FOND ===== */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -141,8 +154,13 @@ const Hero = () => {
         </div>
       ))}
 
-      {/* ===== IMAGE DESKTOP ===== */}
-      <div className="hidden lg:block absolute inset-0 z-10">
+      {/* ============================================= */}
+      {/* ===== VERSION DESKTOP ===== */}
+      {/* ============================================= */}
+      <div className="hidden min-h-screen pt-0 lg:block relative">
+        {/* IMAGE à gauche */}
+        {/* ===== IMAGE DESKTOP ===== */}
+      <div className="hidden  lg:block absolute inset-0 z-10">
         <div className="absolute top-1/2 left-[28%] -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-neon-purple/10 to-neon-blue/10 rounded-full blur-3xl"></div>
         <div className="absolute top-1/2 left-[50%] -translate-x-1/2 -translate-y-1/2">
           <div className="relative group">
@@ -151,160 +169,348 @@ const Hero = () => {
               <div className="absolute -inset-1"></div>
               <img
                 src={ProfileHero}
-                className="h-screen w-auto object-contain max-w-[2000px] animate-float"
+                className="h-screen w-auto object-contain max-w-[2000px]"
               />
             </div>
-            <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-br from-white to-neon-blue/20 rounded-2xl border border-white shadow-lg flex items-center justify-center backdrop-blur-sm">
-              <div className="w-12 h-12 bg-gradient-to-r from-neon-purple to-neon-blue rounded-full flex items-center justify-center">
-                <Sparkles className="text-white w-6 h-6" />
+          </div>
+        </div>
+      </div>
+
+        {/* PROJET EN VEDETTE - Desktop */}
+        <div className="absolute z-30 bottom-[8%] left-[25%] -translate-x-1/2 w-full max-w-lg">
+          <div className="bg-white/95 backdrop-blur-sm border border-gray-200 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-neon-purple/30">
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <h4 className="text-lg font-bold text-gray-900">
+                  {featuredProject.title}
+                </h4>
+                <span className="px-3 py-1 bg-gradient-to-r from-neon-purple to-neon-blue text-white text-xs font-medium rounded-full">
+                  ★ Projet en vedette
+                </span>
+              </div>
+              <p className="text-sm text-gray-600">
+                {featuredProject.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {featuredProject.technologies.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10 text-xs font-medium text-gray-700 rounded-full border border-gray-200"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex gap-4 pt-2">
+                <a
+                  href={featuredProject.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-neon-purple transition-colors font-medium"
+                >
+                  <Github className="w-4 h-4" />
+                  Voir le code
+                </a>
+                <a
+                  href={featuredProject.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-neon-purple transition-colors font-medium"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  Voir la démo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* TEXTE - Desktop à droite */}
+        <div className="section-container px-4 sm:px-6 relative z-20">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-screen">
+            <div className="space-y-5 md:space-y-7 text-center lg:text-left lg:col-start-2">
+              <h2 className="text-base md:text-lg font-medium text-gray-600 tracking-wider uppercase">
+                Bonjour, je suis
+              </h2>
+
+              <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl tracking-tight text-center sm:text-left font-bold text-gray-900">
+                <span className="bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink bg-clip-text text-transparent block sm:inline">
+                  RASOANIRINA
+                </span>
+                <span className="hidden md:block"></span>
+                <span className="block sm:inline text-gray-900">
+                  Mialisoa Lisa
+                </span>
+              </h1>
+
+              <div className="flex flex-row justify-center md:justify-start items-center gap-2 mt-2 flex-wrap">
+                <p className="text-base md:text-lg text-gray-700 font-light">
+                  étudiante en
+                </p>
+                <div className="relative">
+                  <span className="font-bold bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent text-lg md:text-xl">
+                    INFORMATIQUE
+                  </span>
+                  <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-neon-purple to-neon-blue rounded-full" />
+                </div>
+              </div>
+
+              <div className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl p-5 md:p-6 shadow-lg max-w-lg mx-auto lg:mx-0 group hover:shadow-xl hover:border-neon-purple/30 transition-all duration-300 relative">
+                <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="w-3 h-3 bg-neon-purple rounded-full animate-ping"></div>
+                </div>
+                <div className="space-y-3">
+                  <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                    <span className="font-semibold text-neon-purple">
+                      Développeuse PHP orientée API
+                    </span>{" "}
+                    fraîchement diplômée en informatique, passionnée par la conception 
+                    et le développement de services performants. 
+                  </p>
+                  <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                    Spécialisée en{" "}
+                    <span className="text-neon-blue font-medium">
+                      architecture backend, intégration d'API REST
+                    </span>
+                    ,{" "}
+                    <span className="text-neon-purple font-medium">
+                      gestion de bases de données
+                    </span>
+                    , et en solutions{" "}
+                    <span className="text-neon-pink font-medium">cloud</span>.
+                  </p>
+                  <div className="flex items-center gap-2 pt-1 border-t border-gray-100">
+                    <Briefcase className="w-4 h-4 text-green-600" />
+                    <span className="text-sm font-medium text-green-700">
+                      📌 À la recherche d'un stage
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-row flex-wrap gap-3 justify-center lg:justify-start">
+                <a
+                  href="/cv.pdf"
+                  download
+                  className="group relative overflow-hidden bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2.5 md:px-6 md:py-3 rounded-xl border-0 shadow-lg hover:shadow-2xl hover:shadow-neon-blue/40 transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base"
+                >
+                  <span className="relative z-10 flex items-center gap-2 font-semibold">
+                    <Download className="w-4 h-4 md:w-5 md:h-5 group-hover:animate-bounce" />
+                    Voir mon CV
+                  </span>
+                </a>
+                <Link
+                  to="/projects"
+                  className="group relative overflow-hidden bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2.5 md:px-6 md:py-3 rounded-xl border-0 shadow-lg hover:shadow-2xl hover:shadow-neon-blue/40 transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base"
+                >
+                  <span className="relative z-10 flex items-center gap-2 font-semibold">
+                    Voir mes projets
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform" />
+                  </span>
+                </Link>
+              </div>
+              <div className="pt-0">
+                <div className="inline-flex flex-row sm:flex-row items-center gap-4 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl p-4 shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <span className="text-sm font-semibold text-gray-700">
+                    Suivez-moi
+                  </span>
+                  <div className="h-px w-8 bg-gradient-to-r from-neon-purple to-neon-blue sm:h-8 sm:w-px sm:bg-gradient-to-b"></div>
+                  <SocialLinks
+                    className="flex gap-4"
+                    variant="light"
+                    iconSize={20}
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* ===== IMAGE MOBILE ===== */}
-      <div className="lg:hidden flex justify-center mb-8 relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] bg-gradient-to-r from-neon-purple/10 to-neon-blue/10 rounded-full blur-3xl"></div>
-        <div className="relative group">
-          <div className="absolute -inset-4 bg-gradient-to-r from-neon-purple/15 to-neon-blue/15 rounded-2xl blur-lg"></div>
-          <div className="relative bg-white/80 backdrop-blur-md border-2 border-white rounded-full p-2 shadow-xl">
-            <img
-              src={ProfileHeroMobile}
-              alt="RASOANIRINA Mialisoa Lisa"
-              className="w-64 sm:w-80 md:w-96 object-contain animate-float rounded-full "
-            />
+      {/* ============================================= */}
+      {/* ===== VERSION MOBILE ===== */}
+      {/* ============================================= */}
+      <div className="lg:hidden px-4 py-6">
+        {/* 1. IMAGE EN PREMIER */}
+        <div className="flex justify-center mb-6">
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-to-r from-neon-purple/15 to-neon-blue/15 rounded-2xl blur-lg"></div>
+            <div className="relative bg-white/80 backdrop-blur-md border-2 border-white rounded-full p-2 shadow-xl">
+              <img
+                src={ProfileHeroMobile}
+                alt="RASOANIRINA Mialisoa Lisa"
+                className="w-56 sm:w-64 object-contain animate-float rounded-full"
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* ===== TEXTE ===== */}
-      <div className="section-container px-4 sm:px-6 relative z-20">
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="space-y-6 md:space-y-8 text-center lg:text-left lg:col-start-2">
-            <h2 className="text-base md:text-lg font-medium text-gray-600 tracking-wider uppercase">
-              Bonjour, je suis
-            </h2>
-            
-            <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl tracking-tight text-center sm:text-left font-bold text-gray-900">
-  <span className="bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink bg-clip-text text-transparent block sm:inline">
-    RASOANIRINA
-  </span>
-  <span className="hidden md:block"></span>
-  <span className="block sm:inline text-gray-900">
-    Mialisoa Lisa
-  </span>
-</h1>
-            <div className="flex flex-row justify-center md:justify-start items-center gap-2 mt-3">
-              <p className="text-base md:text-lg text-gray-700 font-light">
-                étudiante en
-              </p>
-
-              <div className="relative">
-                <span className="font-bold bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent text-lg md:text-xl">
-                  INFORMATIQUE
-                </span>
-                <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-neon-purple to-neon-blue rounded-full" />
-              </div>
+        {/* 2. DESCRIPTION AU MILIEU (nom, titre, description) */}
+        <div className="text-center space-y-4">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-300 px-3 py-1 rounded-full mx-auto">
+            <div className="relative">
+              <div className="absolute inset-0 animate-ping rounded-full bg-green-400/50"></div>
+              <div className="relative w-2 h-2 bg-green-500 rounded-full"></div>
             </div>
+            <span className="text-xs font-semibold text-green-700">
+              🎓 Disponible pour un stage
+            </span>
+          </div>
 
-            <div className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl p-6 shadow-lg max-w-lg mx-auto lg:mx-0 group hover:shadow-xl hover:border-neon-purple/30 transition-all duration-300">
-              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="w-3 h-3 bg-neon-purple rounded-full animate-ping"></div>
-              </div>
-              <p className="text-gray-700 text-sm md:text-lg leading-relaxed">
-                <span className="font-semibold text-neon-purple">
-                  Développeur PHP orienté API
-                </span>{" "}
-                passionné par la conception et le développement de services
-                performants. Spécialisé en{" "}
-                <span className="text-neon-blue font-medium">
-                  architecture backend, intégration d’API REST
-                </span>
-                ,{" "}
-                <span className="text-neon-purple font-medium">
-                  gestion de bases de données
-                </span>
-                , et en solutions{" "}
-                <span className="text-neon-pink font-medium">cloud</span>.
-              </p>
+          <h2 className="text-sm font-medium text-gray-600 tracking-wider uppercase">
+            Bonjour, je suis
+          </h2>
+
+          <h1 className="text-2xl font-bold text-gray-900">
+            <span className="bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink bg-clip-text text-transparent">
+              RASOANIRINA
+            </span>
+            <br />
+            <span className="text-gray-900">Mialisoa Lisa</span>
+          </h1>
+
+          <div className="flex justify-center items-center gap-2">
+            <p className="text-base text-gray-700 font-light">
+              étudiante en
+            </p>
+            <span className="font-bold bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent text-base">
+              INFORMATIQUE
+            </span>
+          </div>
+
+          <div className="flex justify-center gap-2 flex-wrap">
+            <div className="inline-flex items-center gap-1 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 px-2.5 py-0.5 rounded-full text-xs">
+              <GraduationCap className="w-3.5 h-3.5" />
+              Diplômée 2025
             </div>
-            <div className="flex flex-row sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="inline-flex items-center gap-1 bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full text-xs">
+              <Target className="w-3.5 h-3.5" />
+              Stage recherché
+            </div>
+          </div>
+
+          <div className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-xl p-4 shadow-lg text-left">
+            <p className="text-gray-700 text-sm leading-relaxed">
+              <span className="font-semibold text-neon-purple">
+                Développeuse PHP orientée API
+              </span>{" "}
+              fraîchement diplômée en informatique, passionnée par la conception 
+              et le développement de services performants.
+            </p>
+            <p className="text-gray-700 text-sm leading-relaxed mt-2">
+              Spécialisée en{" "}
+              <span className="text-neon-blue font-medium">
+                architecture backend, intégration d'API REST
+              </span>
+              ,{" "}
+              <span className="text-neon-purple font-medium">
+                gestion de bases de données
+              </span>
+              , et en solutions{" "}
+              <span className="text-neon-pink font-medium">cloud</span>.
+            </p>
+            <div className="flex items-center gap-2 mt-2 pt-2 border-t border-gray-100">
+              <Briefcase className="w-4 h-4 text-green-600 flex-shrink-0" />
+              <span className="text-xs font-medium text-green-700">
+                📌 À la recherche d'un stage
+              </span>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-2 justify-center">
+            <a
+              href="/cv.pdf"
+              download
+              className="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg hover:shadow-xl transition-all"
+            >
+              <span className="flex items-center gap-2">
+                <Download className="w-4 h-4" />
+                Voir mon CV
+              </span>
+            </a>
+            <Link
+              to="/projects"
+              className="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg hover:shadow-xl transition-all"
+            >
+              <span className="flex items-center gap-2">
+                Voir mes projets
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+          </div>
+
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl shadow-lg hover:shadow-xl transition-all text-sm font-semibold"
+          >
+            <Mail className="w-4 h-4" />
+            📌 Je recherche un stage
+          </a>
+
+          <div className="flex justify-center pt-2">
+            <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-xl px-4 py-2.5 shadow-md">
+              <span className="text-xs font-semibold text-gray-700">
+                Suivez-moi
+              </span>
+              <div className="h-5 w-px bg-gradient-to-b from-neon-purple to-neon-blue"></div>
+              <SocialLinks
+                className="flex gap-3"
+                variant="light"
+                iconSize={18}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* 3. PROJET EN DERNIER */}
+        <div className="mt-6">
+          <div className="bg-white/95 backdrop-blur-sm border border-gray-200 rounded-xl p-4 shadow-lg">
+            <div className="flex items-center justify-between">
+              <h4 className="text-base font-bold text-gray-900">
+                {featuredProject.title}
+              </h4>
+              <span className="px-2.5 py-0.5 bg-gradient-to-r from-neon-purple to-neon-blue text-white text-[10px] font-medium rounded-full">
+                ★ En vedette
+              </span>
+            </div>
+            <p className="text-xs text-gray-600 mt-1">
+              {featuredProject.description}
+            </p>
+            <div className="flex flex-wrap gap-1.5 mt-2">
+              {featuredProject.technologies.slice(0, 4).map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-2 py-0.5 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10 text-[10px] font-medium text-gray-700 rounded-full border border-gray-200"
+                >
+                  {tech}
+                </span>
+              ))}
+              {featuredProject.technologies.length > 4 && (
+                <span className="px-2 py-0.5 text-[10px] font-medium text-gray-500 rounded-full border border-gray-200">
+                  +{featuredProject.technologies.length - 4}
+                </span>
+              )}
+            </div>
+            <div className="flex gap-3 mt-2 pt-2 border-t border-gray-100">
               <a
-                href="/cv.pdf"
-                download
-                className="group relative overflow-hidden bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2.5 md:px-6 md:py-3 rounded-xl border-0 shadow-lg hover:shadow-2xl hover:shadow-neon-blue/40 transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base"
+                href={featuredProject.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs text-gray-600 hover:text-neon-purple transition-colors font-medium"
               >
-                <span className="relative z-10 flex items-center gap-2 font-semibold">
-                  <Download className="w-4 h-4 md:w-5 md:h-5 group-hover:animate-bounce" />
-                  Voir mon CV
-                </span>
+                <Github className="w-3.5 h-3.5" />
+                Code
               </a>
-              <Link
-                to="/projects"
-                className="group relative overflow-hidden bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2.5 md:px-6 md:py-3 rounded-xl border-0 shadow-lg hover:shadow-2xl hover:shadow-neon-blue/40 transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base"
+              <a
+                href={featuredProject.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs text-gray-600 hover:text-neon-purple transition-colors font-medium"
               >
-                <span className="relative z-10 flex items-center gap-2 font-semibold">
-                  Voir mes projets
-                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-neon-purple/5 to-neon-blue/5 opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-300"></div>
-              </Link>
+                <ExternalLink className="w-3.5 h-3.5" />
+                Démo
+              </a>
             </div>
-            <div className="pt-0">
-              <div className="inline-flex flex-row sm:flex-row items-center gap-4 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl p-4 shadow-md hover:shadow-lg transition-shadow duration-300">
-                <span className="text-sm font-semibold text-gray-700">
-                  Suivez-moi
-                </span>
-                <div className="h-px w-8 bg-gradient-to-r from-neon-purple to-neon-blue sm:h-8 sm:w-px sm:bg-gradient-to-b"></div>
-                <SocialLinks
-                  className="flex gap-4"
-                  variant="light"
-                  iconSize={20}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ===== SKILLS FIXE EN BAS ===== */}
-      <div className="fixed bottom-0 w-full z-50 bg-[rgba(128,128,128,0.3)] backdrop-blur-sm py-2">
-        <div className="overflow-hidden">
-          <div className="flex animate-scroll-slow gap-6 px-4">
-            {skills.map((skillGroup, idx) =>
-              skillGroup.techs.map((tech, tIdx) => {
-                const Icon = tech.icon;
-                return (
-                  <div
-                    key={`${idx}-${tIdx}`}
-                    className="flex flex-col items-center justify-center min-w-[80px] text-center"
-                  >
-                    <Icon className={`w-10 h-10 ${tech.color}`} />
-                    <span className="text-xs text-gray-900 mt-1">
-                      {tech.label}
-                    </span>
-                  </div>
-                );
-              })
-            )}
-            {/* Répétition pour boucle infinie */}
-            {skills.map((skillGroup, idx) =>
-              skillGroup.techs.map((tech, tIdx) => {
-                const Icon = tech.icon;
-                return (
-                  <div
-                    key={`repeat-${idx}-${tIdx}`}
-                    className="flex flex-col items-center justify-center min-w-[80px] text-center"
-                  >
-                    <Icon className={`w-10 h-10 ${tech.color}`} />
-                    <span className="text-xs text-gray-900 mt-1">
-                      {tech.label}
-                    </span>
-                  </div>
-                );
-              })
-            )}
           </div>
         </div>
       </div>
@@ -331,30 +537,8 @@ const Hero = () => {
             transform: scale(1.1);
           }
         }
-        @keyframes scroll-slow {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        @keyframes shine {
-          0% {
-            transform: translateX(-100%) skewX(-12deg);
-          }
-          100% {
-            transform: translateX(200%) skewX(-12deg);
-          }
-        }
         .animate-float {
           animation: float 6s ease-in-out infinite;
-        }
-        .animate-scroll-slow {
-          animation: scroll-slow 30s linear infinite;
-        }
-        .animate-shine {
-          animation: shine 1.5s ease-in-out infinite;
         }
       `}</style>
     </section>

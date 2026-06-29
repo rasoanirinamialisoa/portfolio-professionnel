@@ -189,3 +189,36 @@
 .perspective {
   perspective: 1000px;
 }
+
+/* Scroll smooth global */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Style personnalisé de la scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #7c3aed, #3b82f6);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #6d28d9, #2563eb);
+  transform: scale(1.1);
+}
+
+/* Pour Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7c3aed #f1f1f1;
+}
