@@ -1,7 +1,5 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
+import React from 'react';
 import SocialLinks from "./SocialLinks";
-import { Link } from "react-router-dom";
 
 import {
   ArrowRight,
@@ -116,6 +114,35 @@ const featuredProject = {
 };
 
 const Hero = () => {
+  // Fonction pour scroller vers la section projets
+  const handleProjectsClick = () => {
+    console.log("Bouton projets cliqué !");
+    const element = document.getElementById('projects');
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      console.log("Section projects non trouvée");
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Fonction pour télécharger le CV
+  const handleCVClick = () => {
+    console.log("Bouton CV cliqué !");
+    const link = document.createElement('a');
+    link.href = '/cv.pdf';
+    link.download = 'CV_RASOANIRINA_Mialisoa_Lisa.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section
       id="hero"
@@ -126,7 +153,7 @@ const Hero = () => {
         {[...Array(15)].map((_, i) => (
           <div
             key={i}
-            className="absolute rounded-full bg-gradient-to-r from-neon-blue/10 to-neon-blue/10"
+            className="absolute pointer-events-none rounded-full bg-gradient-to-r from-neon-blue/10 to-neon-blue/10"
             style={{
               width: Math.random() * 100 + 50 + "px",
               height: Math.random() * 100 + 50 + "px",
@@ -143,7 +170,7 @@ const Hero = () => {
       {[...Array(8)].map((_, i) => (
         <div
           key={`star-${i}`}
-          className="absolute"
+          className="absolute pointer-events-none"
           style={{
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,
@@ -159,22 +186,21 @@ const Hero = () => {
       {/* ============================================= */}
       <div className="hidden min-h-screen pt-0 lg:block relative">
         {/* IMAGE à gauche */}
-        {/* ===== IMAGE DESKTOP ===== */}
-      <div className="hidden  lg:block absolute inset-0 z-10">
-        <div className="absolute top-1/2 left-[28%] -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-neon-purple/10 to-neon-blue/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-[50%] -translate-x-1/2 -translate-y-1/2">
-          <div className="relative group">
-            <div className="absolute -inset-6 bg-gradient-to-r from-neon-blue/20 via-neon-pink/20 to-neon-blue/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
-            <div className="relative">
-              <div className="absolute -inset-1"></div>
-              <img
-                src={ProfileHero}
-                className="h-screen w-auto object-contain max-w-[2000px]"
-              />
+        <div className="hidden lg:block absolute inset-0 z-10">
+          <div className="absolute top-1/2 left-[28%] -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-neon-purple/10 to-neon-blue/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-[50%] -translate-x-1/2 -translate-y-1/2">
+            <div className="relative group">
+              <div className="absolute -inset-6 bg-gradient-to-r from-neon-blue/20 via-neon-pink/20 to-neon-blue/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+              <div className="relative">
+                <img
+                  src={ProfileHero}
+                  alt="RASOANIRINA Mialisoa Lisa"
+                  className="h-screen w-auto object-contain max-w-[2000px]"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
         {/* PROJET EN VEDETTE - Desktop */}
         <div className="absolute z-30 bottom-[8%] left-[25%] -translate-x-1/2 w-full max-w-lg">
@@ -229,6 +255,7 @@ const Hero = () => {
         <div className="section-container px-4 sm:px-6 relative z-20">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-screen">
             <div className="space-y-5 md:space-y-7 text-center lg:text-left lg:col-start-2">
+              
               <h2 className="text-base md:text-lg font-medium text-gray-600 tracking-wider uppercase">
                 Bonjour, je suis
               </h2>
@@ -243,72 +270,74 @@ const Hero = () => {
                 </span>
               </h1>
 
+              {/* ===== NOUVEAU TEXTE - DEVELOPPEUSE FULLSTACK ===== */}
               <div className="flex flex-row justify-center md:justify-start items-center gap-2 mt-2 flex-wrap">
-                <p className="text-base md:text-lg text-gray-700 font-light">
-                  étudiante en
-                </p>
                 <div className="relative">
                   <span className="font-bold bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent text-lg md:text-xl">
-                    INFORMATIQUE
+                    DÉVELOPPEUSE FULLSTACK
                   </span>
                   <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-neon-purple to-neon-blue rounded-full" />
                 </div>
               </div>
 
+              {/* ===== NOUVELLE DESCRIPTION ===== */}
               <div className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl p-5 md:p-6 shadow-lg max-w-lg mx-auto lg:mx-0 group hover:shadow-xl hover:border-neon-purple/30 transition-all duration-300 relative">
                 <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="w-3 h-3 bg-neon-purple rounded-full animate-ping"></div>
                 </div>
                 <div className="space-y-3">
                   <p className="text-gray-700 text-sm md:text-base leading-relaxed">
-                    <span className="font-semibold text-neon-purple">
-                      Développeuse PHP orientée API
-                    </span>{" "}
+
                     fraîchement diplômée en informatique, passionnée par la conception 
-                    et le développement de services performants. 
+                    et le développement d'applications web performantes et intuitives.
                   </p>
                   <p className="text-gray-700 text-sm md:text-base leading-relaxed">
-                    Spécialisée en{" "}
+                    Compétente en{" "}
                     <span className="text-neon-blue font-medium">
-                      architecture backend, intégration d'API REST
+                      développement frontend (ReactJS)
                     </span>
                     ,{" "}
                     <span className="text-neon-purple font-medium">
-                      gestion de bases de données
+                      backend (PHP, Laravel, Symfony, Node.js)
                     </span>
-                    , et en solutions{" "}
-                    <span className="text-neon-pink font-medium">cloud</span>.
+                    , et{" "}
+                    <span className="text-neon-pink font-medium">
+                      gestion de bases de données (PostgreSQL)
+                    </span>
+                    .
                   </p>
                   <div className="flex items-center gap-2 pt-1 border-t border-gray-100">
                     <Briefcase className="w-4 h-4 text-green-600" />
                     <span className="text-sm font-medium text-green-700">
-                      📌 À la recherche d'un stage
+                      🚀 À la recherche d'un poste de développeuse Fullstack
                     </span>
                   </div>
                 </div>
               </div>
 
+              {/* BOUTONS DESKTOP */}
               <div className="flex flex-row flex-wrap gap-3 justify-center lg:justify-start">
-                <a
-                  href="/cv.pdf"
-                  download
-                  className="group relative overflow-hidden bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2.5 md:px-6 md:py-3 rounded-xl border-0 shadow-lg hover:shadow-2xl hover:shadow-neon-blue/40 transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base"
+                <button
+                  onClick={handleCVClick}
+                  className="z-50 pointer-events-auto group relative overflow-hidden bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2.5 md:px-6 md:py-3 rounded-xl border-0 shadow-lg hover:shadow-2xl hover:shadow-neon-blue/40 transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base cursor-pointer"
                 >
                   <span className="relative z-10 flex items-center gap-2 font-semibold">
                     <Download className="w-4 h-4 md:w-5 md:h-5 group-hover:animate-bounce" />
                     Voir mon CV
                   </span>
-                </a>
-                <Link
-                  to="/projects"
-                  className="group relative overflow-hidden bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2.5 md:px-6 md:py-3 rounded-xl border-0 shadow-lg hover:shadow-2xl hover:shadow-neon-blue/40 transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base"
+                </button>
+                
+                <button
+                  onClick={handleProjectsClick}
+                  className="z-50 pointer-events-auto group relative overflow-hidden bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2.5 md:px-6 md:py-3 rounded-xl border-0 shadow-lg hover:shadow-2xl hover:shadow-neon-blue/40 transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base cursor-pointer"
                 >
                   <span className="relative z-10 flex items-center gap-2 font-semibold">
                     Voir mes projets
                     <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform" />
                   </span>
-                </Link>
+                </button>
               </div>
+              
               <div className="pt-0">
                 <div className="inline-flex flex-row sm:flex-row items-center gap-4 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl p-4 shadow-md hover:shadow-lg transition-shadow duration-300">
                   <span className="text-sm font-semibold text-gray-700">
@@ -330,7 +359,7 @@ const Hero = () => {
       {/* ============================================= */}
       {/* ===== VERSION MOBILE ===== */}
       {/* ============================================= */}
-      <div className="lg:hidden px-4 py-6">
+      <div className="lg:hidden px-4 py-6 relative z-20">
         {/* 1. IMAGE EN PREMIER */}
         <div className="flex justify-center mb-6">
           <div className="relative group">
@@ -345,7 +374,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* 2. DESCRIPTION AU MILIEU (nom, titre, description) */}
+        {/* 2. DESCRIPTION AU MILIEU */}
         <div className="text-center space-y-4">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-300 px-3 py-1 rounded-full mx-auto">
             <div className="relative">
@@ -353,7 +382,7 @@ const Hero = () => {
               <div className="relative w-2 h-2 bg-green-500 rounded-full"></div>
             </div>
             <span className="text-xs font-semibold text-green-700">
-              🎓 Disponible pour un stage
+              🚀 Disponible pour un poste
             </span>
           </div>
 
@@ -369,83 +398,70 @@ const Hero = () => {
             <span className="text-gray-900">Mialisoa Lisa</span>
           </h1>
 
+          {/* ===== NOUVEAU TEXTE MOBILE - DEVELOPPEUSE FULLSTACK ===== */}
           <div className="flex justify-center items-center gap-2">
             <p className="text-base text-gray-700 font-light">
-              étudiante en
+              Je suis
             </p>
             <span className="font-bold bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent text-base">
-              INFORMATIQUE
+              DÉVELOPPEUSE FULLSTACK
             </span>
           </div>
 
-          <div className="flex justify-center gap-2 flex-wrap">
-            <div className="inline-flex items-center gap-1 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 px-2.5 py-0.5 rounded-full text-xs">
-              <GraduationCap className="w-3.5 h-3.5" />
-              Diplômée 2025
-            </div>
-            <div className="inline-flex items-center gap-1 bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full text-xs">
-              <Target className="w-3.5 h-3.5" />
-              Stage recherché
-            </div>
-          </div>
-
+          {/* ===== NOUVELLE DESCRIPTION MOBILE ===== */}
           <div className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-xl p-4 shadow-lg text-left">
             <p className="text-gray-700 text-sm leading-relaxed">
               <span className="font-semibold text-neon-purple">
-                Développeuse PHP orientée API
+                Développeuse Fullstack
               </span>{" "}
               fraîchement diplômée en informatique, passionnée par la conception 
-              et le développement de services performants.
+              et le développement d'applications web performantes.
             </p>
             <p className="text-gray-700 text-sm leading-relaxed mt-2">
-              Spécialisée en{" "}
+              Compétente en{" "}
               <span className="text-neon-blue font-medium">
-                architecture backend, intégration d'API REST
+                frontend (React, Next.js)
               </span>
               ,{" "}
               <span className="text-neon-purple font-medium">
-                gestion de bases de données
+                backend (PHP, Laravel, Symfony, Node.js)
               </span>
-              , et en solutions{" "}
-              <span className="text-neon-pink font-medium">cloud</span>.
+              , et{" "}
+              <span className="text-neon-pink font-medium">
+                bases de données (PostgreSQL, MySQL)
+              </span>
+              .
             </p>
             <div className="flex items-center gap-2 mt-2 pt-2 border-t border-gray-100">
               <Briefcase className="w-4 h-4 text-green-600 flex-shrink-0" />
               <span className="text-xs font-medium text-green-700">
-                📌 À la recherche d'un stage
+                🚀 À la recherche d'un poste Fullstack
               </span>
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-2 justify-center">
-            <a
-              href="/cv.pdf"
-              download
-              className="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg hover:shadow-xl transition-all"
+          {/* BOUTONS MOBILE */}
+          <div className="flex flex-wrap gap-2 justify-center relative z-30">
+            <button
+              onClick={handleCVClick}
+              className="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg hover:shadow-xl transition-all active:scale-95"
             >
               <span className="flex items-center gap-2">
                 <Download className="w-4 h-4" />
                 Voir mon CV
               </span>
-            </a>
-            <Link
-              to="/projects"
-              className="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg hover:shadow-xl transition-all"
+            </button>
+            
+            <button
+              onClick={handleProjectsClick}
+              className="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg hover:shadow-xl transition-all active:scale-95"
             >
               <span className="flex items-center gap-2">
                 Voir mes projets
                 <ArrowRight className="w-4 h-4" />
               </span>
-            </Link>
+            </button>
           </div>
-
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl shadow-lg hover:shadow-xl transition-all text-sm font-semibold"
-          >
-            <Mail className="w-4 h-4" />
-            📌 Je recherche un stage
-          </a>
 
           <div className="flex justify-center pt-2">
             <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-xl px-4 py-2.5 shadow-md">

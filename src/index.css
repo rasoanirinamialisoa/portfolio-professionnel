@@ -102,6 +102,7 @@
 
   section {
     @apply py-16 md:py-24;
+    pointer-events: auto;
   }
 }
 
@@ -222,3 +223,4 @@ html {
   scrollbar-width: thin;
   scrollbar-color: #7c3aed #f1f1f1;
 }
+
