@@ -44,7 +44,12 @@ import { FaReact } from "react-icons/fa";
 
 const ProfileHero = import.meta.env.VITE_ProfileHero;
 const ProfileHeroMobile = import.meta.env.VITE_ProfileHeroMobile;
-
+const Projects = [
+  {
+    githubUrl: "https://github.com/rasoanirinamialisoa/PostNova.AI-server",
+    demoUrl: "https://prod-postnova-web.netlify.app",
+  }
+]
 const skills = [
   {
     name: "Frontend",
@@ -229,7 +234,7 @@ const Hero = () => {
               </div>
               <div className="flex gap-4 pt-2">
                 <a
-                  href={featuredProject.github}
+                  href={Projects[0].githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-neon-purple transition-colors font-medium"
@@ -238,7 +243,7 @@ const Hero = () => {
                   Voir le code
                 </a>
                 <a
-                  href={featuredProject.demo}
+                  href={Projects[0].demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-neon-purple transition-colors font-medium"
@@ -255,17 +260,27 @@ const Hero = () => {
         <div className="section-container px-4 sm:px-6 relative z-20">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-screen">
             <div className="space-y-5 md:space-y-7 text-center lg:text-left lg:col-start-2">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-300 px-3 py-1 rounded-full mx-auto">
+            <div className="relative">
+              <div className="absolute inset-0 animate-ping rounded-full bg-green-400/50"></div>
+              <div className="relative w-2 h-2 bg-green-500 rounded-full"></div>
+            </div>
+            <span className="text-xs font-semibold text-green-700">
+              Disponible pour un stage
+            </span>
+          </div>
               
               <h2 className="text-base md:text-lg font-medium text-gray-600 tracking-wider uppercase">
                 Bonjour, je suis
               </h2>
+              
 
               <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl tracking-tight text-center sm:text-left font-bold text-gray-900">
-                <span className="bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink bg-clip-text text-transparent block sm:inline">
+                <span className="bg-neon-dark bg-clip-text text-transparent block sm:inline">
                   RASOANIRINA
                 </span>
                 <span className="hidden md:block"></span>
-                <span className="block sm:inline text-gray-900">
+                <span className="block sm:inline text-neon-dark">
                   Mialisoa Lisa
                 </span>
               </h1>
@@ -285,33 +300,25 @@ const Hero = () => {
                 <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="w-3 h-3 bg-neon-purple rounded-full animate-ping"></div>
                 </div>
-                <div className="space-y-3">
+                <div>
                   <p className="text-gray-700 text-sm md:text-base leading-relaxed">
 
-                    fraîchement diplômée en informatique, passionnée par la conception 
-                    et le développement d'applications web performantes et intuitives.
+                     Fraîchement diplômée en informatique, parcours écosystème logiciel,
                   </p>
                   <p className="text-gray-700 text-sm md:text-base leading-relaxed">
-                    Compétente en{" "}
+                    avec une appétence pour {" "}
                     <span className="text-neon-blue font-medium">
-                      développement frontend (ReactJS)
-                    </span>
-                    ,{" "}
-                    <span className="text-neon-purple font-medium">
-                      backend (PHP, Laravel, Symfony, Node.js)
+                      PHP/Laravel , Symfony
                     </span>
                     , et{" "}
-                    <span className="text-neon-pink font-medium">
-                      gestion de bases de données (PostgreSQL)
+                    <span className="text-neon-blue font-medium">
+                      React
                     </span>
                     .
                   </p>
-                  <div className="flex items-center gap-2 pt-1 border-t border-gray-100">
-                    <Briefcase className="w-4 h-4 text-green-600" />
-                    <span className="text-sm font-medium text-green-700">
-                      🚀 À la recherche d'un poste de développeuse Fullstack
-                    </span>
-                  </div>
+                  <p>
+                    Je cherche une opportunité pour consolider mes compétences techniques dans un environnement stimulant.
+                  </p>
                 </div>
               </div>
 
@@ -382,7 +389,7 @@ const Hero = () => {
               <div className="relative w-2 h-2 bg-green-500 rounded-full"></div>
             </div>
             <span className="text-xs font-semibold text-green-700">
-              🚀 Disponible pour un poste
+              Disponible pour un stage
             </span>
           </div>
 
@@ -391,7 +398,7 @@ const Hero = () => {
           </h2>
 
           <h1 className="text-2xl font-bold text-gray-900">
-            <span className="bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink bg-clip-text text-transparent">
+            <span className="bg-neon-dark bg-clip-text text-transparent">
               RASOANIRINA
             </span>
             <br />
@@ -400,9 +407,6 @@ const Hero = () => {
 
           {/* ===== NOUVEAU TEXTE MOBILE - DEVELOPPEUSE FULLSTACK ===== */}
           <div className="flex justify-center items-center gap-2">
-            <p className="text-base text-gray-700 font-light">
-              Je suis
-            </p>
             <span className="font-bold bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent text-base">
               DÉVELOPPEUSE FULLSTACK
             </span>
@@ -414,30 +418,22 @@ const Hero = () => {
               <span className="font-semibold text-neon-purple">
                 Développeuse Fullstack
               </span>{" "}
-              fraîchement diplômée en informatique, passionnée par la conception 
-              et le développement d'applications web performantes.
+              Fraîchement diplômée en informatique, parcours écosystème logiciel,
             </p>
             <p className="text-gray-700 text-sm leading-relaxed mt-2">
-              Compétente en{" "}
+              avec une appétence pour {" "}
               <span className="text-neon-blue font-medium">
-                frontend (React, Next.js)
-              </span>
-              ,{" "}
-              <span className="text-neon-purple font-medium">
-                backend (PHP, Laravel, Symfony, Node.js)
+                PHP/Laravel , Symfony
               </span>
               , et{" "}
-              <span className="text-neon-pink font-medium">
-                bases de données (PostgreSQL, MySQL)
+              <span className="text-neon-blue font-medium">
+                React
               </span>
               .
             </p>
-            <div className="flex items-center gap-2 mt-2 pt-2 border-t border-gray-100">
-              <Briefcase className="w-4 h-4 text-green-600 flex-shrink-0" />
-              <span className="text-xs font-medium text-green-700">
-                🚀 À la recherche d'un poste Fullstack
-              </span>
-            </div>
+            <p>
+                    Je cherche une opportunité pour consolider mes compétences techniques dans un environnement stimulant.
+                  </p>
           </div>
 
           {/* BOUTONS MOBILE */}

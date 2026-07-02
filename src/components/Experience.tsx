@@ -135,16 +135,16 @@ const Experience = () => {
     
     return (
       <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-        <div className="bg-neon-blue rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl animate-scaleIn">
+        <div className="bg-blue-50 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl animate-scaleIn">
           <div className="flex justify-between items-start mb-4">
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white">
+              <h3 className="text-2xl md:text-3xl font-bold text-neon-dark">
                 {exp.title}
               </h3>
-              <div className="flex flex-wrap items-center gap-2 text-sm text-purple-200 mt-1">
+              <div className="flex flex-wrap items-center gap-2 text-sm text-black mt-1">
                 <Building className="w-4 h-4" />
                 <span>{exp.company}</span>
-                <span className="text-purple-300">•</span>
+                <span className="text-black">•</span>
                 <Calendar className="w-4 h-4" />
                 <span>{exp.period}</span>
               </div>
@@ -153,17 +153,17 @@ const Experience = () => {
               onClick={onClose}
               className="p-2 hover:bg-white/20 rounded-full transition-colors"
             >
-              <X className="w-6 h-6 text-white" />
+              <X className="w-6 h-6 text-neon-dark" />
             </button>
           </div>
 
-          <div className="space-y-4 text-white">
-            <p className="text-base md:text-lg text-purple-100 leading-relaxed">
+          <div className="space-y-4 text-neon-dark">
+            <p className="text-base md:text-lg text-black leading-relaxed">
               {exp.longDescription}
             </p>
 
             <div>
-              <h4 className="text-sm font-semibold text-purple-200 uppercase tracking-wider flex items-center gap-2 mb-2">
+              <h4 className="text-sm font-semibold text-black uppercase tracking-wider flex items-center gap-2 mb-2">
                 <Code className="w-4 h-4" />
                 Stack Technique
               </h4>
@@ -171,7 +171,7 @@ const Experience = () => {
                 {exp.technologies.map((tech, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 text-sm rounded-full bg-white/20 text-white border border-white/10 font-medium"
+                    className="px-3 py-1 text-sm rounded-full bg-white/20 text-neon-dark border border-white/10 font-medium"
                   >
                     {tech}
                   </span>
@@ -181,14 +181,14 @@ const Experience = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <h4 className="text-sm font-semibold text-purple-200 uppercase tracking-wider flex items-center gap-2 mb-2">
+                <h4 className="text-sm font-semibold text-black uppercase tracking-wider flex items-center gap-2 mb-2">
                   <Award className="w-4 h-4" />
                   Réalisations
                 </h4>
                 <ul className="space-y-1.5">
                   {exp.achievements.map((achievement, i) => (
-                    <li key={i} className="text-sm flex items-start gap-2 text-purple-100">
-                      <CheckCircle className="w-4 h-4 text-purple-300 mt-0.5 flex-shrink-0" />
+                    <li key={i} className="text-sm flex items-start gap-2 text-black">
+                      <CheckCircle className="w-4 h-4 text-neon-blue mt-0.5 flex-shrink-0" />
                       <span>{achievement}</span>
                     </li>
                   ))}
@@ -196,14 +196,14 @@ const Experience = () => {
               </div>
 
               <div>
-                <h4 className="text-sm font-semibold text-purple-200 uppercase tracking-wider flex items-center gap-2 mb-2">
+                <h4 className="text-sm font-semibold text-black uppercase tracking-wider flex items-center gap-2 mb-2">
                   <Users className="w-4 h-4" />
                   Compétences Requises
                 </h4>
                 <ul className="space-y-1.5">
                   {exp.requis.map((req, i) => (
-                    <li key={i} className="text-sm flex items-start gap-2 text-purple-100">
-                      <span className="text-purple-300">▹</span>
+                    <li key={i} className="text-sm flex items-start gap-2 text-black">
+                      <span className="text-neon-blue">▹</span>
                       <span>{req}</span>
                     </li>
                   ))}
@@ -214,15 +214,15 @@ const Experience = () => {
             {/* Section Compétences Transversales - Soft Skills */}
             {exp.softSkills && (
               <div>
-                <h4 className="text-sm font-semibold text-purple-200 uppercase tracking-wider flex items-center gap-2 mb-2">
+                <h4 className="text-sm font-semibold text-purple-2000 uppercase tracking-wider flex items-center gap-2 mb-2">
                   <Users2 className="w-4 h-4" />
                   Compétences Transversales Acquises
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {exp.softSkills.map((skill, i) => (
                     <div key={i} className="flex items-start gap-2 bg-white/10 rounded-lg p-2">
-                      <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-purple-100">{skill}</span>
+                      <CheckCircle className="w-4 h-4 text-green-800 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-black">{skill}</span>
                     </div>
                   ))}
                 </div>
@@ -232,17 +232,17 @@ const Experience = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-2 border-t border-white/10">
               {exp.stats.map((stat, i) => (
                 <div key={i} className="text-center bg-white/10 rounded-xl p-3">
-                  <h4 className="text-xl md:text-2xl font-bold text-white">
+                  <h4 className="text-xl md:text-2xl font-bold text-neon-dark">
                     {stat.value}
                   </h4>
-                  <p className="text-xs text-purple-200">
+                  <p className="text-xs text-neon-dark">
                     {stat.label}
                   </p>
                 </div>
               ))}
             </div>
 
-            <p className="text-sm text-purple-200 text-center italic pt-2">
+            <p className="text-sm text-neon-dark text-center italic pt-2">
               "{exp.summary}"
             </p>
           </div>
@@ -252,24 +252,24 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="relative py-16 md:py-24 bg-gradient-to-b from-white to-purple-50/30">
+    <section id="experience" className="relative py-16 md:py-24 bg-gradient-to-blue from-white to-purple-50/30">
       <div className="section-container max-w-6xl mx-auto px-4 md:px-6">
         {/* Titre */}
         <div className="text-center mb-12 md:mb-16">
-          <span className="inline-block text-sm font-medium text-purple-600 tracking-widest uppercase mb-3">
+          <span className="inline-block text-sm font-medium text-neon-blue tracking-widest uppercase mb-3">
             Parcours Professionnel
           </span>
           <h2 className="text-2xl md:text-5xl font-light text-gray-900">
-            Mon <span className="text-neon-blue font-medium">Expérience</span>
+            Mon <span className="text-neon-dark font-medium">Expérience</span>
           </h2>
-          <div className="w-16 h-0.5 bg-purple-600 mx-auto mt-4 rounded-full" />
+          <div className="w-16 h-0.5 bg-neon-blue mx-auto mt-4 rounded-full" />
         </div>
 
         {/* Timeline avec cartes cliquables pour la modale */}
         <div className="relative z-10">
           {/* Ligne centrale */}
-          <div className="absolute left-6 md:left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-purple-600 via-purple-400 to-purple-200 -translate-x-1/2 hidden md:block"></div>
-          <div className="absolute left-6 top-0 h-full w-0.5 bg-gradient-to-b from-purple-600 via-purple-400 to-purple-200 block md:hidden"></div>
+          <div className="absolute left-6 md:left-1/2 top-0 h-full w-0.5 bg-neon-dark -translate-x-1/2 hidden md:block"></div>
+          <div className="absolute left-6 top-0 h-full w-0.5 bg-neon-dark block md:hidden"></div>
           
           {experiences.map((exp, index) => (
             <div key={index} className={`relative mb-12 last:mb-0 ${
@@ -277,7 +277,7 @@ const Experience = () => {
             }`}>
               {/* Point sur la timeline */}
               <div className="absolute left-6 md:left-1/2 top-0 -translate-x-1/2 z-20">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-r from-purple-600 to-purple-500 flex items-center justify-center shadow-lg border-2 border-white cursor-pointer hover:scale-110 transition-transform" onClick={() => setSelectedExp(exp)}>
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-r from-neon-blue to-purple-500 flex items-center justify-center shadow-lg border-2 border-white cursor-pointer hover:scale-110 transition-transform" onClick={() => setSelectedExp(exp)}>
                   <Code className="w-4 h-4 md:w-5 md:h-5 text-white" />
                 </div>
               </div>
@@ -308,12 +308,12 @@ const Experience = () => {
                       </div>
 
                       <div className="flex items-center gap-1.5 text-sm text-gray-500">
-                        <Building className="w-4 h-4 text-purple-400" />
+                        <Building className="w-4 h-4 text-neon-blue" />
                         <span className="truncate">{exp.company}</span>
                       </div>
 
-                      <div className="flex items-center gap-1.5 text-sm text-gray-400">
-                        <Calendar className="w-4 h-4" />
+                      <div className="flex items-center gap-1.5 text-sm text-gray-500">
+                        <Calendar className="w-4 h-4 text-neon-blue" />
                         <span>{exp.period}</span>
                       </div>
 
@@ -336,7 +336,7 @@ const Experience = () => {
 
                       {/* Indicateur de clic pour la modale */}
                       <div className="text-center pt-1">
-                        <span className="text-xs text-purple-400 group-hover:text-purple-600 transition-colors">
+                        <span className="text-sm text-neon-blue group-hover:text-neon-dark transition-colors">
                           Cliquez pour voir tous les détails →
                         </span>
                       </div>
@@ -355,22 +355,22 @@ const Experience = () => {
                     index % 2 === 0 
                       ? '-left-8 md:-left-12' 
                       : '-right-8 md:-right-12'
-                  } text-purple-500 text-6xl md:text-8xl font-bold animate-pulse`}
+                  } text-blue-500 text-6xl md:text-8xl font-bold animate-pulse`}
                   style={{ 
-                    textShadow: '0 0 20px rgba(147, 51, 234, 0.3)',
+                    textShadow: '0 0 20px rgba(51, 158, 234, 0.3)',
                     zIndex: 20 
                   }}>
                     {index % 2 === 0 ? '←' : '→'}
                   </div>
                   
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl border-2 border-purple-200 hover:border-purple-400 transition-colors">
-                    <h3 className="text-base font-bold text-purple-600 mb-3 text-center">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl border-2 border-blue-200 hover:border-blue-400 transition-colors">
+                    <h3 className="text-base font-bold text-neon-dark mb-3 text-center">
                       📊 Points Clés
                     </h3>
                     <div className="grid grid-cols-2 gap-2">
                       {exp.stats.map((stat, i) => (
-                        <div key={i} className="text-center bg-purple-50 rounded-lg p-2 hover:bg-purple-100 transition-colors">
-                          <h4 className="text-lg md:text-xl font-bold text-purple-600">
+                        <div key={i} className="text-center bg-blue-50 rounded-lg p-2 hover:bg-blue-100 transition-colors">
+                          <h4 className="text-lg md:text-xl font-bold text-neon-dark">
                             {stat.value}
                           </h4>
                           <p className="text-[10px] text-gray-500">

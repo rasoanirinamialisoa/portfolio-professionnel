@@ -73,13 +73,13 @@ const Sidebar = () => {
       {/* ☰ HAMBURGER — MOBILE SEULEMENT */}
       <button
         onClick={handleClick}
-        className="fixed top-4 left-4 z-50 md:hidden bg-neon-blue text-white p-3 rounded-xl shadow-lg"
+        className="fixed top-4 left-4 z-50 md:hidden bg-neon-dark text-white p-3 rounded-xl shadow-lg"
       >
         {clicked ? <FaXmark size={22} /> : <FaBars size={22} />}
       </button>
 
       {/* SIDEBAR POUR DESKTOP (toujours visible) */}
-      <aside className="hidden md:flex fixed top-0 left-0 h-screen w-60 bg-neon-blue shadow-md flex-col items-center justify-between py-8 z-40 border-r border-white/10">
+      <aside className="hidden md:flex fixed top-0 left-0 h-screen w-60 bg-neon-dark shadow-md flex-col items-center justify-between py-8 z-40 border-r border-white/10">
         <div className="w-full px-4">
           <button onClick={() => scrollToSection('hero')} className="flex justify-center mb-12 w-full">
             <img
@@ -158,7 +158,7 @@ const Sidebar = () => {
               animate={{ x: 0 }}
               exit={{ x: -240 }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="fixed top-0 left-0 h-screen w-60 bg-neon-blue shadow-md flex flex-col items-center justify-between py-8 z-50 border-r border-white/10 md:hidden"
+              className="fixed top-0 left-0 h-screen w-60 bg-neon-dark shadow-md flex flex-col items-center justify-between py-8 z-50 border-r border-white/10 md:hidden"
             >
               <div className="w-full px-4">
                 <button onClick={() => scrollToSection('hero')} className="flex justify-center mb-12 w-full">

@@ -186,8 +186,8 @@ const Projects = () => {
               <h3 className="text-2xl md:text-3xl font-bold text-white">
                 {project.title}
               </h3>
-              <div className="flex flex-wrap items-center gap-2 text-sm text-purple-300 mt-1">
-                <span className="px-2 py-0.5 bg-purple-600/30 text-purple-300 rounded-full text-xs">
+              <div className="flex flex-wrap items-center gap-2 text-sm text-neon-blue 00 mt-1">
+                <span className="px-2 py-0.5 bg-purple-600/30 text-neon-blue rounded-full text-xs">
                   {project.category === "web" ? "🌐 Web" : "📱 Mobile"}
                 </span>
                 <span className="text-gray-400">•</span>
@@ -220,8 +220,8 @@ const Projects = () => {
           <div className="space-y-4 text-white">
             {/* Description */}
             <div>
-              <h4 className="text-sm font-semibold text-purple-300 uppercase tracking-wider mb-2">
-                📝 Description
+              <h4 className="text-sm font-semibold text-neon-blue uppercase tracking-wider mb-2">
+                Description
               </h4>
               <p className="text-base md:text-lg text-gray-300 leading-relaxed">
                 {project.longDescription}
@@ -230,7 +230,7 @@ const Projects = () => {
 
             {/* Tags complets */}
             <div>
-              <h4 className="text-sm font-semibold text-purple-300 uppercase tracking-wider flex items-center gap-2 mb-2">
+              <h4 className="text-sm font-semibold text-neon-blue uppercase tracking-wider flex items-center gap-2 mb-2">
                 <Code className="w-4 h-4" />
                 Technologies
               </h4>
@@ -238,7 +238,7 @@ const Projects = () => {
                 {project.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 text-sm rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/30 font-medium"
+                    className="px-3 py-1 text-sm rounded-full bg-purple-600/30 text-neon-blue border border-purple-500/30 font-medium"
                   >
                     {tag}
                   </span>
@@ -248,7 +248,7 @@ const Projects = () => {
 
             {/* Fonctionnalités */}
             <div>
-              <h4 className="text-sm font-semibold text-purple-300 uppercase tracking-wider flex items-center gap-2 mb-2">
+              <h4 className="text-sm font-semibold text-neon-blue uppercase tracking-wider flex items-center gap-2 mb-2">
                 <Award className="w-4 h-4" />
                 Fonctionnalités
               </h4>
@@ -348,7 +348,7 @@ const Projects = () => {
               <h3 className="text-xl font-bold text-gray-800 line-clamp-1">
                 {project.title}
               </h3>
-              <span className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs font-medium rounded-full flex-shrink-0 ml-2">
+              <span className="px-2 py-0.5 bg-purple-100 text-neon-blue text-xs font-medium rounded-full flex-shrink-0 ml-2">
                 {project.category === "web" ? "Web" : "Mobile"}
               </span>
             </div>
@@ -375,7 +375,7 @@ const Projects = () => {
 
             {/* Indicateur de clic */}
             <div className="flex items-center justify-between pt-1 border-t border-gray-100">
-              <span className="text-xs text-purple-400 group-hover:text-purple-600 transition-colors flex items-center gap-1">
+              <span className="text-sm text-blue-500 group-hover:text-neon-blue font-bold transition-colors flex items-center gap-1">
                 Cliquez pour voir les détails
                 <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </span>
@@ -428,13 +428,13 @@ const Projects = () => {
   const SectionHeader = () => (
     <div className="text-center space-y-4 max-w-3xl mx-auto px-4">
       <div className="text-center mb-12 md:mb-16">
-        <span className="inline-block text-sm font-medium text-purple-600 tracking-widest uppercase mb-3">
+        <span className="inline-block text-sm font-medium text-neon-blue tracking-widest uppercase mb-3">
           Projets académiques et personnels
         </span>
         <h2 className="text-2xl md:text-5xl font-light text-gray-900">
-          Mes <span className="text-neon-blue font-medium">Projets</span>
+          Mes <span className="text-neon-dark font-medium">Projets</span>
         </h2>
-        <div className="w-16 h-0.5 bg-purple-600 mx-auto mt-4 rounded-full" />
+        <div className="w-16 h-0.5 bg-neon-blue mx-auto mt-4 rounded-full" />
       </div>
     </div>
   );

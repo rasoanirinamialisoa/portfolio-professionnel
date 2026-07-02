@@ -219,7 +219,7 @@ const Contact = () => {
                 <Button
                   type="submit"
                   disabled={isSubmitting || isSubmitted}
-                  className={`w-full sm:w-auto bg-gradient-to-r from-neon-purple to-neon-pink hover:opacity-90 text-white px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base ${
+                  className={`w-full sm:w-auto bg-gradient-to-r from-neon-blue to-neon-purple hover:opacity-90 text-white px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base ${
                     isSubmitted ? "bg-green-500" : ""
                   }`}
                 >

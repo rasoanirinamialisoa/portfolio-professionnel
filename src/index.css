@@ -224,3 +224,7 @@ html {
   scrollbar-color: #7c3aed #f1f1f1;
 }
 
+.stack-bg {
+  background: linear-gradient(to bottom, #a855f7, #0543a6);
+}
+

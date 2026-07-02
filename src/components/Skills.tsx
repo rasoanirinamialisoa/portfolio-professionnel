@@ -117,17 +117,17 @@ const Skills = () => {
     <section id="skills" className="min-h-screen py-12 md:py-16 bg-white">
       <div className="section-container max-w-6xl mx-auto px-4 md:px-6">
         <div className="text-center mb-8 md:mb-10">
-          <span className="inline-block text-xs md:text-sm font-medium text-purple-600 tracking-widest uppercase mb-2">
+          <span className="inline-block text-xs md:text-sm font-medium text-neon-blue tracking-widest uppercase mb-2">
             Stack Technique
           </span>
           <h2 className="text-2xl md:text-4xl font-light text-gray-900">
-            Mes <span className="text-neon-blue font-medium">Compétences</span>
+            Mes <span className="text-neon-dark font-medium">Compétences</span>
           </h2>
-          <div className="w-12 md:w-16 h-0.5 bg-purple-600 mx-auto mt-3 rounded-full" />
+          <div className="w-12 md:w-16 h-0.5 bg-neon-blue mx-auto mt-3 rounded-full" />
         </div>
 
         {/* Bannière Stack Principale */}
-        <div className="mb-10 p-4 md:p-6 rounded-2xl bg-neon-blue shadow-lg">
+        <div className="mb-10 p-4 md:p-6 rounded-2xl stack-bg shadow-lg">
           <div className="text-center text-white mb-4">
             <h3 className="text-sm md:text-base font-light">
               Stack Technique <span className="font-semibold">Principale</span>
