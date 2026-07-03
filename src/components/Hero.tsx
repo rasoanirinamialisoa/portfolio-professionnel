@@ -307,11 +307,11 @@ const Hero = () => {
                   </p>
                   <p className="text-gray-700 text-sm md:text-base leading-relaxed">
                     avec une appétence pour {" "}
-                    <span className="text-neon-blue font-medium">
+                    <span className="text-neon-blue font-bold">
                       PHP/Laravel , Symfony
                     </span>
                     , et{" "}
-                    <span className="text-neon-blue font-medium">
+                    <span className="text-neon-blue font-bold">
                       React
                     </span>
                     .
@@ -375,7 +375,7 @@ const Hero = () => {
               <img
                 src={ProfileHeroMobile}
                 alt="RASOANIRINA Mialisoa Lisa"
-                className="w-56 sm:w-64 object-contain animate-float rounded-full"
+                className="w-56 sm:w-64 object-contain rounded-full"
               />
             </div>
           </div>
@@ -422,11 +422,11 @@ const Hero = () => {
             </p>
             <p className="text-gray-700 text-sm leading-relaxed mt-2">
               avec une appétence pour {" "}
-              <span className="text-neon-blue font-medium">
+              <span className="text-neon-blue font-bold">
                 PHP/Laravel , Symfony
               </span>
               , et{" "}
-              <span className="text-neon-blue font-medium">
+              <span className="text-neon-blue font-bold">
                 React
               </span>
               .

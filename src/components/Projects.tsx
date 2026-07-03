@@ -66,7 +66,7 @@ const Projects = () => {
     {
       id: 3,
       title: "AKORY-HOTEL - Gestion d'Hôtel",
-      category: "web",
+      category: "Database & Backend",
       tags: ["Node.js", "Express", "PostgreSQL", "HTML", "CSS"],
       image: env.projectAkoryHotel,
       description: "Application de gestion hôtelière avec base de données.",
@@ -180,20 +180,20 @@ const Projects = () => {
     
     return (
       <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-        <div className="bg-neon-blue rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl animate-scaleIn">
+        <div className="bg-blue-50 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl animate-scaleIn">
           <div className="flex justify-between items-start mb-4">
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white">
+              <h3 className="text-2xl md:text-3xl font-bold text-neon-dark">
                 {project.title}
               </h3>
               <div className="flex flex-wrap items-center gap-2 text-sm text-neon-blue 00 mt-1">
-                <span className="px-2 py-0.5 bg-purple-600/30 text-neon-blue rounded-full text-xs">
-                  {project.category === "web" ? "🌐 Web" : "📱 Mobile"}
+                <span className="px-2 py-0.5 bg-blue-600/30 text-neon-dark rounded-full text-sm font-medium">
+                  {project.category === "web" ? "🌐 Web" : project.category === "Database & Backend" ? "🗄️ Database & Backend" : "📱 Mobile"}
                 </span>
-                <span className="text-gray-400">•</span>
+                <span className="text-black">•</span>
                 <div className="flex flex-wrap gap-1">
                   {project.tags.slice(0, 3).map((tag, i) => (
-                    <span key={i} className="text-xs text-gray-400">
+                    <span key={i} className="text-sm text-black">
                       #{tag}
                     </span>
                   ))}
@@ -204,7 +204,7 @@ const Projects = () => {
               onClick={onClose}
               className="p-2 hover:bg-white/10 rounded-full transition-colors"
             >
-              <X className="w-6 h-6 text-white" />
+              <X className="w-6 h-6 text-black" />
             </button>
           </div>
 
@@ -217,20 +217,20 @@ const Projects = () => {
             />
           </div>
 
-          <div className="space-y-4 text-white">
+          <div className="space-y-4 text-black">
             {/* Description */}
             <div>
-              <h4 className="text-sm font-semibold text-neon-blue uppercase tracking-wider mb-2">
+              <h4 className="text-sm font-semibold text-neon-dark uppercase tracking-wider mb-2">
                 Description
               </h4>
-              <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+              <p className="text-base md:text-lg text-black leading-relaxed">
                 {project.longDescription}
               </p>
             </div>
 
             {/* Tags complets */}
             <div>
-              <h4 className="text-sm font-semibold text-neon-blue uppercase tracking-wider flex items-center gap-2 mb-2">
+              <h4 className="text-sm font-semibold text-neon-dark uppercase tracking-wider flex items-center gap-2 mb-2">
                 <Code className="w-4 h-4" />
                 Technologies
               </h4>
@@ -238,7 +238,7 @@ const Projects = () => {
                 {project.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 text-sm rounded-full bg-purple-600/30 text-neon-blue border border-purple-500/30 font-medium"
+                    className="px-3 py-1 text-sm rounded-full bg-blue-500/30 text-dark border border-blue-500/30 font-medium"
                   >
                     {tag}
                   </span>
@@ -254,8 +254,8 @@ const Projects = () => {
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {project.features.map((feature, i) => (
-                  <div key={i} className="text-sm flex items-start gap-2 text-gray-300">
-                    <span className="text-purple-400">✓</span>
+                  <div key={i} className="text-sm flex items-start gap-2 text-black">
+                    <span className="text-neon-dark font-bold">✓</span>
                     <span>{feature}</span>
                   </div>
                 ))}
@@ -273,33 +273,13 @@ const Projects = () => {
                 <Github size={18} />
                 <span>Code Source</span>
               </a>
-              <button
-                onClick={handleModalDemoClick}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors text-white ${
-                  project.hasDemo
-                    ? "bg-purple-600 hover:bg-purple-700"
-                    : "bg-purple-600/50 hover:bg-purple-700/50 cursor-pointer"
-                }`}
-              >
-                {project.hasDemo ? (
-                  <>
-                    <ExternalLink size={18} />
-                    <span>Voir la démo</span>
-                  </>
-                ) : (
-                  <>
-                    <Hourglass className="w-4 h-4 animate-spin-slow" />
-                    <span>Vidéo à venir</span>
-                  </>
-                )}
-              </button>
             </div>
 
             {/* Message "Vidéo à venir" si pas de démo */}
             {!project.hasDemo && (
-              <div className="bg-purple-600/10 border border-purple-500/30 rounded-lg p-3 text-center">
-                <p className="text-sm text-purple-300/80">
-                  🎬 Une démonstration vidéo est en cours de préparation pour ce projet. 
+              <div className="bg-blue-600/10 border border-blue-500/30 rounded-lg p-3 text-center">
+                <p className="text-sm text-black-300/80">
+                   Une démonstration vidéo est en cours de préparation pour ce projet. 
                   Revenez bientôt !
                 </p>
               </div>
@@ -323,16 +303,6 @@ const Projects = () => {
       >
         <div className="relative h-full w-full bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
           
-          {/* Badge "Vidéo à venir" sur la carte */}
-          {!project.hasDemo && (
-            <div className="absolute top-3 right-3 z-10">
-              <span className="flex items-center gap-1.5 px-2.5 py-1 bg-purple-600/90 text-white text-xs font-medium rounded-full backdrop-blur-sm">
-                <Hourglass className="w-3 h-3 animate-spin-slow" />
-                Vidéo à venir
-              </span>
-            </div>
-          )}
-
           {/* Image */}
           <div className="h-60 overflow-hidden">
             <img
@@ -348,9 +318,9 @@ const Projects = () => {
               <h3 className="text-xl font-bold text-gray-800 line-clamp-1">
                 {project.title}
               </h3>
-              <span className="px-2 py-0.5 bg-purple-100 text-neon-blue text-xs font-medium rounded-full flex-shrink-0 ml-2">
-                {project.category === "web" ? "Web" : "Mobile"}
-              </span>
+             <span className="px-2 py-0.5 bg-blue-600/30 text-neon-dark rounded-full text-sm font-medium">
+                  {project.category === "web" ? " Web" : project.category === "Database & Backend" ? " Database & Backend" : " Mobile"}
+                </span>
             </div>
 
             <div className="flex flex-wrap gap-2">
@@ -393,8 +363,8 @@ const Projects = () => {
                   onClick={(e) => handleDemoClick(project, e)}
                   className={`transition-colors ${
                     project.hasDemo
-                      ? "text-gray-400 hover:text-purple-600"
-                      : "text-gray-300 hover:text-purple-400 cursor-pointer"
+                      ? "text-gray-400 hover:text-blue-600"
+                      : "text-gray-300 hover:text-blue-400 cursor-pointer"
                   }`}
                 >
                   {project.hasDemo ? (
@@ -417,7 +387,7 @@ const Projects = () => {
       onClick={() => setActiveTab(tab.id)}
       className={`px-5 md:px-6 py-1 md:py-2 rounded-full transition-all duration-300 ${
         activeTab === tab.id
-          ? "bg-purple-600 text-white shadow-lg shadow-purple-500/30"
+          ? "bg-blue-600 text-white shadow-lg shadow-blue-500/30"
           : "bg-gray-100 text-gray-700 hover:bg-gray-200"
       }`}
     >
@@ -441,7 +411,7 @@ const Projects = () => {
 
   // ===== Rendu principal =====
   return (
-    <section id="projects" className="py-24 bg-gradient-to-b from-white to-purple-50/30">
+    <section id="projects" className="py-24 bg-gradient-to-b from-white to-blue-50/30">
       <div className="section-container space-y-8 md:space-y-16">
         {/* En-tête */}
         <SectionHeader />
