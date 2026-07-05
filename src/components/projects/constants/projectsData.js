@@ -1,0 +1,130 @@
+export const projectsData = [
+  {
+    id: 1,
+    title: "Boutique Écolo Natecolo",
+    category: "web",
+    tags: ["HTML", "CSS", "Site statique", "Écologie"],
+    image: import.meta.env.VITE_ProjectNatEcolo,
+    description: "Premier site web développé en HTML et CSS pur.",
+    longDescription: "Natecolo est mon premier projet web réalisé dans le cadre de mon apprentissage du développement front-end. L'objectif était de concevoir un site vitrine présentant des produits écologiques tout en découvrant les bases du HTML5 et du CSS3.",
+    features: [
+      "Design responsive adapté aux mobiles et ordinateurs",
+      "Catalogue de produits écologiques",
+      "Navigation multi-pages",
+      "Formulaire de contact",
+      "Utilisation de Flexbox",
+      "Utilisation de CSS Grid"
+    ],
+    githubUrl: "https://github.com/rasoanirinamialisoa/rasoanirinamialisoa",
+    demoUrl: "https://natecolo.netlify.app/",
+    hasDemo: true,
+  },
+  {
+    id: 2,
+    title: "Facebak - Réseau Social",
+    category: "web",
+    tags: ["React", "Hooks", "JSX", "Components"],
+    image: import.meta.env.VITE_ProjectFacebak,
+    description: "Application développée pour apprendre React.",
+    longDescription: "Facebak est mon premier projet réalisé avec React. L'objectif était de reproduire les fonctionnalités principales d'un réseau social afin de comprendre l'architecture des composants, la gestion d'état et le fonctionnement des hooks React.",
+    features: [
+      "Architecture basée sur les composants",
+      "Utilisation de useState",
+      "Utilisation de useEffect",
+      "Gestion des événements utilisateur",
+      "Rendu dynamique avec JSX",
+      "Communication entre composants via les props"
+    ],
+    githubUrl: "https://github.com/rasoanirinamialisoa/facebak",
+    demoUrl: null,
+    hasDemo: false,
+  },
+  {
+    id: 3,
+    title: "AKORY-HOTEL - Gestion d'Hôtel",
+    category: "Database & Backend",
+    tags: ["Node.js", "Express", "PostgreSQL", "HTML", "CSS"],
+    image: import.meta.env.VITE_ProjectAkoryHotel,
+    description: "Application de gestion hôtelière avec base de données.",
+    longDescription: "AKORY-HOTEL est une application de gestion permettant d'administrer les chambres, les clients et les réservations d'un hôtel. Ce projet représente ma première expérience avec les bases de données relationnelles et le développement back-end.",
+    features: [
+      "Gestion des réservations",
+      "Gestion des chambres",
+      "Gestion des clients",
+      "CRUD complet",
+      "Connexion PostgreSQL",
+      "API Node.js / Express"
+    ],
+    githubUrl: "https://github.com/rasoanirinamialisoa/Gestion_Hotel",
+    demoUrl: null,
+    hasDemo: false,
+  },
+  {
+    id: 4,
+    title: "Blog Article",
+    category: "web",
+    tags: ["Symfony", "PHP", "Bootstrap", "PostgreSQL"],
+    image: import.meta.env.VITE_ProjectBlogArticle,
+    description: "Plateforme de publication et gestion d'articles.",
+    longDescription: "Projet réalisé durant ma formation PHP/Symfony. L'application permet de créer, modifier, consulter et supprimer des articles. Ce projet m'a permis de comprendre le fonctionnement du framework Symfony, l'architecture MVC, la gestion des routes, les contrôleurs ainsi que les interactions avec une base de données.",
+    features: [
+      "Gestion des articles",
+      "Architecture MVC",
+      "Utilisation de Symfony",
+      "Gestion des formulaires",
+      "Connexion base de données",
+      "Interface Bootstrap responsive"
+    ],
+    githubUrl: "https://github.com/TECHLAB-ETECH-MAI-2025/BLOG-Lisa",
+    demoUrl: null,
+    hasDemo: false,
+  },
+  {
+    id: 5,
+    title: "Music App",
+    category: "mobile",
+    tags: ["React Native", "Mobile"],
+    image: import.meta.env.VITE_ProjectMusicApp,
+    description: "Application mobile de lecture audio.",
+    longDescription: "Application mobile développée avec React Native permettant d'écouter de la musique depuis une interface simple et intuitive. Ce projet m'a permis de découvrir le développement mobile multiplateforme ainsi que la création d'interfaces adaptées aux smartphones Android et iOS.",
+    features: [
+      "Lecture audio",
+      "Contrôle Play / Pause",
+      "Navigation mobile",
+      "Gestion des composants React Native",
+      "Interface responsive",
+      "Découverte du développement mobile"
+    ],
+    githubUrl: "https://github.com/rasoanirinamialisoa/Music-Player",
+    demoUrl: null,
+    hasDemo: false,
+  },
+  {
+    id: 6,
+    title: "PostNova AI",
+    category: "web",
+    tags: ["Laravel", "React", "Tailwind CSS", "PostgreSQL", "SaaS"],
+    image: import.meta.env.VITE_ProjectPostNovaAi,
+    description: "Plateforme SaaS basée sur l'intelligence artificielle.",
+    longDescription: "PostNova AI est une plateforme SaaS permettant de générer automatiquement du contenu digital grâce à l'intelligence artificielle. J'ai participé au développement du front-end et du back-end ainsi qu'à la création d'interfaces modernes.",
+    features: [
+      "Authentification des utilisateurs",
+      "Dashboard administrateur",
+      "Gestion des contenus",
+      "API REST Laravel",
+      "Interface React + Tailwind CSS",
+      "Base de données PostgreSQL"
+    ],
+    githubUrl: "https://github.com/rasoanirinamialisoa/PostNova.AI-server",
+    demoUrl: "https://prod-postnova-web.netlify.app",
+    hasDemo: true,
+  }
+];
+
+// Catégories pour les filtres
+export const categories = [
+  { id: "all", label: "Tous" },
+  { id: "web", label: "🌐 Web" },
+  { id: "Database & Backend", label: "🗄️ Database & Backend" },
+  { id: "mobile", label: "📱 Mobile" },
+];

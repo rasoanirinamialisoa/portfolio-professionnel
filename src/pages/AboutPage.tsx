@@ -1,7 +1,7 @@
 
 import React from 'react';
-import About from '@/components/About';
-import ParticleBackground from '@/components/ParticleBackground';
+import About from '@/components/about/About';
+import ParticleBackground from '@/components/ui/ParticleBackground';
 
 const AboutPage = () => {
   return (
