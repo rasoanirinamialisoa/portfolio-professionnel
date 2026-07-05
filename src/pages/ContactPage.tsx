@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Contact from '@/components/Contact';
-import ParticleBackground from '@/components/ParticleBackground';
+import ParticleBackground from '@/components/ui/ParticleBackground';
 
 
 const ContactPage = () => {

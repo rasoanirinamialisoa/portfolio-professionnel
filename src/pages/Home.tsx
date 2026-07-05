@@ -1,8 +1,7 @@
 
 import React from 'react';
-import Hero from '@/components/Hero';
-import ParticleBackground from '@/components/ParticleBackground';
-
+import Hero from '@/components/hero/components/Hero';
+import ParticleBackground from '@/components/ui/ParticleBackground';
 const Home = () => {
   return (
     <div className="relative min-h-screen">

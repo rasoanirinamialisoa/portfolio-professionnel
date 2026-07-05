@@ -1,6 +1,6 @@
 import React from 'react';
-import Experience from '@/components/Experience';
-import ParticleBackground from '@/components/ParticleBackground';
+import Experience from '@/components/experience/components/Experience';
+import ParticleBackground from '@/components/ui/ParticleBackground';
 
 const ExperiencePage = () => {
     return (

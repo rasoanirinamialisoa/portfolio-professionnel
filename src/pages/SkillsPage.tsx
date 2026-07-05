@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Skills from '@/components/Skills';
-import ParticleBackground from '@/components/ParticleBackground';
+import ParticleBackground from '@/components/ui/ParticleBackground';
 
 const SkillsPage = () => {
   return (

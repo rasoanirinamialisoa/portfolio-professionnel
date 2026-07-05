@@ -1,7 +1,7 @@
 
 import React from 'react';
-import Projects from '@/components/Projects';
-import ParticleBackground from '@/components/ParticleBackground';
+import Projects from '@/components/projects/components/Projects';
+import ParticleBackground from '@/components/ui/ParticleBackground';
 
 const ProjectsPage = () => {
   return (
