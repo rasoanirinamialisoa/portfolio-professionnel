@@ -26,23 +26,44 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
+    
     if (savedTheme) {
       setTheme(savedTheme);
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setTheme(prefersDark ? 'dark' : 'light');
     }
+    
     setMounted(true);
   }, []);
 
   useEffect(() => {
     if (mounted) {
+      localStorage.setItem('theme', theme);
+      
       const root = document.documentElement;
       if (theme === 'dark') {
         root.classList.add('dark');
       } else {
         root.classList.remove('dark');
       }
-      localStorage.setItem('theme', theme);
     }
   }, [theme, mounted]);
+
+  useEffect(() => {
+    if (!mounted) return;
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (!localStorage.getItem('theme')) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, [mounted]);
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
@@ -53,7 +74,13 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   };
 
   if (!mounted) {
-    return null;
+    return (
+      <div className="min-h-screen bg-white dark:bg-gray-900">
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      </div>
+    );
   }
 
   return (
