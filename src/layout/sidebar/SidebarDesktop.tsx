@@ -63,8 +63,8 @@ const SidebarDesktop = ({
                   'flex items-center gap-4 py-2.5 px-4 w-full transition-all duration-300 rounded-r-full text-sm relative group',
                   'hover:bg-blue-500/10',
                   isActive 
-                    ? 'text-blue-400 font-medium bg-blue-500/20 shadow-lg shadow-blue-500/10' 
-                    : 'text-blue-300/70 hover:text-blue-300'
+                            ? 'text-white font-medium bg-blue-500/20 shadow-lg shadow-white-500' 
+                            : 'text-neon-indigo hover:text-blue-300'
                 )}
               >
                 {/* Effet de surbrillance active */}

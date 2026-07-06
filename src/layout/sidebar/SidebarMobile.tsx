@@ -33,7 +33,7 @@ const SidebarMobile = ({
       {/* ☰ HAMBURGER */}
       <button
         onClick={handleClick}
-        className="fixed top-4 left-4 z-50 md:hidden p-3 rounded-xl shadow-lg transition-colors duration-300 bg-[#0a1628] text-blue-400 hover:bg-[#0d1f3c] border border-blue-900/30"
+        className="fixed top-4 left-4 z-50 md:hidden p-3 rounded-xl shadow-lg transition-colors duration-300 bg-[#0a1628] text-white hover:bg-[#0d1f3c] border border-white/10 hover:border-blue-400/30"
       >
         {clicked ? <FaXmark size={22} /> : <FaBars size={22} />}
       </button>
@@ -56,7 +56,7 @@ const SidebarMobile = ({
               animate={{ x: 0 }}
               exit={{ x: -280 }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="fixed top-0 left-0 h-screen w-64 flex flex-col items-center justify-between py-8 z-50 md:hidden border-r border-blue-900/30 shadow-2xl shadow-blue-900/20"
+              className="fixed top-0 left-0 h-screen w-64 flex flex-col items-center justify-between py-8 z-50 md:hidden border-r border-blue-900/30 shadow-2xl shadow-white/20"
               style={{ background: 'linear-gradient(180deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%)' }}
             >
               {/* Effet de fond */}
@@ -99,8 +99,8 @@ const SidebarMobile = ({
                           'flex items-center gap-4 py-2.5 px-4 w-full transition-all duration-300 rounded-r-full text-[14px] relative group',
                           'hover:bg-blue-500/10',
                           isActive 
-                            ? 'text-blue-400 font-medium bg-blue-500/20 shadow-lg shadow-blue-500/10' 
-                            : 'text-blue-300/70 hover:text-blue-300'
+                            ? 'text-white font-medium bg-blue-500/20 shadow-lg shadow-white-500' 
+                            : 'text-neon-indigo hover:text-blue-300'
                         )}
                       >
                         {isActive && (
