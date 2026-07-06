@@ -33,8 +33,6 @@ const SidebarFooter = ({ currentYear, isMobile = false }: SidebarFooterProps) =>
         />
       </div>
       <Copyright currentYear={currentYear} textSize={textSize} nameSize={nameSize} isDark={isDark} />
-
-      
     </div>
   );
 };

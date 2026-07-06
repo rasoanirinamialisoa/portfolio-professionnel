@@ -1,4 +1,3 @@
-// src/context/ThemeContext.tsx
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 interface ThemeContextType {
@@ -25,18 +24,14 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setTheme] = useState('light');
   const [mounted, setMounted] = useState(false);
 
-  // Charger le thème sauvegardé ou la préférence système
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       setTheme(savedTheme);
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
     }
     setMounted(true);
   }, []);
 
-  // Appliquer le thème au document
   useEffect(() => {
     if (mounted) {
       const root = document.documentElement;
@@ -49,18 +44,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     }
   }, [theme, mounted]);
 
-  // Écouter les changements de préférence système
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e: MediaQueryListEvent) => {
-      if (!localStorage.getItem('theme')) {
-        setTheme(e.matches ? 'dark' : 'light');
-      }
-    };
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
-
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
   };
@@ -70,7 +53,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   };
 
   if (!mounted) {
-    return null; // Évite le flash blanc
+    return null;
   }
 
   return (
