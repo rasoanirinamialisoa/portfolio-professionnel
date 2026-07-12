@@ -135,14 +135,16 @@ const HeroDesktop = ({ onCVClick, onProjectsClick, ProfileHero }: HeroDesktopPro
                 : 'bg-white/80 border-gray-200 hover:shadow-xl hover:border-neon-purple/30'
             }`}>
               <p className={`text-sm md:text-base leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                Fraîchement diplômée en informatique, parcours écosystème logiciel,
-              </p>
-              <p className={`text-sm md:text-base leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                avec une appétence pour <span className="text-neon-blue font-bold">PHP/Laravel, Symfony</span>, et{' '}
-                <span className="text-neon-blue font-bold">React</span>.
-              </p>
-              <p className={`text-sm md:text-base leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                Je cherche une opportunité pour consolider mes compétences techniques dans un environnement stimulant.
+               Fraîchement diplômée en informatique, je suis à la recherche d'un
+              <span className="text-neon-blue font-bold"> stage</span> ou d'une{' '}
+                <span className="text-neon-blue font-bold"> première expérience en développement web. </span>
+                </p> 
+              <p className={`text-sm md:text-base leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}> 
+                <br />
+               Spécialisée en <span className="text-neon-blue font-bold">PHP/Laravel, Symfony</span>, et{' '}
+                <span className="text-neon-blue font-bold">React</span>,
+              
+                je transforme vos idées et vos besoins métiers en applications concrètes et performantes.
               </p>
             </div>
 
