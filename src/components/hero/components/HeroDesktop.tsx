@@ -88,25 +88,10 @@ const HeroDesktop = ({ onCVClick, onProjectsClick, ProfileHero }: HeroDesktopPro
       <div className="section-container px-4 sm:px-6 relative z-20">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-screen">
           <div className="space-y-5 md:space-y-7 text-center lg:text-left lg:col-start-2">
-            {/* Disponibilité */}
-            <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full mx-auto lg:mx-0 ${
-              isDark 
-                ? 'bg-green-900/30 border border-green-800' 
-                : 'bg-gradient-to-r from-green-50 to-emerald-50 border border-green-300'
-            }`}>
-              <div className="relative">
-                <div className="absolute inset-0 animate-ping rounded-full bg-green-400/50"></div>
-                <div className={`relative w-2 h-2 rounded-full ${isDark ? 'bg-green-400' : 'bg-green-500'}`}></div>
-              </div>
-              <span className={`text-xs font-semibold ${isDark ? 'text-green-400' : 'text-green-700'}`}>
-                Disponible pour un stage
-              </span>
-            </div>
-
             <h2 className={`text-base md:text-lg font-medium tracking-wider uppercase ${
               isDark ? 'text-gray-400' : 'text-gray-600'
             }`}>
-              Bonjour, je suis
+            Bonjour, je suis
             </h2>
 
             {/* TITRE - RASOANIRINA réduit */}
