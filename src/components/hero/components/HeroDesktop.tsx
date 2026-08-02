@@ -126,8 +126,8 @@ const HeroDesktop = ({ onCVClick, onProjectsClick, ProfileHero }: HeroDesktopPro
                 </p> 
               <p className={`text-sm md:text-base leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}> 
                 <br />
-               Première expérience avec <span className="text-neon-blue font-bold">PHP/Laravel, Symfony</span>, et{' '}
-                <span className="text-neon-blue font-bold">React</span>,
+               Première expérience avec <span className="text-neon-blue font-bold">PHP/Laravel, Symfony</span> et{' '}
+                <span className="text-neon-blue font-bold">React</span>.
               Je développe des applications web qui répondent à des besoins métiers concrets, tout en m'adaptant rapidement aux nouvelles technologies.
               </p>
             </div>
