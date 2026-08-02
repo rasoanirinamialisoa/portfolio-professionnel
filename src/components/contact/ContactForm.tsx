@@ -1,6 +1,6 @@
 // features/contact/components/ContactForm.tsx
-import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import React from "react";
+import { useTheme } from "@/context/ThemeContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -16,7 +16,7 @@ const ContactForm = ({
   error,
 }) => {
   const { theme } = useTheme();
-  const isDark = theme === 'dark';
+  const isDark = theme === "dark";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
@@ -24,7 +24,7 @@ const ContactForm = ({
         <label
           htmlFor="name"
           className={`block text-xs md:text-sm font-medium mb-1.5 transition-colors duration-300 ${
-            isDark ? 'text-gray-300' : 'text-gray-700'
+            isDark ? "text-gray-300" : "text-gray-700"
           }`}
         >
           Nom
@@ -36,9 +36,9 @@ const ContactForm = ({
           onChange={handleChange}
           required
           className={`w-full h-10 md:h-11 text-sm md:text-base transition-colors duration-300 ${
-            isDark 
-              ? 'bg-gray-700 border-gray-600 text-gray-200 placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500' 
-              : 'focus:ring-neon-purple focus:border-neon-purple'
+            isDark
+              ? "bg-gray-700 border-gray-600 text-gray-200 placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500"
+              : "focus:ring-neon-purple focus:border-neon-purple"
           }`}
           placeholder="Votre nom"
         />
@@ -48,7 +48,7 @@ const ContactForm = ({
         <label
           htmlFor="email"
           className={`block text-xs md:text-sm font-medium mb-1.5 transition-colors duration-300 ${
-            isDark ? 'text-gray-300' : 'text-gray-700'
+            isDark ? "text-gray-300" : "text-gray-700"
           }`}
         >
           Email
@@ -61,9 +61,9 @@ const ContactForm = ({
           onChange={handleChange}
           required
           className={`w-full h-10 md:h-11 text-sm md:text-base transition-colors duration-300 ${
-            isDark 
-              ? 'bg-gray-700 border-gray-600 text-gray-200 placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500' 
-              : 'focus:ring-neon-purple focus:border-neon-purple'
+            isDark
+              ? "bg-gray-700 border-gray-600 text-gray-200 placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500"
+              : "focus:ring-neon-purple focus:border-neon-purple"
           }`}
           placeholder="votre@email.com"
         />
@@ -73,7 +73,7 @@ const ContactForm = ({
         <label
           htmlFor="message"
           className={`block text-xs md:text-sm font-medium mb-1.5 transition-colors duration-300 ${
-            isDark ? 'text-gray-300' : 'text-gray-700'
+            isDark ? "text-gray-300" : "text-gray-700"
           }`}
         >
           Message
@@ -85,9 +85,9 @@ const ContactForm = ({
           onChange={handleChange}
           required
           className={`w-full h-28 md:h-36 text-sm md:text-base resize-none transition-colors duration-300 ${
-            isDark 
-              ? 'bg-gray-700 border-gray-600 text-gray-200 placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500' 
-              : 'focus:ring-neon-purple focus:border-neon-purple'
+            isDark
+              ? "bg-gray-700 border-gray-600 text-gray-200 placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500"
+              : "focus:ring-neon-purple focus:border-neon-purple"
           }`}
           placeholder="Votre message..."
         />
@@ -96,15 +96,32 @@ const ContactForm = ({
       <div className="flex flex-col items-end gap-3 pt-1">
         {/* ALERTE DE SUCCÈS */}
         {isSubmitted && (
-          <Alert className={`w-full border-green-500 transition-colors duration-300 ${
-            isDark ? 'bg-green-900/30 text-green-300' : 'bg-green-50 text-green-800'
-          }`}>
-            <Check className={`h-4 w-4 ${isDark ? 'text-green-400' : 'text-green-600'}`} />
-            <AlertTitle className={`text-sm font-medium ${isDark ? 'text-green-300' : 'text-green-800'}`}>
+          <Alert
+            className={`w-full border-green-500 transition-colors duration-300 ${
+              isDark
+                ? "bg-green-900/30 text-green-300"
+                : "bg-green-50 text-green-800"
+            }`}
+          >
+            <Check
+              className={`h-4 w-4 ${
+                isDark ? "text-green-400" : "text-green-600"
+              }`}
+            />
+            <AlertTitle
+              className={`text-sm font-medium ${
+                isDark ? "text-green-300" : "text-green-800"
+              }`}
+            >
               Message envoyé !
             </AlertTitle>
-            <AlertDescription className={`text-xs ${isDark ? 'text-green-400' : 'text-green-700'}`}>
-              Votre message a été envoyé avec succès. Je vous répondrai dans les plus brefs délais.
+            <AlertDescription
+              className={`text-xs ${
+                isDark ? "text-green-400" : "text-green-700"
+              }`}
+            >
+              Votre message a été envoyé avec succès. Je vous répondrai dans les
+              plus brefs délais.
             </AlertDescription>
           </Alert>
         )}
@@ -116,9 +133,7 @@ const ContactForm = ({
             <AlertTitle className="text-sm font-medium">
               Erreur d'envoi
             </AlertTitle>
-            <AlertDescription className="text-xs">
-              {error}
-            </AlertDescription>
+            <AlertDescription className="text-xs">{error}</AlertDescription>
           </Alert>
         )}
 
@@ -127,9 +142,9 @@ const ContactForm = ({
           type="submit"
           disabled={isSubmitting || isSubmitted}
           className={`w-full sm:w-auto px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base transition-all duration-300 ${
-            isSubmitted 
-              ? 'bg-green-600 hover:bg-green-700 text-white' 
-              : 'bg-gradient-to-r from-neon-blue to-neon-purple hover:opacity-90 text-white'
+            isSubmitted
+              ? "bg-green-600 hover:bg-green-700 text-white"
+              : "bg-gradient-to-r from-neon-blue to-neon-purple hover:opacity-90 text-white"
           }`}
         >
           {isSubmitting ? (

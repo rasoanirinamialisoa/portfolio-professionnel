@@ -32,21 +32,6 @@ const HeroMobile = ({ onCVClick, onProjectsClick, ProfileHeroMobile }: HeroMobil
 
       {/* CONTENU */}
       <div className="text-center space-y-4">
-        {/* Disponibilité */}
-        <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full mx-auto ${
-          isDark 
-            ? 'bg-green-900/30 border border-green-800' 
-            : 'bg-gradient-to-r from-green-50 to-emerald-50 border border-green-300'
-        }`}>
-          <div className="relative">
-            <div className="absolute inset-0 animate-ping rounded-full bg-green-400/50"></div>
-            <div className={`relative w-2 h-2 rounded-full ${isDark ? 'bg-green-400' : 'bg-green-500'}`}></div>
-          </div>
-          <span className={`text-xs font-semibold ${isDark ? 'text-green-400' : 'text-green-700'}`}>
-            Disponible pour un stage
-          </span>
-        </div>
-
         <h2 className={`text-sm font-medium tracking-wider uppercase ${
           isDark ? 'text-gray-400' : 'text-gray-600'
         }`}>
@@ -73,16 +58,18 @@ const HeroMobile = ({ onCVClick, onProjectsClick, ProfileHeroMobile }: HeroMobil
             ? 'bg-gray-800/80 border-gray-700' 
             : 'bg-white/80 border-gray-200'
         }`}>
-          <p className={`text-sm leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-            Fraîchement diplômée en informatique, parcours écosystème logiciel,
-          </p>
-          <p className={`text-sm leading-relaxed mt-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-            avec une appétence pour <span className="text-neon-blue font-bold">PHP/Laravel, Symfony</span>, et{' '}
-            <span className="text-neon-blue font-bold">React</span>.
-          </p>
-          <p className={`text-sm leading-relaxed mt-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-            Je cherche une opportunité pour consolider mes compétences techniques dans un environnement stimulant.
-          </p>
+          <p className={`text-sm md:text-base leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+               Fraîchement diplômée en informatique, je suis à la recherche d'un
+              <span className="text-neon-blue font-bold"> stage</span> ou d'une{' '}
+                <span className="text-neon-blue font-bold"> première expérience en développement web. </span>
+                </p> 
+              <p className={`text-sm md:text-base leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}> 
+                <br />
+               Spécialisée en <span className="text-neon-blue font-bold">PHP/Laravel, Symfony</span>, et{' '}
+                <span className="text-neon-blue font-bold">React</span>,
+              
+                je transforme vos idées et vos besoins métiers en applications concrètes et performantes.
+              </p>
         </div>
 
         {/* BOUTONS */}

@@ -10,8 +10,8 @@ export const experiencesData = [
     longDescription: "Au sein d'Etech Madagascar, j'ai contribué au développement d'applications web professionnelles. J'ai travaillé sur la conception et l'implémentation de fonctionnalités côté frontend avec React et Tailwind CSS, ainsi que sur le backend avec PHP et Laravel. J'ai également participé à l'intégration d'APIs REST et à l'optimisation des performances.",
     technologies: ['React', 'PHP', 'Laravel', 'Tailwind CSS', 'PostgreSQL', 'Git', 'Docker'],
     achievements: [
-      'Création et intégration de 8 APIs RESTful avec Laravel',
-      'Développement de 3 modules fonctionnels complets',
+      'Création et intégration des APIs RESTful avec Laravel',
+      'Développement des modules fonctionnels complets',
       'Mise en place du pipeline CI/CD avec GitHub Actions',
       'Déploiement automatisé sur serveur de production',
       'Optimisation des temps de chargement de 40%',
@@ -51,15 +51,15 @@ export const experiencesData = [
     longDescription: "En tant que rédactrice web freelance chez Noesys, j'ai créé du contenu technique et marketing pour divers secteurs. J'ai rédigé des articles SEO optimisés, des guides techniques et des études de cas. Cette expérience m'a permis de développer une excellente capacité de synthèse et une maîtrise des techniques de rédaction web.",
     technologies: ['SEO', 'Rédaction technique', 'Content Marketing', 'Analytics'],
     achievements: [
-      'Plus de 50 articles publiés',
+      'Plus de 200 articles publiés',
       'Augmentation du trafic de 60% sur certains projets',
       'Création de guides techniques complets',
-      'Optimisation SEO de 30+ pages'
+      'Optimisation SEO pour plusieurs sites web',
     ],
     requis: [
       'Maîtrise du SEO et des outils d\'analyse',
       'Excellentes capacités rédactionnelles',
-      'Connaissance de WordPress',
+      'Recherche approfondie et vérification des sources',
       'Gestion de projets éditoriaux'
     ],
     stats: [
@@ -82,7 +82,7 @@ export const experiencesData = [
   {
     id: 3,
     title: 'Stagiaire en Recherche et Développement',
-    company: 'Homepharma',
+    company: 'HOMEOPHARMA',
     location: 'Antananarivo, Madagascar',
     period: 'Avril 2017 - Septembre 2017',
     type: 'Stage',
@@ -90,10 +90,10 @@ export const experiencesData = [
     longDescription: "Au sein du laboratoire R&D de Homepharma, j'ai participé à la formulation de produits cosmétiques naturels. J'ai réalisé des recherches sur les ingrédients naturels, développé des protocoles de test et contribué au contrôle qualité. Cette expérience m'a apporté une rigueur scientifique et une méthodologie de recherche.",
     technologies: ['Chimie', 'Cosmétologie', 'Recherche', 'Développement produit', 'Contrôle qualité', 'Formulation'],
     achievements: [
-      'Création de 5 formulations originales',
+      'Création et formulation des huiles cosmétiques naturelles',
       'Mise en place de protocoles de contrôle qualité',
       'Rédaction de fiches techniques produits',
-      'Validation de 15 matières premières'
+      'Validation des matières premières'
     ],
     requis: [
       'Connaissances en chimie organique',
@@ -102,7 +102,7 @@ export const experiencesData = [
       'Respect des normes qualité'
     ],
     stats: [
-      { value: '5', label: 'Formulations créées' },
+      { value: '7', label: 'Formulations créées' },
       { value: 'R&D', label: 'Recherche' },
       { value: 'Qualité', label: 'Contrôle' },
       { value: 'Tests', label: 'Validés' }
