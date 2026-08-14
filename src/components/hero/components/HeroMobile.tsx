@@ -52,25 +52,37 @@ const HeroMobile = ({ onCVClick, onProjectsClick, ProfileHeroMobile }: HeroMobil
           </span>
         </div>
 
-        {/* Description */}
-        <div className={`backdrop-blur-sm border rounded-xl p-4 shadow-lg text-left ${
-          isDark 
-            ? 'bg-gray-800/80 border-gray-700' 
-            : 'bg-white/80 border-gray-200'
-        }`}>
-          <p className={`text-sm md:text-base leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-               Fraîchement diplômée en informatique, je suis à la recherche d'un
-              <span className="text-neon-blue font-bold"> stage</span> ou d'une{' '}
-                <span className="text-neon-blue font-bold"> première expérience en développement web. </span>
-                </p> 
-              <p className={`text-sm md:text-base leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}> 
-                <br />
-               Spécialisée en <span className="text-neon-blue font-bold">PHP/Laravel, Symfony</span>, et{' '}
-                <span className="text-neon-blue font-bold">React</span>,
-              
-                je transforme vos idées et vos besoins métiers en applications concrètes et performantes.
-              </p>
-        </div>
+{/* Description */}
+<div className={`backdrop-blur-sm border rounded-xl p-4 shadow-lg text-left ${
+  isDark
+    ? 'bg-gray-800/80 border-gray-700'
+    : 'bg-white/80 border-gray-200'
+}`}>
+  <p className={`text-sm md:text-base leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+    Fraîchement diplômée en informatique, je recherche une
+    <span className="text-neon-blue font-bold"> opportunité en développement web</span>,
+    que ce soit dans le cadre d'un
+    <span className="text-neon-blue font-bold"> stage </span>
+    ou <span className="text-neon-blue font-bold"> d'un premier poste </span>. Passionnée par la création d'applications web, je m'adapte rapidement aux nouveaux environnements techniques.
+  </p>
+</div>
+<div className="flex flex-wrap gap-2 mt-4">
+  {[
+    "PHP",
+    "Laravel",
+    "Symfony",
+    "React",
+    "JavaScript",
+    "PostgreSQL",
+  ].map((tech) => (
+    <span
+      key={tech}
+      className="px-3 py-1 rounded-full text-sm font-medium bg-neon-blue/10 text-neon-blue border border-neon-blue/20"
+    >
+      {tech}
+    </span>
+  ))}
+</div>
 
         {/* BOUTONS */}
         <div className="flex flex-wrap gap-2 justify-center relative z-30">

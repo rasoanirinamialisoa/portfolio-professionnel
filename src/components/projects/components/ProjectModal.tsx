@@ -189,7 +189,7 @@ const ProjectModal = ({ project, onClose }) => {
               <p className={`text-sm transition-colors duration-300 ${
                 isDark ? 'text-gray-400' : 'text-black/80'
               }`}>
-                ⏳ Une démonstration vidéo est en cours de préparation pour ce projet. 
+                Une démonstration vidéo est en cours de préparation pour ce projet. 
                 Revenez bientôt !
               </p>
             </div>
