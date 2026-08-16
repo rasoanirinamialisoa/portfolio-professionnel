@@ -1,8 +1,8 @@
-import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
-import { Download, ArrowRight, Github, ExternalLink } from 'lucide-react';
-import SocialLinks from '../../ui/SocialLinks';
-import { featuredProject } from '../constants/heroConfig';
+import React from "react";
+import { useTheme } from "@/context/ThemeContext";
+import { Download, ArrowRight, Github, ExternalLink } from "lucide-react";
+import SocialLinks from "../../ui/SocialLinks";
+import { featuredProject } from "../constants/heroConfig";
 
 interface HeroMobileProps {
   onCVClick: () => void;
@@ -10,38 +10,60 @@ interface HeroMobileProps {
   ProfileHeroMobile: string;
 }
 
-const HeroMobile = ({ onCVClick, onProjectsClick, ProfileHeroMobile }: HeroMobileProps) => {
+const HeroMobile = ({
+  onCVClick,
+  onProjectsClick,
+  ProfileHeroMobile,
+}: HeroMobileProps) => {
   const { theme } = useTheme();
-  const isDark = theme === 'dark';
+  const isDark = theme === "dark";
 
   return (
     <div className="lg:hidden px-4 py-6 relative z-20">
       {/* IMAGE */}
       <div className="flex justify-center mb-6">
         <div className="relative group">
-          <div className={`absolute -inset-4 rounded-2xl blur-lg ${
-            isDark ? 'bg-gray-700/20' : 'bg-gradient-to-r from-neon-purple/15 to-neon-blue/15'
-          }`}></div>
-          <div className={`relative backdrop-blur-md border-2 rounded-full p-2 shadow-xl ${
-            isDark ? 'bg-gray-800/80 border-gray-700' : 'bg-white/80 border-white'
-          }`}>
-            <img src={ProfileHeroMobile} alt="RASOANIRINA Mialisoa Lisa" className="w-56 sm:w-64 object-contain rounded-full" />
+          <div
+            className={`absolute -inset-4 rounded-2xl blur-lg ${
+              isDark
+                ? "bg-gray-700/20"
+                : "bg-gradient-to-r from-neon-purple/15 to-neon-blue/15"
+            }`}
+          ></div>
+          <div
+            className={`relative backdrop-blur-md border-2 rounded-full p-2 shadow-xl ${
+              isDark
+                ? "bg-gray-800/80 border-gray-700"
+                : "bg-white/80 border-white"
+            }`}
+          >
+            <img
+              src={ProfileHeroMobile}
+              alt="RASOANIRINA Mialisoa Lisa"
+              className="w-56 sm:w-64 object-contain rounded-full"
+            />
           </div>
         </div>
       </div>
 
       {/* CONTENU */}
       <div className="text-center space-y-4">
-        <h2 className={`text-sm font-medium tracking-wider uppercase ${
-          isDark ? 'text-gray-400' : 'text-gray-600'
-        }`}>
+        <h2
+          className={`text-sm font-medium tracking-wider uppercase ${
+            isDark ? "text-gray-400" : "text-gray-600"
+          }`}
+        >
           Bonjour, je suis
         </h2>
 
         {/* NOM - Réduit et en blanc en mode dark */}
-        <h1 className={`text-lg sm:text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
-          <span className={isDark ? 'text-white' : 'text-gray-800'}>
-           RASOANIRINA Mialisoa Lisa
+        <h1
+          className={`text-lg sm:text-xl font-bold ${
+            isDark ? "text-white" : "text-gray-900"
+          }`}
+        >
+          <span className={isDark ? "text-white" : "text-gray-800"}>
+            RASOANIRINA Mialisoa Lisa
           </span>
         </h1>
 
@@ -52,119 +74,167 @@ const HeroMobile = ({ onCVClick, onProjectsClick, ProfileHeroMobile }: HeroMobil
           </span>
         </div>
 
-{/* Description */}
-<div className={`backdrop-blur-sm border rounded-xl p-4 shadow-lg text-left ${
-  isDark
-    ? 'bg-gray-800/80 border-gray-700'
-    : 'bg-white/80 border-gray-200'
-}`}>
-  <p className={`text-sm md:text-base leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-    Fraîchement diplômée en informatique, je recherche une
-    <span className="text-neon-blue font-bold"> opportunité en développement web</span>,
-    que ce soit dans le cadre d'un
-    <span className="text-neon-blue font-bold"> stage </span>
-    ou <span className="text-neon-blue font-bold"> d'un premier poste </span>. Passionnée par la création d'applications web, je m'adapte rapidement aux nouveaux environnements techniques.
-  </p>
-</div>
-<div className="flex flex-wrap gap-2 mt-4">
-  {[
-    "PHP",
-    "Laravel",
-    "Symfony",
-    "React",
-    "JavaScript",
-    "PostgreSQL",
-  ].map((tech) => (
-    <span
-      key={tech}
-      className="px-3 py-1 rounded-full text-sm font-medium bg-neon-blue/10 text-neon-blue border border-neon-blue/20"
-    >
-      {tech}
-    </span>
-  ))}
-</div>
-
+        {/* Description */}
+        <div
+          className={`backdrop-blur-sm border rounded-xl p-4 shadow-lg text-left ${
+            isDark
+              ? "bg-gray-800/80 border-gray-700"
+              : "bg-white/80 border-gray-200"
+          }`}
+        >
+          <p
+            className={`text-sm md:text-base leading-relaxed ${
+              isDark ? "text-gray-300" : "text-gray-700"
+            }`}
+          >
+            Fraîchement diplômée en informatique, je recherche une
+            <span className="text-neon-blue font-bold">
+              {" "}
+              opportunité en développement web
+            </span>
+            , que ce soit dans le cadre d'un
+            <span className="text-neon-blue font-bold"> stage </span>
+            ou{" "}
+            <span className="text-neon-blue font-bold">
+              {" "}
+              d'un premier poste{" "}
+            </span>
+            . Passionnée par la création d'applications web, je m'adapte
+            rapidement aux nouveaux environnements techniques.
+          </p>
+        </div>
         {/* BOUTONS */}
         <div className="flex flex-wrap gap-2 justify-center relative z-30">
           <button
             onClick={onCVClick}
             className="text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg hover:shadow-xl transition-all active:scale-95 bg-gradient-to-r from-neon-blue to-neon-purple"
           >
-            <span className="flex items-center gap-2"><Download className="w-4 h-4" /> Voir mon CV</span>
+            <span className="flex items-center gap-2">
+              <Download className="w-4 h-4" /> Voir mon CV
+            </span>
           </button>
           <button
             onClick={onProjectsClick}
             className="text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg hover:shadow-xl transition-all active:scale-95 bg-gradient-to-r from-neon-blue to-neon-purple"
           >
-            <span className="flex items-center gap-2">Voir mes projets <ArrowRight className="w-4 h-4" /></span>
+            <span className="flex items-center gap-2">
+              Voir mes projets <ArrowRight className="w-4 h-4" />
+            </span>
           </button>
         </div>
 
         {/* SOCIAL */}
         <div className="flex justify-center pt-2">
-          <div className={`inline-flex items-center gap-3 backdrop-blur-sm border rounded-xl px-4 py-2.5 shadow-md ${
-            isDark 
-              ? 'bg-gray-800/80 border-gray-700' 
-              : 'bg-white/80 border-gray-200'
-          }`}>
-            <span className={`text-xs font-semibold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+          <div
+            className={`inline-flex items-center gap-3 backdrop-blur-sm border rounded-xl px-4 py-2.5 shadow-md ${
+              isDark
+                ? "bg-gray-800/80 border-gray-700"
+                : "bg-white/80 border-gray-200"
+            }`}
+          >
+            <span
+              className={`text-xs font-semibold ${
+                isDark ? "text-gray-300" : "text-gray-700"
+              }`}
+            >
               Suivez-moi
             </span>
-            <div className={`h-5 w-px ${isDark ? 'bg-gray-600' : 'bg-gradient-to-b from-neon-purple to-neon-blue'}`}></div>
-            <SocialLinks className="flex gap-3" variant="default" iconSize={18} />
+            <div
+              className={`h-5 w-px ${
+                isDark
+                  ? "bg-gray-600"
+                  : "bg-gradient-to-b from-neon-purple to-neon-blue"
+              }`}
+            ></div>
+            <SocialLinks
+              className="flex gap-3"
+              variant="default"
+              iconSize={18}
+            />
           </div>
         </div>
       </div>
 
       {/* PROJET EN VEDETTE */}
       <div className="mt-6">
-        <div className={`backdrop-blur-sm border rounded-xl p-4 shadow-lg ${
-          isDark 
-            ? 'bg-gray-800/95 border-gray-700' 
-            : 'bg-white/95 border-gray-200'
-        }`}>
+        <div
+          className={`backdrop-blur-sm border rounded-xl p-4 shadow-lg ${
+            isDark
+              ? "bg-gray-800/95 border-gray-700"
+              : "bg-white/95 border-gray-200"
+          }`}
+        >
           <div className="flex items-center justify-between">
-            <h4 className={`text-base font-bold ${isDark ? 'text-gray-100' : 'text-gray-900'}`}>
+            <h4
+              className={`text-base font-bold ${
+                isDark ? "text-gray-100" : "text-gray-900"
+              }`}
+            >
               {featuredProject.title}
             </h4>
             <span className="px-2.5 py-0.5 bg-gradient-to-r from-neon-purple to-neon-blue text-white text-[10px] font-medium rounded-full">
               ★ En vedette
             </span>
           </div>
-          <p className={`text-xs mt-1 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+          <p
+            className={`text-xs mt-1 ${
+              isDark ? "text-gray-400" : "text-gray-600"
+            }`}
+          >
             {featuredProject.description}
           </p>
           <div className="flex flex-wrap gap-1.5 mt-2">
             {featuredProject.technologies.slice(0, 4).map((tech, index) => (
-              <span key={index} className={`px-2 py-0.5 text-[10px] font-medium rounded-full border ${
-                isDark 
-                  ? 'bg-gray-700/50 text-gray-300 border-gray-600' 
-                  : 'bg-gradient-to-r from-neon-blue/10 to-neon-purple/10 text-gray-700 border-gray-200'
-              }`}>
+              <span
+                key={index}
+                className={`px-2 py-0.5 text-[10px] font-medium rounded-full border ${
+                  isDark
+                    ? "bg-gray-700/50 text-gray-300 border-gray-600"
+                    : "bg-gradient-to-r from-neon-blue/10 to-neon-purple/10 text-gray-700 border-gray-200"
+                }`}
+              >
                 {tech}
               </span>
             ))}
             {featuredProject.technologies.length > 4 && (
-              <span className={`px-2 py-0.5 text-[10px] font-medium rounded-full border ${
-                isDark 
-                  ? 'text-gray-400 border-gray-600' 
-                  : 'text-gray-500 border-gray-200'
-              }`}>
+              <span
+                className={`px-2 py-0.5 text-[10px] font-medium rounded-full border ${
+                  isDark
+                    ? "text-gray-400 border-gray-600"
+                    : "text-gray-500 border-gray-200"
+                }`}
+              >
                 +{featuredProject.technologies.length - 4}
               </span>
             )}
           </div>
-          <div className={`flex gap-3 mt-2 pt-2 border-t ${
-            isDark ? 'border-gray-700' : 'border-gray-100'
-          }`}>
-            <a href={featuredProject.github} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1.5 text-xs font-medium transition-colors ${
-              isDark ? 'text-gray-400 hover:text-gray-200' : 'text-gray-600 hover:text-neon-purple'
-            }`}>
+          <div
+            className={`flex gap-3 mt-2 pt-2 border-t ${
+              isDark ? "border-gray-700" : "border-gray-100"
+            }`}
+          >
+            <a
+              href={featuredProject.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-1.5 text-xs font-medium transition-colors ${
+                isDark
+                  ? "text-gray-400 hover:text-gray-200"
+                  : "text-gray-600 hover:text-neon-purple"
+              }`}
+            >
               <Github className="w-3.5 h-3.5" /> Code
             </a>
-            <a href={featuredProject.demo} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1.5 text-xs font-medium transition-colors ${
-              isDark ? 'text-gray-400 hover:text-gray-200' : 'text-gray-600 hover:text-neon-purple'
-            }`}>
+            <a
+              href={featuredProject.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-1.5 text-xs font-medium transition-colors ${
+                isDark
+                  ? "text-gray-400 hover:text-gray-200"
+                  : "text-gray-600 hover:text-neon-purple"
+              }`}
+            >
               <ExternalLink className="w-3.5 h-3.5" /> Démo
             </a>
           </div>
