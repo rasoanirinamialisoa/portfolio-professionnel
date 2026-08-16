@@ -183,23 +183,7 @@ const HeroDesktop = ({
                 techniques.
               </p>
             </div>
-            <div className="flex flex-wrap gap-2 mt-4">
-              {[
-                "PHP",
-                "Laravel",
-                "Symfony",
-                "React",
-                "JavaScript",
-                "PostgreSQL",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 rounded-full text-sm font-medium bg-neon-blue/10 text-neon-blue border border-neon-blue/20"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+
 
             {/* BOUTONS */}
             <div className="flex flex-row flex-wrap gap-3 justify-center lg:justify-start">
